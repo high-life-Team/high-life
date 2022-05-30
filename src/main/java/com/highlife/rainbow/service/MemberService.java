@@ -1,6 +1,8 @@
-package member;
+package com.highlife.rainbow.service;
 
 import org.springframework.context.annotation.Primary;
+
+import member.MemberDTO;
 
 
 @Primary
