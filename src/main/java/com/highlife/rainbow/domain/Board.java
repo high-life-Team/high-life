@@ -34,7 +34,7 @@ public class Board {
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "member_id", referencedColumnName = "member_id")
+	@JoinColumn(name = "member_num", referencedColumnName = "member_num") // member의 PK를 받아옴
 	private Member member;
 	
 	private String title;
