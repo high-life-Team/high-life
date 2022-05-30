@@ -23,9 +23,10 @@ public class Emotion {
 	@Column(name = "emotion_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
     // **** 연관관계 정리 ****
 	@OneToOne
-	@JoinColumn(name = "member_id", referencedColumnName = "member_id")
+	@JoinColumn(name = "member_num", referencedColumnName = "member_num") // member의 PK를 받아옴
 	private Member member;
 	
 	@OneToOne

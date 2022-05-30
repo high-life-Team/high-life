@@ -39,7 +39,7 @@ public class ReplyReport {
 	private Board board;
 	
     @ManyToOne
-    @JoinColumn(name = "member_id", referencedColumnName = "member_id")
+    @JoinColumn(name = "member_num", referencedColumnName = "member_num")
     private Member member;
 	
     
