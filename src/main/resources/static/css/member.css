@@ -1,0 +1,456 @@
+#content {
+	text-align: center;   
+    width: 100%;
+    height: 800px;
+    background-color: white;
+    border-radius: 15px;
+
+} 
+
+#content{
+	margin-top:45px;
+}
+
+#member_cssbox {
+	padding:8px;
+	display:flex;	
+}
+
+#content_container{
+	height: 937px;
+}
+
+
+	
+.item{
+	flex:1;
+}
+
+.item:nth-child(1){
+width: 600px;
+}
+
+.item:nth-child(2){
+	width: 600px;
+	margin-top: 500px;
+}
+
+/* 아이디 */
+#id {
+	display: flex;
+	justify-content: center;
+	margin-top: 60px;
+	margin-right : 90px;
+}
+
+#id_box {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+	
+}
+
+#id_id { 
+    width: 300px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    
+}
+
+/*닉네임*/
+#nickname {
+	display: flex;
+	justify-content: center;
+	margin-right: 90px;
+}
+
+#nickname_box {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+	
+}
+
+#nickname_nickname { 
+    width: 300px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    
+}
+
+/* 패스워드 */
+#pw {
+	display: flex;
+	justify-content: center;
+}
+
+#pw_box {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    margin-right: 90px;
+	
+}
+
+#pw_text { 
+    width: 300px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    
+}
+
+/*패스워드 확인*/
+#pw_check {
+	display: flex;
+	justify-content: center;
+}
+
+#pw_check_box {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    margin-left: 6px;
+    margin-right: 90px;
+	
+}
+
+#pw_check_text { 
+    width: 300px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    
+}
+
+/* 이메일 */
+#email {
+	display: flex;
+	justify-content: center;
+	margin-right: 90px;
+}
+
+#email_box {
+    width: 190px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    
+}
+
+#email_email { 
+    width: 190px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    
+}
+
+#emailcode_div{
+	display: flex;
+	justify-content: center;
+}
+
+#emailCode_box {
+    width: 190px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    margin-top:10px;
+    margin-left:10px;
+}
+
+
+#emailCode{
+	width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    
+}
+
+#emailtime{
+	width: 80px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 15px;
+    color: red;
+    margin-top:5px;
+}
+
+/* 전화번호 */
+
+#phone {
+	display: flex;
+	justify-content: center;
+	margin-right: 90px;
+}
+
+#phone_box {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+}
+
+#phone_phone { 
+    width: 300px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;    
+}
+
+/* 생년월일 */
+
+
+#birth {
+	display: flex;
+	justify-content: center;
+	
+}
+
+
+#birth_box {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    margin-right: 90px;
+	
+}
+
+
+#birth_yy { 
+    width: 70px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;   
+    
+}
+
+#birth_mm { 
+    width: 70px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin-right: 30px;
+}
+
+#birth_dd { 
+    width: 70px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    
+}
+
+
+/* 회원가입 버튼 */
+#member_btn {
+	margin: 10px auto 0 auto;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    background: #bdbdbd;
+}
+
+#member_btn:hover {
+	border-radius: 10px;
+    transition: 0.5s;
+    color: white;
+    background: #12379e;
+	
+}
+
+#emailCheck {
+	margin: auto 0 auto;
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    background: #bdbdbd;
+    margin-left: 20px;
+}
+
+#emailCheck:hover {
+	border-radius: 10px;
+    transition: 0.5s;
+    color: white;
+    background: #12379e;
+	
+}
+
+#request {
+	margin: auto 0 auto;
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    background: #bdbdbd;
+    margin-left:20px;
+}
+
+#request:hover {
+	border-radius: 10px;
+    transition: 0.5s;
+    color: white;
+    background: #12379e;
+	
+}
+/* 중복확인 버튼 */
+/*
+#repeat_check {
+	margin: auto 0 auto;
+	margin-left:20px;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    background: #bdbdbd;
+}
+
+#repeat_check:hover {
+	border-radius: 10px;
+    transition: 0.5s;
+    color: white;
+    background: #12379e;
+	
+}
+
+#repeat_check_nickname {
+	margin: auto 0 auto;
+	margin-left:20px;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    background: #bdbdbd;
+}
+
+#repeat_check_nickname:hover {
+	border-radius: 10px;
+    transition: 0.5s;
+    color: white;
+    background: #12379e;
+	
+}
+
+#repeat_check_email {
+	margin: auto 0 auto;
+	margin-left:20px;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    background: #bdbdbd;
+}
+
+#repeat_check_email:hover {
+	border-radius: 10px;
+    transition: 0.5s;
+    color: white;
+    background: #12379e;
+	
+}
+
+#repeat_check_phone {
+	margin: auto 0 auto;
+	margin-left:20px;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    background: #bdbdbd;
+}
+
+#repeat_check_phone:hover {
+	border-radius: 10px;
+    transition: 0.5s;
+    color: white;
+    background: #12379e;
+	
+} */
+

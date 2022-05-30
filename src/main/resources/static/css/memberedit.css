@@ -1,0 +1,434 @@
+/* */
+
+.inner_space {
+    width: 100%;
+    height: 40px;
+}
+
+#content {
+    width: 100%;
+    height: 1200px;
+    background-color: #f4f4f4;
+}
+
+#memberedit_post_list_area {
+    width: 800px;
+    height: 1100px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+#memberedit_post_list {
+    width: 700px;
+    height: 1200px;
+    background-color: rgb(255, 255, 255);
+}
+
+#membereditboard_area {
+    width: 380px;
+    height: 1100px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    margin-left: 50px;
+}
+
+#membereditboard_area_box {
+    width: 350px;
+    height: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#membereditboard_area_box > h3 {
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+#membereditboard_area_box > p {
+    margin-top: 20px;
+    font-size: 18px;
+    white-space: pre-wrap;
+}
+
+#membereditboard_area_box > div {
+    margin-top: 30px;
+    width: 90%;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+#category_area {
+    height: 50px;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#cate_detail {
+    height: 50px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+}
+
+#memberedit_container {
+    width: 100%;
+    display: flex; 
+}
+
+#memberedit_post_list_title {
+    margin-top: 40px;
+}
+
+#memberedit_post {
+    width: 100%;
+}
+
+#post_content {
+    width: 100%;
+    height: 400px;
+}
+/* 
+#file-upload-button {
+	margin: 10px auto 0 auto;
+	margin-left:5px;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background: #12379e;
+    cursor:pointer;  
+} */
+
+#fileatt_text {
+	width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    justify-content: center;
+}
+
+#intromyself {
+	
+	width: 500px;
+    height: 90px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    justify-content: center;
+    resize:none;
+    white-space: pre-wrap;
+}
+
+#intromyself_container {
+	align-items:flex-end;
+}
+
+
+#nickname_change_btn {
+	margin-left:10px;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background: #12379e;
+    cursor:pointer;
+}
+
+#phone_change_btn {
+	margin-left:10px;
+	
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background: #12379e;
+    cursor:pointer;
+}
+
+/* 내용 */
+#id {
+	display: flex;
+	margin-top: 30px;
+	
+}
+
+#id_box {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+}
+
+#id_id { 
+    width: 200px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    
+}
+
+/*닉네임*/
+#nickname {
+	display: flex;
+}
+#nickname_box {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+}
+
+#nickname_nickname { 
+    width: 200px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+/* 패스워드 */
+#pw {
+	display: flex;
+}
+
+#pw_box {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    
+	
+}
+
+#pw_text { 
+    width: 200px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    
+}
+
+/*패스워드 확인*/
+#pw_check {
+	display: flex;
+}
+
+#pw_check_box {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    margin-left: 6px;
+    margin-right: 90px;
+	
+}
+
+#pw_check_text { 
+    width: 200px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    
+}
+
+/* 이메일 */
+#email {
+	display: flex;
+}
+
+#email_box {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+}
+
+#email_email { 
+    width: 200px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    
+}
+
+/* 전화번호 */
+
+#phone {
+	display: flex;
+}
+
+#phone_box {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+}
+
+#phone_phone { 
+    width: 200px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;    
+}
+
+/* 생년월일 */
+
+
+#birth {
+	display: flex;
+}
+
+#birth_box {
+	width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0px 0px 4px rgb(209, 209, 209);
+    border: none;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+}
+
+#memberout {
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background: gray;
+    cursor:pointer;
+    float: left;
+}
+
+#editcomple {
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background: #12379e;
+    cursor:pointer;
+    float: right;
+}
+
+#nicknamecheck_font {
+	margin-left: 150px;
+}
+
+.profileimg_preview{
+border-radius:80%;
+width:200px;
+height: 200px;
+}
+
+.board_profileimg{
+    margin-top: 100px;
+    border-radius:80%;
+    width:200px;
+    height: 200px;
+}
+
+#profileimg_btn {
+	margin-left:10px;
+    width: 85px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background: #12379e;
+    cursor:pointer;
+    float: right;
+}
+
+#profileimg_preview_btn {
+	margin-left:10px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background: #12379e;
+    cursor:pointer;
+    float: right;
+}
+
+#file-upload-button {
+	
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background: #12379e;
+    cursor:pointer;
+    
+}
+
+.introtextarea {
+  word-break: break-word;
+}
