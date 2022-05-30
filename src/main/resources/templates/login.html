@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="indexhtml">
+<head>
+<meta charset="UTF-8">
+<title>멀티몰 - 로그인</title>
+<link rel="stylesheet" type="text/css" href="./css/login.css">
+<script src="./js/login.js"></script>
+<meta name="viewport"
+	content="user-scalable=no,width=device-width,initial-scale=1" />
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="css\login.css">
+
+
+</head>
+<header>
+
+<!--  네비 끝 -->
+
+
+
+	<div class="maintop">
+		<A href="multimall.html"><IMG
+			src="images/mblack.png" width=240; height=60;></A>
+
+		<div class="d-flex">
+			<!-- 검색 -->
+			<input class="form-control me-sm-2" type="text" placeholder="오늘의 아우터"
+				style="width: 300px; height: 50px; font-size: 20px;">
+			<button class="btn btn-secondary my-2 my-sm-0" type="submit"
+				style="float: right;">Search</button>
+			<div class="simbol">
+				<A	href="order.html"><img src="images/cart.svg" width="50"
+					height="50" style="float: right; margin-left: 20px;"></A>
+				<A href="login.html"><img src="images/person.svg" width="50"
+					height="50" style="float: right; margin-left: 20px;"></A>
+			</div>
+		</div>
+	</div>
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#"></a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+				aria-controls="navbarColor03" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+
+			<ul class="navbar-nav  justify-content-center" style="width: 100%">
+				<li class="nav-item"><a class="nav-link"
+					href="multimall.html">&nbsp;홈&nbsp;
+				</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="productlist_top.html">&nbsp;상의&nbsp;</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="productlist_bottom.html">&nbsp;하의&nbsp;</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="productlist_outer.html">&nbsp;아우터&nbsp;</a></li>
+				<li class="nav-item"><a class="nav-link" href="order.html">&nbsp;장바구니&nbsp;</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="cs.html">&nbsp;고객센터&nbsp;</a>
+				</li>
+			</ul>
+		</div>
+
+	</nav>
+
+<body>
+
+	<div class="intro_container">
+		<!-- 상단 소개글 여백 -->
+		<div class="intro">
+			<h2>
+				<!-- 상단 소개글 -->
+				안녕하세요 : ) <br> 멀티몰입니다.
+			</h2>
+		</div>
+	</div>
+	<form class="login_form">
+		<!-- 폼 시작 -->
+
+		<div class="idpwlogin">
+		<div class="id_line">
+			<!--ID-->
+			<input type=text name="uid" id="uid" maxlength="20" size="60"
+				required="required" placeholder="아이디 입력" pattern="[a-z0-9]{5,20}" style="padding-bottom: 10px">
+			<!--영어 소문자 a-z 숫자0~9 5~20자리 사이 -->
+		</div>
+		
+		<div class="pw_line">
+			<!--PW-->
+			<input type="password" name="pw" id='pw' value=""
+				placeholder="비밀번호 입력" required="required" size="60">
+		</div>
+		<br>
+		<div id="login_btn" class="btn_form">
+			<!--로그인-->
+			<input type=button value=" 로그인 " class="btn btn-dark" id='login_btn1'
+				onclick="javascript:login_btn()">
+			<!-- 클릭 후 login.js 내부 유효성 검사 함수 실행 -->
+		</div>
+		</div>
+		
+		
+		
+		<br>
+		<div class="signup">
+			<span> <!--회원가입-->
+				<button type="button" class="btn btn-Light">아이디 찾기</button>
+				<button type="button" class="btn btn-Light">비밀번호 찾기</button>
+				<button type="button" class="btn btn-Light"
+					onclick="location.href='signup.html'">회원가입</button> <br> <!-- 회원가입 페이지 이동 -->
+			</span>
+		</div>
+		<br>
+		<hr>
+	</form>
+	<!-- 폼 종료 -->
+
+
+	<footer class="bd-footer py-5 mt-5 bg-light">
+		<div class="container py-5">
+			<div class="row">
+				<div class="col-lg-3 mb-3">
+					<a
+						class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none"
+						href="/" aria-label="Bootstrap"> <span class="fs-5"><B>멀티몰</B></span>
+					</a>
+					<ul class="list-unstyled small text-muted">
+						<li class="mb-2">메인 페이지 만드는데 죽을 것 같습니다 흑흑</li>
+						<li class="mb-2">살려주세요 저는 아무 잘못도 안했어요 ㅠㅠ</li>
+						<li class="mb-2">멀티캠퍼스 브라우니 감사합니다 잘 먹고 있워용</li>
+					</ul>
+				</div>
+				<div class="col-6 col-lg-4 offset-lg-1 mb-3">
+					<h3>
+						<b>고객센터</b>
+					</h3>
+					<h5>
+						<b>010-8525-4261</b>
+					</h5>
+					<br>
+					<ul class="list-unstyled text-muted">
+						<li class="mb-2"><b>영업시간</b> AM 09:10 ~ PM 17:50 (주말 및 공휴일
+							휴무)</li>
+						<li class="mb-2"><b>점심시간</b> PM 11:50 ~ PM 13:00</li>
+						<li class="mb-2"><br></li>
+						<li class="mb-2"><a href="#"><button type="button"
+									class="btn btn-dark">입점문의</button></a> <a href="#"><button
+									type="button" class="btn btn-dark">셀러어드민</button></a></li>
+
+					</ul>
+				</div>
+
+				<div class="col-6 col-lg-4 mb-3">
+					<h5>6조 구성</h5>
+					<ul class="list-unstyled small text-muted">
+						<li class="mb-2">메인 페이지_최은택</li>
+						<li class="mb-2">고객센터/장바구니/구매 페이지_김정년</li>
+						<li class="mb-2">관리자 상품 등록/관리자 고객 센터 관리_양정민</li>
+						<li class="mb-2">상품 페이지/상품 목록 페이지_이예은</li>
+						<li class="mb-2">로그인/회원 가입_이윤석</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class=topBtn onclick="window.scrollTo(0,0);"
+			style="float: right; margin-right: 100px; margin-top: 70px; margin-bottom: 50px; height: 3%; width: 3%;">
+			<img src="images/up.svg" height="200%" width="200%"><b>&nbsp;TOP</b>
+		</div>
+	</footer>
+
+	<!-- footer 종료 -->
+
+</body>
+<!-- body 종료 -->
+
+</html>
