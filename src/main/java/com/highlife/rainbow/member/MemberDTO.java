@@ -1,4 +1,4 @@
-package com.highlife.rainbow.controller;
+package com.highlife.rainbow.member;
 
 import org.springframework.stereotype.Component;
 
