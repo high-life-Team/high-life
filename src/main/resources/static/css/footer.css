@@ -1,0 +1,35 @@
+
+.footer_wrap{
+    height: 330px;
+    background-color: rgb(240, 240, 240);
+    font-size: 13px;
+}
+
+.footer_section{
+    display: flex;
+    margin: 0 20%;
+    height: 200px;
+    display: flex;
+    padding-top:50px;
+    line-height: 40px;
+    justify-content:center;
+}
+
+.footer_sec1{
+    width: 150px;
+    background-color: rgb(219, 163, 163);
+    margin-right: 200px;
+}
+
+.footer_sec2{
+    width: 150px;
+    background-color: rgb(182, 236, 182);
+    margin-right: 150px;
+}
+
+.footer_sec3{
+    left:640px;
+    width: 150px;
+    background-color: rgb(182, 236, 182);
+}
+

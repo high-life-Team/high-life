@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" class="indexhtml">
-
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <head>
 </head>
 <title>먹구름 속 무지개</title>
 <body>
-<h1>메인 페이지</h1>
+      <!-- import header -->
+      <header th:replace="layout/fragment :: fr_header"></header>
+      <!-- end of import header -->
+      
+      <div class="index_wrap">
+      
+      </div>
+      <!-- import header -->
+      <header th:replace="layout/fragment :: fr_footer"></header>
+      <!-- end of import header -->
 </body>
 </html>
