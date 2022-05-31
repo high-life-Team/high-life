@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import member.MemberDAO;
-import member.MemberDTO;
+import com.highlife.rainbow.controller.MemberDAO;
+import com.highlife.rainbow.controller.MemberDTO;
 
 
 @Repository
@@ -23,6 +23,8 @@ public class MemberServiceImpl implements MemberService {
 		return dao.memberinsert(dto);
 	}
 
+	
+	/*
 	@Override
 	public int checkmember(String id) {
 		return dao.checkmember(id);
@@ -67,7 +69,7 @@ public class MemberServiceImpl implements MemberService {
 	public String pwfind(MemberDTO dto) {
 		return dao.pwfind(dto);
 	}
-	 
+	 */
 	 
 
 
