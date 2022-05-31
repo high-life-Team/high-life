@@ -7,13 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class IndexController {
-	
-	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@GetMapping("/")
     public String main(){
-		
-		logger.info("-----> 인덱스 컨트롤러 실행 확인");
 		
        return "index";
     }
