@@ -11,12 +11,19 @@
       <!-- import header -->
       <header th:replace="layout/fragment :: fr_header"></header>
       <!-- end of import header -->
-      
+    
       <div class="index_wrap">
-      
+        <button type="button" onclick="location.href='board/list';">게시판</button>
+        <button type="button" onclick="location.href='board/detail';">게시판 상세페이지</button>
+        <button type="button" onclick="location.href='board/form';">글작성 이동</button>
+        <button type="button" onclick="location.href='/';">홈 이동</button>
+        <button type="button" onclick="location.href='login';">로그인 이동</button>
+        <button type="button" onclick="location.href='member';">회원가입 이동</button>
       </div>
-      <!-- import header -->
+  
+      <!-- import footer -->
       <header th:replace="layout/fragment :: fr_footer"></header>
-      <!-- end of import header -->
+      <!-- end of import footer -->
+
 </body>
 </html>
