@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" class="indexhtml">
-
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <head>
 </head>
 <title>먹구름 속 무지개</title>
 <body>
-<h1>메인 페이지</h1>
-<button type="button" onclick="location.href='board/list';">게시판</button>
-<button type="button" onclick="location.href='board/detail';">게시판 상세페이지</button>
-<button type="button" onclick="location.href='board/form';">글작성 이동</button>
-<button type="button" onclick="location.href='/';">홈 이동</button>
-<button type="button" onclick="location.href='login';">로그인 이동</button>
-<button type="button" onclick="location.href='member';">회원가입 이동</button>
+      <!-- import header -->
+      <header th:replace="layout/fragment :: fr_header"></header>
+      <!-- end of import header -->
+    
+      <div class="index_wrap">
+        <button type="button" onclick="location.href='board/list';">게시판</button>
+        <button type="button" onclick="location.href='board/detail';">게시판 상세페이지</button>
+        <button type="button" onclick="location.href='board/form';">글작성 이동</button>
+        <button type="button" onclick="location.href='/';">홈 이동</button>
+        <button type="button" onclick="location.href='login';">로그인 이동</button>
+        <button type="button" onclick="location.href='member';">회원가입 이동</button>
+      </div>
+  
+      <!-- import footer -->
+      <header th:replace="layout/fragment :: fr_footer"></header>
+      <!-- end of import footer -->
+
 </body>
 </html>
