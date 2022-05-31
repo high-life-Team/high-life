@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  <!-- mybatis db 연결정보 세팅 파일 -->
+<configuration>
+
+<!-- sql 실행 결과 XXXDTO 매핑 -->
+<typeAliases>
+
+   
+   <!-- 은택님 -->
+	<typeAlias type="com.highlife.rainbow.member.MemberDTO" alias="memberdto"/>
+   
+</typeAliases>
+
+</configuration>
+

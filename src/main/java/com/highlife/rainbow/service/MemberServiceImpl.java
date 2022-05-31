@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import com.highlife.rainbow.controller.MemberDAO;
-import com.highlife.rainbow.controller.MemberDTO;
+import com.highlife.rainbow.member.MemberDAO;
+import com.highlife.rainbow.member.MemberDTO;
 
 
 @Repository

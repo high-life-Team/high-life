@@ -2,7 +2,7 @@ package com.highlife.rainbow.service;
 
 import org.springframework.context.annotation.Primary;
 
-import com.highlife.rainbow.controller.MemberDTO;
+import com.highlife.rainbow.member.MemberDTO;
 
 
 @Primary
