@@ -42,6 +42,32 @@ public class MemberController {
 		return "redirect:login";
 	}
 	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView form() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("login");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView login(MemberDTO dto, RedirectAttributes rAttr, HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		MemberDTO logindto = service.login(dto);
+		
+		if (logindto != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("member", logindto);
+			session.setAttribute("isLogOn", true);
+			
+			mv.setViewName("redirect:http://localhost:8011/");		
+			
+		} else {
+			rAttr.addAttribute("result", "loginFailed");
+			mv.setViewName("redirect:/login");
+		}
+		return mv;
+	}
 	
 	
 }

@@ -32,7 +32,7 @@ body {
 
 
 
- #uid, #pw, #login_btn1{
+ #member_id, #password, #login_btn{
   width: 100%;
   padding: 10px 20px;
   margin: 5px 0;
