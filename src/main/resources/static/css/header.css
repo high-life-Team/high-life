@@ -1,8 +1,8 @@
 .header_wrap {
     border: 1px solid #000;
-    height: 55px;
+    height: 45px;
     margin: 0px;
-    background-color: rgb(240, 240, 240);
+    background-color: transparent;
     display: flex;
     flex-direction: row;
 }
@@ -59,14 +59,16 @@
 
 .header_logo {
     border: 1px solid blue;
+    border-radius: 9px;
     position: absolute;
     left:70px;
     width:70px;
-    height:30px;
+    height:20px;
     top:10px;
     text-align: center;
     padding-top: 5px;
     cursor: pointer;
+    font-size: 12px;
 }
 
 .header_logo:hover{
@@ -77,12 +79,14 @@
 .header_login, .header_join{
     position: absolute;
     border: 1px solid rgb(68, 68, 11);
-    width : 100px;
-    height: 30px;
+    border-radius: 9px;
+    width : 70px;
+    height: 20px;
     top:10px;
     text-align: center;
     padding-top: 5px;
     cursor: pointer;
+    font-size: 12px;
 }
 
 .header_login{
