@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.highlife.rainbow.member.MemberDAO">
+
+<!-- 회원가입 -->
+<insert id="memberinsert" parameterType="memberdto">
+	insert into member (email, member_id, nickname, password, reg_date, status) values (#{email},#{member_id},#{nickname},#{password},CURRENT_TIMESTAMP,0)
+</insert>
+
+
+<!-- 로그인 -->
+<select id="login" resultType="memberdto" parameterType="memberdto">
+	select * from member where member_id = #{member_id} and password = #{password} and status = 0
+</select>
+
+
+
+</mapper>
