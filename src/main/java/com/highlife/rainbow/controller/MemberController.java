@@ -60,7 +60,7 @@ public class MemberController {
 			session.setAttribute("member", logindto);
 			session.setAttribute("isLogOn", true);
 			
-			mv.setViewName("redirect:/index");		
+			mv.setViewName("redirect:/");
 			
 		} else {
 			rAttr.addAttribute("result", "loginFailed");
