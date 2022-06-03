@@ -58,8 +58,20 @@ public class MemberController {
 		if (logindto != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("member", logindto);
+			session.setAttribute("id", logindto.getMember_id());
+			session.setAttribute("email", logindto.getEmail());
+			session.setAttribute("nickName", logindto.getNickname());
 			session.setAttribute("isLogOn", true);
-			
+		
+			String id = (String) session.getAttribute("id");
+			String email = (String) session.getAttribute("email");
+			String nickname = (String) session.getAttribute("nickName");
+			System.out.println("=====================================");
+			System.out.println("로그인 성공");
+			System.out.println("아이디 : " + id);
+			System.out.println("이메일 : " + email);
+			System.out.println("닉네임 : " + nickname);
+			System.out.println("=====================================");
 			mv.setViewName("redirect:/");
 			
 		} else {
@@ -68,7 +80,6 @@ public class MemberController {
 		}
 		return mv;
 	}
-	
 	
 }
 
