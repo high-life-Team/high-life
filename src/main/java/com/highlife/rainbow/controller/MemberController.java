@@ -81,5 +81,16 @@ public class MemberController {
 		return mv;
 	}
 	
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		HttpSession session = request.getSession();
+		session.removeAttribute("member");
+		session.removeAttribute("isLogOn");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("redirect:/");
+		return mav;
+	}
+	
 }
 
