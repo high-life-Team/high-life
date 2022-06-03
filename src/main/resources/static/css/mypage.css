@@ -1,0 +1,133 @@
+
+
+.mypage_container {
+	padding : 50px 0;
+	margin : 0 auto;
+    width:935px;
+    position: relative;
+}
+
+.profilepart_wrap{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+
+.profileimg_wrap{
+    width: 40%;
+
+}
+.profile_img{
+    width: 152px;
+    height: 152px;
+    overflow:hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.profile_img img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.profiledetail_wrap{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profiledetail_wrap_top{
+    display: flex;
+    align-items: center;
+}
+
+.profiledetail_wrap_user_name{
+    font-size: 40px;
+    font-weight: 200;
+    display: inline-block;
+    margin-top: 10px;
+    justify-content: center;
+    text-align : center;
+}
+
+.profiledetail_wrap_middle > a{
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    color: #262626;
+	
+    font-weight: 600;
+    vertical-align: text-bottom;
+    text-decoration: none;
+    box-sizing: border-box;
+    
+    
+}
+
+
+.profiledetail_wrap_middle{
+    display: flex;
+    height: 50px;
+    margin : 0 auto;
+    padding: 40px 60px ;
+}
+
+
+
+.profiledetail_wrap .about > span{
+    display:inline-block;
+    cursor: pointer;
+    position:relative;
+}
+
+
+
+
+.my_write_lists{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+}
+
+
+
+.my_write_lists_thum{
+    max-width:300px;
+    max-height:300px;
+    overflow:hidden;
+    margin-bottom: 18px;
+    
+
+
+}
+
+.my_write_lists_thum img{
+    width: 100%;
+    height: 100%;
+}
+
+
+@media screen and (max-width:1000px){
+
+    .my_write_lists {
+        justify-content: center;
+
+    }
+
+
+    .my_write_lists_thum {
+        margin:10px;
+    }
+}
+
+
+
+
+
+

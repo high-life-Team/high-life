@@ -20,9 +20,7 @@
 <div class="detail_wrap">
 
 <!-- 신고버튼(모달)작동 필요 정보 -->
-<input type="hidden" value="${postnum}" id="getPostnum">
-<input type="hidden" value="${memberid}" id="post_memberid">
-<input type="hidden" value="${member.id}" id="userid">
+<input type="hidden" value="${member_id}" id="member_id">
 <!-- 필요 정보 끝 -->
 
 	<div class="detail_content">
@@ -38,9 +36,10 @@
 	
 	<div class="detail_comment">
 	
-	<div class="report_btn">
+	  <div class="report_btn">
+		
 		<button class="reportcommentbtn" id="1comment${comment.commentnum}">신고하기</button>
-	</div>
+	  </div>
 	
 	
 	</div>

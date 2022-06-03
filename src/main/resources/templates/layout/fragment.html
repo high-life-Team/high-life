@@ -12,9 +12,9 @@
         
         <a class="header_login" th:if="${session.isLogOn == null}" th:href="@{/login}">로그인</a>
         <a class="header_join" th:if="${session.isLogOn == null}" th:href="@{/member}">회원가입</a>
-        <a class="header_join" th:if="${session.isLogOn != null}">어서오세요</a>
-        <a class="header_login" th:if="${session.isLogOn != null}" th:href="@{/logout}">로그아웃</a>
         
+        <a class="header_login" th:if="${session.isLogOn != null}" th:href="@{/logout}">로그아웃</a>
+        <a class="header_join" th:if="${session.isLogOn != null}" th:href="@{/mypage}">마이페이지</a>
         
         
         <!--- 로그인 유무에 따라 문구 변경
