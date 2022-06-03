@@ -2,97 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org" class="indexhtml">
   <!-- CSS -->
   <link rel="stylesheet" href="/css/style.css" />
-  <!-- JQUERY -->
+  <!-- JAVASCRIPT -->
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  
 <head>
 </head>
 <title>먹구름 속 무지개</title>
 <body>
-
-    
-      <div class="index_top_wrap">
-            
-      
-       <div class="custom-shape-divider-bottom-1654128152">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
-        
-        <button type="button" onclick="location.href='board/list';">게시판</button>
-        <button type="button" onclick="location.href='board/detail';">게시판 상세페이지</button>
-        <button type="button" onclick="location.href='board/form';">글작성 이동</button>
-        <button type="button" onclick="location.href='/';">홈 이동</button>
-        <button type="button" onclick="location.href='login';">로그인 이동</button>
-        <button type="button" onclick="location.href='member';">회원가입 이동</button>
-        
-                <!-- box section 시작  -->
-        <div class="index_box_section">
-            <h3 > TODAY TOP </h3>
-            <P class="box_section_subtitle"> 오늘의 인기글을 만나보세요 </P>
-
-            <ul class="index_box_wrap">
-                <!-- box 1칸  -->
-                <li class="index_box">
-                    <a class="box_link" href="#">
-                        <img class="box_img" src="https://bit.ly/3aF4Kt7">
-                    </a>
-                    <p class="box_title">  월요일 월요일 월요일 월요일 월요일 월요일 월요일  </p>
-                    <p class="box_content">
-                        우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다 있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린 보고, 봅니다. 계집애들의 없이 계절이 있습니다.
-                    </p>
-                </li>
-
-                <!-- box 1칸  -->
-                <li class="index_box">
-                    <a class="box_link" href="#">
-                        <img class="box_img" src="https://bit.ly/3aF4Kt7">
-                    </a>
-                    <p class="box_title">  화요일 화요일 화요일 화요일 화요일 화요일 화요일 화요일 화요일 </p>
-                    <p class="box_content">
-                        우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다 있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린 보고, 봅니다. 계집애들의 없이 계절이 있습니다.
-                    </p>
-                </li>
-
-                <!-- box 1칸  -->
-                <li class="index_box">
-                    <a class="box_link" href="#">
-                        <img class="box_img" src="https://bit.ly/3aF4Kt7">
-                    </a>
-                    <p class="box_title"> 수요일 수요일 수요일 수요일 수요일 수요일 수요일 수요일  </p>
-                    <p class="box_content">
-                        우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다 있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린 보고, 봅니다. 계집애들의 없이 계절이 있습니다.
-                    </p>
-                </li>
-                                
-                
-            </ul>
-
-        </div>
-      </div>
-      
-      
-  
-  
-
-
-
-
   <div class="index_top_wrap">
-    <!-- import header -->
+  
+     <!-- import header -->
       <header th:replace="layout/fragment :: fr_header"></header>
       
-     <!-- 상단 shapedivider --> 
-    <div class="custom-shape-divider-bottom-1654128152">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path
-          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-          class="shape-fill"></path>
-      </svg>
-    </div>
-    
-    
-    <!-- 백엔드 연결 확인용 임시 버튼  -->
+
     <button type="button" onclick="location.href='board/list';">게시판</button>
     <button type="button" onclick="location.href='board/detail';">게시판 상세페이지</button>
     <button type="button" onclick="location.href='board/form';">글작성 이동</button>
@@ -100,103 +23,128 @@
     <button type="button" onclick="location.href='login';">로그인 이동</button>
     <button type="button" onclick="location.href='member';">회원가입 이동</button>
 
-    <!-- box section 시작  -->
-    <div class="index_box_section">
-      <h3 class="box_section_title"> TODAY TOP </h3>
-      <P class="box_section_subtitle"> 오늘의 인기글을 만나보세요 </P>
+    <h1 class="main_title">먹구름 속 무지개</h1>
+    <h3 class="sub_title"> 
+    당신의 고민을 함께 나누는 이 곳 </h3>
 
-      <ul class="index_box_wrap">
-        <!-- box 1칸  -->
-        <li class="index_box">
-          <a class="box_link" href="#">
-            <img class="box_img" src="https://bit.ly/3aF4Kt7">
-          </a>
-          <p class="box_title"> 월요일 월요일 월요일 월요일 월요일 월요일 월요일 월요일 월요일</p>
-          <p class="box_content">
-            우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다
-            있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린
-            보고, 봅니다. 계집애들의 없이 계절이 있습니다.
-          </p>
-        </li>
+    <div class="main_gobtn">
+      <a href="#index_scroll" class="main_scroll">둘러보기</a>
+    </div>
 
-        <!-- box 1칸  -->
-        <li class="index_box">
-          <a class="box_link" href="#">
-            <img class="box_img" src="https://bit.ly/3N9Adli">
-          </a>
-          <p class="box_title"> 화요일 화요일 화요일 화요일 화요일 화요일 화요일 화요일 화요일 </p>
-          <p class="box_content">
-            우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다
-            있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린
-            보고, 봅니다. 계집애들의 없이 계절이 있습니다.
-          </p>
-        </li>
 
-        <!-- box 1칸  -->
-        <li class="index_box">
-          <a class="box_link" href="#">
-            <img class="box_img" src="https://bit.ly/3Ncroaw">
-          </a>
-          <p class="box_title"> 수요일 수요일 수요일 수요일 수요일 수요일 수요일 수요일 </p>
-          <p class="box_content">
-            우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다
-            있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린
-            보고, 봅니다. 계집애들의 없이 계절이 있습니다.
-          </p>
-        </li>
-      </ul>
+    <div class="custom-shape-divider-bottom-1654214450">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+        </svg>
     </div>
     
-    <!-- box section 시작  -->
-    <div class="index_box_section">
-      <h3 class="box_section_title"> 방금 올라온 고민 </h3>
-      <P class="box_section_subtitle"> 지금 나의 고민은? </P>
+  </div>
 
-      <ul class="index_box_wrap">
-        <!-- box 1칸  -->
-        <li class="index_box">
-          <a class="box_link" href="#">
-            <img class="box_img" src="https://bit.ly/3aF4Kt7">
-          </a>
-          <p class="box_title"> 월요일 월요일 월요일 월요일 월요일 월요일 월요일 월요일 월요일</p>
-          <p class="box_content">
-            우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다
-            있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린
-            보고, 봅니다. 계집애들의 없이 계절이 있습니다.
-          </p>
-        </li>
+  <div class="main_image">
 
-        <!-- box 1칸  -->
-        <li class="index_box">
-          <a class="box_link" href="#">
-            <img class="box_img" src="https://bit.ly/3N9Adli">
-          </a>
-          <p class="box_title"> 화요일 화요일 화요일 화요일 화요일 화요일 화요일 화요일 화요일 </p>
-          <p class="box_content">
-            우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다
-            있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린
-            보고, 봅니다. 계집애들의 없이 계절이 있습니다.
-          </p>
-        </li>
+  </div>
+  
+  <div id="index_scroll"></div>
+<!-- box section -->
+<div class="index_box_section" id="index_box_section">
+  <h3 class="box_section_title"> TODAY TOP </h3>
+  <P class="box_section_subtitle"> 오늘의 인기글을 만나보세요 </P>
 
-        <!-- box 1칸  -->
-        <li class="index_box">
-          <a class="box_link" href="#">
-            <img class="box_img" src="https://bit.ly/3Ncroaw">
-          </a>
-          <p class="box_title"> 수요일 수요일 수요일 수요일 수요일 수요일 수요일 수요일 </p>
-          <p class="box_content">
-            우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다
-            있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린
-            보고, 봅니다. 계집애들의 없이 계절이 있습니다.
-          </p>
-        </li>
-      </ul>
-    </div>
+  <ul class="index_box_wrap">
+    <!-- box 1칸  -->
+    <li class="index_box">
+      <a class="box_link" href="#">
+        <img class="box_img" src="https://bit.ly/3aF4Kt7">
+        <p class="box_title"> 월요일 월요일 월요일 월요일 월요일 월요일 월요일 </p>
+        <p class="box_content">
+          우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다
+          있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에
+          내린 보고, 봅니다. 계집애들의 없이 계절이 있습니다.
+        </p>
+      </a>
+    </li>
 
+    <!-- box 1칸  -->
+    <li class="index_box">
+      <a class="box_link" href="#">
+        <img class="box_img" src="https://bit.ly/3aF4Kt7">
+      <p class="box_title"> 화요일 화요일 화요일 화요일 화요일 화요일 화요일 화요일 화요일 </p>
+      <p class="box_content">
+        우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다
+        있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린
+        보고, 봅니다. 계집애들의 없이 계절이 있습니다.
+      </p>
+      </a>
+    </li>
+
+    <!-- box 1칸  -->
+    <li class="index_box">
+      <a class="box_link" href="#">
+        <img class="box_img" src="https://bit.ly/3aF4Kt7">
+      <p class="box_title"> 수요일 수요일 수요일 수요일 수요일 수요일 수요일 수요일 </p>
+      <p class="box_content">
+        우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다
+        있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린
+        보고, 봅니다. 계집애들의 없이 계절이 있습니다.
+      </p>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- box section -->
+<div class="index_box_section" id="index_box_section">
+  <h3 class="box_section_title"> TODAY TOP </h3>
+  <P class="box_section_subtitle"> 오늘의 인기글을 만나보세요 </P>
+
+  <ul class="index_box_wrap">
+    <!-- box 1칸  -->
+    <li class="index_box">
+      <a class="box_link" href="#">
+        <img class="box_img" src="https://bit.ly/3aF4Kt7">
+
+        <p class="box_title"> 월요일 월요일 월요일 월요일 월요일 월요일 월요일 </p>
+        <p class="box_content">
+          우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다
+          있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에
+          내린 보고, 봅니다. 계집애들의 없이 계절이 있습니다.
+        </p>
+      </a>
+    </li>
+
+    <!-- box 1칸  -->
+    <li class="index_box">
+      <a class="box_link" href="#">
+        <img class="box_img" src="https://bit.ly/3aF4Kt7">
+      <p class="box_title"> 화요일 화요일 화요일 화요일 화요일 화요일 화요일 화요일 화요일 </p>
+      <p class="box_content">
+        우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다
+        있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린
+        보고, 봅니다. 계집애들의 없이 계절이 있습니다.
+      </p>
+      </a>
+    </li>
+
+    <!-- box 1칸  -->
+    <li class="index_box">
+      <a class="box_link" href="#">
+        <img class="box_img" src="https://bit.ly/3aF4Kt7">
+      <p class="box_title"> 수요일 수요일 수요일 수요일 수요일 수요일 수요일 수요일 </p>
+      <p class="box_content">
+        우는 오는 마리아 별이 별 그리워 새겨지는 계십니다. 무성할 밤을 어머님, 아이들의 옥 잔디가 언덕 어머니, 때 거외다. 위에도 벌레는 말 버리었습니다. 다하지 아스라히 된 내린 가득 다
+        있습니다. 된 이름을 라이너 별 아직 잔디가 하나에 새겨지는 때 봅니다. 말 너무나 무덤 별 하나 계십니다. 이름자 이름을 프랑시스 나의 하나에 하나에 있습니다. 계집애들의 노새, 하나에 내린
+        보고, 봅니다. 계집애들의 없이 계절이 있습니다.
+      </p>
+      </a>
+    </li>
+  </ul>
+</div>
+
+  </div>
+  
+  
   	 <!-- import footer -->
       <footer th:replace="layout/fragment :: fr_footer"></footer>
-  </div>
   
   <script type="text/javascript" src="/js/index.js"></script>
 
