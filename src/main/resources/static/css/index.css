@@ -129,19 +129,24 @@
   font-size: 16px;
   padding: 0 12px;
   text-align: center;
-  color: black;
 }
 
 .box_content {
   position: absolute;
-  top: 65%;
+  bottom:-80px;
   height: 20px;
   font-size: 12px;
   padding: 0 12px;
+  transition: 0.6s;
+  opacity: 0;
 }
+
+.index_box:hover .box_content {
+  bottom: 80px;
+  opacity: 1;
+} 
 
 .ml3 {
   font-weight: 900;
   font-size: 3.5em;
 }
-
