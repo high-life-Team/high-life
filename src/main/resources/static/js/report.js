@@ -5,7 +5,7 @@ let reportpostid; //게시글 작성한 아이디
 console.log("report.js실행중");
 //신고하기 버튼 클릭 이벤트
 $(document).on('click', '.report_btn button', (function () {
- reportid = $('#userid').val();
+ reportid = $('#member_id').val();
  console.log("신고하기 클릭 이벤")
  //로그인 여부 확인
  if(reportid == null || reportid == ''){

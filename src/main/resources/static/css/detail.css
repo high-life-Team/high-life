@@ -9,6 +9,8 @@
 	width:80%;
 	background-color:#dae3db;
 	margin : 0 auto;
+	
+	position:relative;
 }
 
 
@@ -17,6 +19,8 @@
 	width:80%;
 	background-color:#dae0e3;
 	margin : 0 auto;
+	
+	position:relative;
 }
 
 
@@ -27,21 +31,31 @@
 	padding: 7px 10px;
     background-color: #ce4764;
     border-radius: 30px;
-    margin-right: 20px;
     border: none;
     outline: none;
     color: white;
     cursor: pointer;
+    
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    float: right;
+    margin-top: 170px;
 }
 .reportcommentbtn{
 	padding: 5px 10px;
     background-color: #ce4764;
     border-radius: 30px;
-    margin-right: 20px;
     border: none;
     outline: none;
     color: white;
     cursor: pointer;
+    
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    float: right;
+    margin-top: 170px;
 }
 /* 신고하기 모달*/
 #modal_report button:hover{
@@ -89,7 +103,7 @@
 	margin: 3px;
 }
 
-textarea{
+#reportTxt{
 	width: 100%;
 	height: 80px;
 	resize: none;
