@@ -50,7 +50,6 @@ public class Member {
 	private LocalDateTime regDate; // 등록날짜
     
     @Column(updatable = false) // update된 시점에 기존에 저장되어 있던 데이터를 유지
-    @CreationTimestamp
 	private LocalDateTime withdrawal; // 탈퇴날짜
 	
 	
