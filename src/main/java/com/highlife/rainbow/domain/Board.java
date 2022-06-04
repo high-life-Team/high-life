@@ -13,18 +13,24 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class , property = "id")
 public class Board {
 	
@@ -37,8 +43,10 @@ public class Board {
 	@JoinColumn(name = "member_num", referencedColumnName = "member_num") // member의 PK를 받아옴
 	private Member member;
 	
+    @NotBlank(message = "제목을 입력해 주세요!")
 	private String title;
 	
+    @NotBlank(message = "내용을 입력해 주세요!")
 	private String content;
 	
     @Column(name = "reg_date", updatable = false) // update된 시점에 기존에 저장되어 있던 데이터를 유지
@@ -66,4 +74,12 @@ public class Board {
 
 	@OneToMany(mappedBy = "board")
 	private List<BoardReport> reportes;
+	
+	  @Builder
+	    public Board(String title, String content, LocalDateTime regDate, Member member) {
+	        this.title = title;
+	        this.content = content;
+	        this.regDate = regDate;
+	        this.member = member;
+	    }
 }
