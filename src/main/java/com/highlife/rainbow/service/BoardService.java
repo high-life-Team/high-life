@@ -25,7 +25,8 @@ public class BoardService {
 	private ReplyRepository replyRepository;
     
     
-    public Board save(Member member, Board board) {
+    public Board save(String email, Board board) {
+        Member member =  memberRepository.findByEmail(email);
         board.setMember(member);
         board.setHits(0);
         return boardRepository.save(board);
