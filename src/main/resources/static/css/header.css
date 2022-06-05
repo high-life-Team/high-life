@@ -25,7 +25,7 @@
     font-weight: bold;
 }
 
-.header_login, .header_join{
+.header_join{
     position: absolute;
     border: 1px solid rgb(68, 68, 11);
     border-radius: 9px;

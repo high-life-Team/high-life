@@ -1,45 +1,194 @@
-@charset "UTF-8";
-/* 네비게이션 및 footer css */
-* {
-  margin: 0;
-  padding: 0;
+/*모달 폼 시작*/
+.detail_wrap{
+	height:800px;
+	width:100%;
+	background-color:rgb(255, 251, 211);
 }
 
-body {
-  padding : 0px;
-  margin: 0 auto;
-  /* width:960px; */
+.detail_content{
+	position:relative;
+}
+
+/*로그인 버튼*/
+.loginpostbtn{
+    position: absolute;
+    border: 1px solid rgb(68, 68, 11);
+    border-radius: 9px;
+    width : 70px;
+    height: 20px;
+    top:10px;
+    text-align: center;
+    padding-top: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #fff;
+    background-color: #7a78f0;
+    right: 180px;
+
+}
+
+.loginpostbtn :hover{
+    background-color: #3d3bb3;
+    font-weight: bold;
+}
+
+/* 로그인 모달*/
+#modal_login button:hover{
+	cursor: pointer;
+}
+
+#modal_login {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+#modal_login .modal_layer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*화면 가운데 정렬*/
+	display: flex; 
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: -1;
+}
+
+#modal_login .modal_content {
+  width: 550px;
+  height: 700px;
+  padding: 27px 29px 40px 69px;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.modal_content_radio input[type="radio"] {
+	margin: 0px 3px;
+}
+
+.modal_login_btn{
+	display: flex;
+	flex-direction: row;
+}
+
+.modal_login_btn button{
+	text-align: center;
+}
+
+#modal_login_close_btn {
+    margin: 10px auto 0 auto;
+    width: 70px;
+    height: 25px;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    background: #bdbdbd;
 }
 
 
+/*모달 폼 종료*/
 
 
-/* login 관련 css */
-.intro_container {
-  margin: 50px;
+
+/* 로고 */
+#logo_rainbow {
+  width: 153px;
+  height: 80px;
+  margin: 30px 375px 66px 1px;
+  object-fit: contain;
 }
 
-.intro {
+/* 텍스트 IDPW */
+#text_id {
+  width: 17px;
+  height: 15px;
+  margin: 20px 30px 25px 2px;
+  object-fit: contain;
+  font-family: NotoSansCJKkr;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.75;
+  letter-spacing: -0.9px;
+  text-align: left;
+  color: #d2d6e6;
+}
+
+#text_pw {
+  width: 27px;
+  height: 14px;
+  margin: 30px 30px 25px 2px;
+  object-fit: contain;
+  font-family: NotoSansCJKkr;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.75;
+  letter-spacing: -0.9px;
+  text-align: left;
+  color: #d2d6e6;
+}
+
+/* 입력 id */
+#member_id {
   width: 500px;
-  margin: 0 auto;
+  height: 30px;
+  margin: 26px 0 16px 1px;
+  object-fit: contain;
+  font-family: NotoSansCJKkr;
+  font-size: 23px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.15;
+  letter-spacing: -1.15px;
+  text-align: left;
+  color: #72788f;
+  border: none;
+  outline: none;
 }
 
-.login_form {
+#password {
   width: 500px;
-  margin: 0 auto;
+  height: 30px;
+  margin: 26px 0 16px 1px;
+  object-fit: contain;
+  font-family: NotoSansCJKkr;
+  font-size: 23px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.15;
+  letter-spacing: -1.15px;
+  text-align: left;
+  color: #72788f;
+  border: none;
+  outline: none;
+}
+
+#login_button {
+  width: 500px;
+  height: 50px;
+  margin: 20px 5px 25px 0;
+  object-fit: contain;
+  border-radius: 25px;
+  background-color: #2f4fc6;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  color: #fff;
+  border: none;
+  outline: none;
 }
 
 
 
-
- #member_id, #password, #login_btn{
-  width: 100%;
-  padding: 10px 20px;
-  margin: 5px 0;
-  box-sizing: border-box;
-} 
- 
-
-.signup {
-  text-align: center;
-}

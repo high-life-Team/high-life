@@ -1,32 +1,18 @@
-$(document).ready(function(){
 
-$('#login_btn').click(function(){
-	let id = $('#id_id').val();
-	if(id==""){
-		alert("아이디를 입력해주세요");
-	}
-	else{
-	console.log(id);
-	$.ajax({
-		url : "/membercheck",
-		type : "post",
-		data :{'id': id},
-		dataType : 'json',
-		success : function(result){
-			console.log(result);
-			if(result == 0){
-				$("#idcheck_font").html('사용할 수 있는 아이디 입니다.');
-				$("#idcheck_font").css('color', 'green');
-				$("#idcheck_font").css('font-size', '11px');
-				idcheck = 1;
-			} else{
-				$("#idcheck_font").html('사용할 수 없는 아이디 입니다.');
-				$("#idcheck_font").css('color', 'red');
-				$("#idcheck_font").css('font-size', '11px');
-				idcheck = 2;
-			}
-		},
-	});//ajax
-	}
-})
-})
+$(document).on('click', '.login_btn button', (function () {
+ loginid = $('#member_id').val();
+ //로그인 여부 확인
+   $("#modal_logincheck").show();
+
+ type = $(this).attr('class');
+ $("#modal_login").show();
+
+})); //신고하기 버튼 이벤트 end
+
+
+
+//신고 취소 버튼
+$(document).on('click', '#modal_login_close_btn', (function () {
+ $("#modal_login").hide();			
+}));
+
