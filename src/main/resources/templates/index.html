@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" class="indexhtml">
+
+   
   <!-- CSS -->
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/login.css" />
+
+   
   <!-- JAVASCRIPT -->
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script type="text/javascript" src='/js/login.js'></script>
   
 <head>
 </head>
@@ -24,7 +30,86 @@
     <button type="button" onclick="location.href='member';">회원가입 이동</button>
     <button type="button" onclick="location.href='/logout';">로그아웃</button>
 
-    <h1 class="main_title">먹구름 속 무지개</h1>
+		<!-- 로그인 모달 버튼 -->
+		<div class="detail_content">
+			<div class="login_btn">
+				<button class="loginpostbtn">로그인</button>
+			</div>
+		</div>
+
+		<!-- 로그인 모달창 -->
+		<div id="modal_login">
+			<div class="modal_layer">
+				<div class="modal_content">
+					<div class="modal_content_title">
+						<img src="images/Logo_Color.png" id="logo_rainbow">
+					</div>
+					<div class="modal_login_btn">
+						<button type="button" id="modal_login_close_btn">취소</button>
+					</div>
+					<div class="modal_content_radio">
+						<form action="/login" class="login_form" method="post">
+							<input type="hidden" value="login">
+							<!-- 폼 시작 -->
+
+
+							<div id="text_id">ID</div>
+							<div id="id_line">
+								<!--ID-->
+								<input type=text name="member_id" id="member_id" maxlength="20"
+									size="60" required="required" pattern="[a-z0-9]{5,20}">
+								<!--영어 소문자 a-z 숫자0~9 5~20자리 사이 -->
+									<hr style="width: 500px;">
+							</div>
+							
+							<div id="text_pw">PW</div>
+							<div id="pw_line">
+								<!--PW-->
+								<input type="password" name="password" id='password'
+									required="required" size="60">
+								<hr style="width: 500px;">
+							</div>
+							<br>
+							<!-- Login button -->
+							<div id="login_btn" class="btn_form">
+								<input type=submit value="로그인" class="btn btn-dark"
+									id="login_button" name='login_btn'>
+							</div>
+
+						</form>
+					</div>
+					
+		
+         <span> <!--회원가입-->
+            <button type="button" class="btn btn-Light">아이디 찾기</button>
+            <button type="button" class="btn btn-Light">비밀번호 찾기</button>
+            <button type="button" class="btn btn-Light"
+               onclick="location.href='member'">회원가입</button> <br> <!-- 회원가입 페이지 이동 -->
+         </span>
+
+	<div id="loginfind">
+	<div class="signup">
+		<!--회원가입-->
+		<br>
+		<a class="idfind_btn" style="color: black; cursor: pointer;" id="member">아이디 찾기 | </a>
+		<a class="pwfind_btn" style="color: black; cursor: pointer;" id="member">비밀번호 찾기 |</a>
+		<a href="/member" style="color: black" id="member">회원가입</a>
+			<!-- 회원가입 페이지 이동 -->
+		
+		
+	</div>
+</div>
+
+
+
+				</div>
+			</div>
+		</div>
+		<!-- 로그인 모달버튼 종료 -->
+
+
+
+		<h1 class="main_title">먹구름 속 무지개</h1>
     <h3 class="sub_title"> 
     당신의 고민을 함께 나누는 이 곳 </h3>
 
@@ -141,8 +226,7 @@
   </ul>
 </div>
 
-  </div>
-  
+	
   
   	 <!-- import footer -->
       <footer th:replace="layout/fragment :: fr_footer"></footer>
