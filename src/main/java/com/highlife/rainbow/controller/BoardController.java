@@ -69,16 +69,26 @@ public class BoardController {
 		} else {
 			HttpSession session = request.getSession();
 			String email = (String) session.getAttribute("email");
-			String nickname = (String) session.getAttribute("nickName");
+			String nickName = (String) session.getAttribute("nickName");
+			String memberId = (String) session.getAttribute("pkId");
 			Board board = boardRepository.findById(id).orElse(null);
+			System.out.println("==================================");
+			System.out.println("memberId : " + memberId.getClass().getName());
+			System.out.println("board.getId : " + board.getMember().getId().toString().getClass().getName());
+			System.out.println("==================================");
 			boardService.updateHits(board.getId());
 			model.addAttribute("board", board);
-			model.addAttribute("nickname", board.getMember().getNickname());
+			model.addAttribute("nickname", nickName);
 			model.addAttribute("reply", new Reply());
 			model.addAttribute("userEmail", email);
 			model.addAttribute("replyList", board.getReplies());
 			Member member = memberRepository.findByEmail(email);
-//            model.addAttribute("writer", member.getId() == board.getMember().getId());
+			System.out.println("==================================");
+			System.out.println("memberId : " + memberId);
+			System.out.println("board.getId : " + board.getMember().getId().toString());
+			System.out.println("==================================");
+            model.addAttribute("memberId", memberId);
+            model.addAttribute("getId",  board.getMember().getId().toString());
 		}
 
 		return "detail";
@@ -153,7 +163,7 @@ public class BoardController {
 
 		model.addAttribute("memberId", memberId);
 		model.addAttribute("board", board);
-		model.addAttribute("ootd", nickName);
+		model.addAttribute("nickName", nickName);
 		model.addAttribute("replyList", board.getReplies());
 		model.addAttribute("email", email);
 		if (bindingResult.hasErrors()) {
@@ -173,6 +183,7 @@ public class BoardController {
 
 		HttpSession session = request.getSession();
 		String nickName = (String) session.getAttribute("nickName");
+		String memberId = (String) session.getAttribute("pkId");
 		System.out.println("============댓글 딜리트문입니다=======");
 		boardService.deleteReply(replyId);
 
@@ -180,7 +191,8 @@ public class BoardController {
 //        String userEmail = authentication.getName();
 		Board board = boardRepository.findById(boardId).get();
 		model.addAttribute("board", board);
-		model.addAttribute("nickName", nickName);
+//		model.addAttribute("ootd", nickName);
+		model.addAttribute("memberId", memberId);
 		model.addAttribute("replyList", board.getReplies());
 		model.addAttribute("reply", new Reply());
 

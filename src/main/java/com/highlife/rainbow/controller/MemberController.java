@@ -59,6 +59,7 @@ public class MemberController {
 			HttpSession session = request.getSession();
 			session.setAttribute("member", logindto);
 			session.setAttribute("id", logindto.getMember_id());
+			session.setAttribute("pkId", logindto.getMember_num());
 			session.setAttribute("email", logindto.getEmail());
 			session.setAttribute("nickName", logindto.getNickname());
 			session.setAttribute("isLogOn", true);
