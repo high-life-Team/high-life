@@ -8,23 +8,22 @@
 body {
   padding : 0px;
   margin: 0 auto;
-  /* width:960px; */
 }
 
-/* scroll style */
-*::-webkit-scrollbar {
-   width: 15px;
+/* a태그 리셋 */
+a{
+  color: #fff; text-decoration: none; outline: none
+} 
+
+a:hover, a:active {
+  text-decoration: none; 
+  color:#fff; 
+  background-color:#f59000;
 }
 
-*::-webkit-scrollbar-thumb {
-   background-color: #b8b8b8;
-   border-radius: 10px;
-   background-clip: padding-box;
-   border: 2px solid transparent;
+/* ul, li 점 없애기 */
+ul, li {
+  list-style: none;
+  padding-left: 0px;
 }
 
-*::-webkit-scrollbar-track {
-   background-color: none;
-   border-radius: 10px;
-   box-shadow: inset 0px 0px 5px white;
-}

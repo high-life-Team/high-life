@@ -3,12 +3,20 @@
 @import "header.css";
 @import "footer.css";
 
-a{
-  color: #fff; text-decoration: none; outline: none
-} 
+/* scroll style */
+*::-webkit-scrollbar {
+   width: 15px;
+}
 
-a:hover, a:active {
-  text-decoration: none; 
-  color:#fff; 
-  background-color:#f59000;
+*::-webkit-scrollbar-thumb {
+   background-color: #b8b8b8;
+   border-radius: 10px;
+   background-clip: padding-box;
+   border: 2px solid transparent;
+}
+
+*::-webkit-scrollbar-track {
+   background-color: none;
+   border-radius: 10px;
+   box-shadow: inset 0px 0px 5px white;
 }
