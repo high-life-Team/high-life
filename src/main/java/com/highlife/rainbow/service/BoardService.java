@@ -37,9 +37,9 @@ public class BoardService {
         return boardRepository.updateHits(id);
     }
 
-    public void saveReply(Reply reply, Board board, Long id) {
+    public void saveReply(Reply reply, Board board, String email) {
 
-        Member member = memberRepository.findById(id).get();
+    	Member member = memberRepository.findByEmail(email);
 
         reply.setBoard(board);
         reply.setMember(member);
@@ -49,5 +49,9 @@ public class BoardService {
 
     public void deleteReply(Long replyId) {
         replyRepository.deleteById(replyId);
+    }
+    
+    public void deleteBoard(Long boardId) {
+    	boardRepository.deleteById(boardId);
     }
 }

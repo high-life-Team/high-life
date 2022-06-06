@@ -8,13 +8,16 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,9 +29,6 @@ import com.highlife.rainbow.repository.BoardRepository;
 import com.highlife.rainbow.repository.MemberRepository;
 import com.highlife.rainbow.service.BoardService;
 import com.highlife.rainbow.service.MemberService;
-
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @Controller
 @RequestMapping("/board")
@@ -44,12 +44,49 @@ public class BoardController {
 	private MemberRepository memberRepository;
 
 	@GetMapping("list")
-	public String lists() {
+	public String list(Model model,
+			@PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable,
+			@RequestParam(required = false, defaultValue = "") String searchText) {
+
+		Page<Board> boards = boardRepository.findByOrderByIdDesc(pageable);
+
+//int startPage = Math.max(1, boards.getPageable().getPageNumber() - 4);
+//int endPage = Math.min(boards.getTotalPages(), boards.getPageable().getPageNumber() + 4);
+//		int nowPage = boards.getPageable().getPageNumber() + 1;
+//		int startPage = Math.max(1, nowPage - 2);
+//		int endPage = Math.min(startPage + 2, boards.getTotalPages());
+//
+//		model.addAttribute("startPage", startPage);
+//		model.addAttribute("endPage", endPage);
+		model.addAttribute("boards", boards);
 		return "board";
 	}
 
 	@GetMapping("detail")
-	public String detail() {
+	public String detail(Model model, @RequestParam(required = false) Long id, HttpServletRequest request) {
+		if (id == null) {
+			model.addAttribute("board", new Board());
+		} else {
+			HttpSession session = request.getSession();
+			String email = (String) session.getAttribute("email");
+			String nickname = (String) session.getAttribute("nickName");
+			Board board = boardRepository.findById(id).orElse(null);
+			boardService.updateHits(board.getId());
+			model.addAttribute("board", board);
+			model.addAttribute("nickname", board.getMember().getNickname());
+			model.addAttribute("reply", new Reply());
+			model.addAttribute("userEmail", email);
+			model.addAttribute("replyList", board.getReplies());
+			Member member = memberRepository.findByEmail(email);
+//            model.addAttribute("writer", member.getId() == board.getMember().getId());
+		}
+
+		return "detail";
+	}
+
+	@GetMapping("delete")
+	public String boardDelete(Long id) {
+		boardService.deleteBoard(id);
 		return "detail";
 	}
 
@@ -74,8 +111,7 @@ public class BoardController {
 	}
 
 	@PostMapping("/form")
-	public String greetingSubmit(@Valid Board board, BindingResult bindingResult, HttpServletRequest request,
-			MemberDTO dto) {
+	public String greetingSubmit(@Valid Board board, BindingResult bindingResult, HttpServletRequest request) {
 		if (bindingResult.hasErrors()) {
 			System.out.println("postmapping if문==========================");
 			return "board";
@@ -88,59 +124,66 @@ public class BoardController {
 
 //      Member member = memberRepository.findByUserEmail(userName);
 
-		return "board";
+		return "redirect:/board/list";
 	}
 
 	@PostMapping("/reply/create")
 	public String createReply(@Valid Reply reply, BindingResult bindingResult, @RequestParam Long boardId, Model model,
 			Member member, MemberDTO dto, HttpServletRequest request) {
-
 		ModelAndView mv = new ModelAndView();
 		MemberDTO logindto = memberService.login(dto);
 
-		if (logindto != null) {
-			HttpSession session = request.getSession();
-
+//		if (logindto != null) {
+		HttpSession session = request.getSession();
+		System.out.println("boardId : " + boardId);
+		System.out.println("member: " + member.getId());
 //      Board board = boardRepository.getById(boardId);
 //    	String userEmail = authentication.getName();			// ==> 현재 로그인한 사용자 정보를 security를 사용하지 않으면 어떻게 받아오는지..
-			Board board = boardRepository.findById(boardId).get();
+		Board board = boardRepository.findById(boardId).get();
 //      String nickName = member.getNickname();
-			String nickName = (String) session.getAttribute("nickName");
+		String nickName = (String) session.getAttribute("nickName");
+		String email = (String) session.getAttribute("email");
+		String memberId = (String) session.getAttribute("id");
+		System.out.println("=====================================");
+		System.out.println("memberId : " + member.getId());
+		System.out.println("nickName : " + nickName);
+		System.out.println("memberId : " + memberId);
+		System.out.println("email : " + email);
+		System.out.println("=====================================");
 
-			System.out.println("=====================================");
-			System.out.println(nickName);
-			System.out.println("=====================================");
-			Long memberId = member.getId();
-			model.addAttribute("board", board);
-			model.addAttribute("nickName", nickName);
-			model.addAttribute("replyList", board.getReplies());
-
-			if (bindingResult.hasErrors()) {
-				return "board/read";
-			}
-
-			model.addAttribute("reply", new Reply());
-			boardService.saveReply(reply, board, memberId);
+		model.addAttribute("memberId", memberId);
+		model.addAttribute("board", board);
+		model.addAttribute("ootd", nickName);
+		model.addAttribute("replyList", board.getReplies());
+		model.addAttribute("email", email);
+		if (bindingResult.hasErrors()) {
+			return "board/detail";
 		}
-		return "redirect:/board/read?id=" + boardId;
+
+		model.addAttribute("reply", new Reply());
+		boardService.saveReply(reply, board, email);
+//		}
+		return "redirect:/board/detail?id=" + boardId;
 
 	}
 
 	@PostMapping("/reply/delete")
-	public String deleteReply(@RequestParam Long replyId, @RequestParam Long boardId, Model model, Member member) {
+	public String deleteReply(@RequestParam Long replyId, @RequestParam Long boardId, Model model, Member member,
+			HttpServletRequest request) {
 
+		HttpSession session = request.getSession();
+		String nickName = (String) session.getAttribute("nickName");
+		System.out.println("============댓글 딜리트문입니다=======");
 		boardService.deleteReply(replyId);
 
 //        Board board = boardRepository.getById(boardId);
 //        String userEmail = authentication.getName();
 		Board board = boardRepository.findById(boardId).get();
-		String nickName = member.getNickname();
-
 		model.addAttribute("board", board);
 		model.addAttribute("nickName", nickName);
 		model.addAttribute("replyList", board.getReplies());
 		model.addAttribute("reply", new Reply());
 
-		return "redirect:/board/read?id=" + boardId;
+		return "redirect:/board/detail?id=" + boardId;
 	}
 }
