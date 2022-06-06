@@ -1,91 +1,161 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" class="indexhtml">
-  <!-- CSS -->
-  <link rel="stylesheet" href="/css/detail.css" />
-  <link rel="stylesheet" href="/css/report.css" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <!-- JQUERY -->
-  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-  <script type="text/javascript" src='/js/report.js'></script>	
+<!-- CSS -->
+<link rel="stylesheet" href="/css/detail.css" />
+<link rel="stylesheet" href="/css/report.css" />
+<link rel="stylesheet" href="/css/style.css" />
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src='/js/report.js'></script>
 
 <head>
 <meta charset="UTF-8">
 <title>Board Detail Page</title>
 </head>
 <body>
-      <!-- import header -->
-      <header th:replace="layout/fragment :: fr_header"></header>
-      <!-- end of import header -->
-	<h1> 게시판 상세보기 페이지 </h1>
-<div class="detail_wrap">
+	<!-- import header -->
+	<header th:replace="layout/fragment :: fr_header"></header>
+	<!-- end of import header -->
+	<h1>게시판 상세보기 페이지</h1>
+	<div class="detail_wrap">
 
-<!-- 신고버튼(모달)작동 필요 정보 -->
-<input type="hidden" value="${member_id}" id="member_id">
-<!-- 필요 정보 끝 -->
-
-	<div class="detail_content">
-	
-	
-	<div class="report_btn">
-	<button class="reportpostbtn" id="1post${postnum}" >신고하기</button>
-	</div>
-	
-	
-	
-	</div>
-	
-	<div class="detail_comment">
-	
-	  <div class="report_btn">
-		
-		<button class="reportcommentbtn" id="1comment${comment.commentnum}">신고하기</button>
-	  </div>
-	
-	
-	</div>
-
-<!-- 신고하기 모달창 -->
-	<div id="modal_report">
-		<div class="modal_layer">
-			<div class="modal_content">
-				<div class="modal_content_title">
-					<h1>신고하기</h1>
+		<!-- 기존 게시판 상세 페이지 -->
+		<div class="container">
+			<form action="#" th:action="@{/board/detail}" th:object="${board}"
+				method="post">
+				<input type="hidden" th:field="*{id}">
+				<div class="form-group">
+					<label for="member_id">작성자</label><br>
+					<td th:text="${nickname}" id="member_id">작성자</td>
 				</div>
+				<div class="form-group">
+					<label for="title">제목</label><br>
+					<td th:text="${board.title}" id="title">제목</td>
+				</div>
+				<div class="form-group">
+					<label for="content">내용</label><br>
+					<td th:text="${board.content}" id="content">내용</td>
+				</div>
+				<div class="text-right">
+					<!--  <a type="button" class="btn btn-info"
+						th:href="@{/board/form(id=${board.id})}" th:if="${writer}">수정</a> -->
+					<a type="button" class="btn btn-danger"
+						th:onclick="|deleteBoard(*{id})|" th:if="${writer}">삭제</a>
+					<!-- 						<a type="button" class="btn btn-danger" th:href="@{/board/delete}" th:if="${writer}">삭제</a> -->
+					<a type="button" class="btn btn-primary" th:href="@{/board/list}">목록</a>
+				</div>
+			</form>
+			<br> <br> <br>
+
+			<div class="form-group">
+				<form th:action="@{/board/reply/create(boardId = ${board.id})}"
+					method="post">
+					<div>
+						<label th:for="reply">댓글</label><br>
+						<div>
+							<textarea class="form-control" rows="1"
+								th:field="${reply.content}"></textarea>
+						</div>
+						<!-- 						<div class="invalid-feedback" th:errors="${reply.content}"></div> -->
+						<div>
+							<input type="submit" class="btn btn-success">
+						</div>
+					</div>
+				</form>
+				<br>
+				<div>댓글 리스트</div>
+				<form th:each="r : ${replyList}"
+					th:action="@{/board/reply/delete(replyId = ${r.id}, boardId = ${board.id})}"
+					method="post">
+					<div class="form-group">
+						<ul class="list-group">
+							<li class="list-group-item d-flex">
+								<div th:text="${r.content}">댓글 내용 들어갈 자리</div>
+								<div>
+									<div th:text="${r.member?.nickname}">작성자 &nbsp;</div>
+									<button th:if="${ootd} == ${r.member?.nickname}"
+										class="btn btn-danger">삭제</button>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- 신고버튼(모달)작동 필요 정보 -->
+		<input type="hidden" value="${member_id}" id="member_id">
+		<!-- 필요 정보 끝 -->
+
+		<div class="detail_content">
+
+
+			<div class="report_btn">
+				<button class="reportpostbtn" id="1post${postnum}">신고하기</button>
+			</div>
+
+
+
+		</div>
+
+		<div class="detail_comment">
+
+			<div class="report_btn">
+
+				<button class="reportcommentbtn" id="1comment${comment.commentnum}">신고하기</button>
+			</div>
+
+
+		</div>
+
+		<!-- 신고하기 모달창 -->
+		<div id="modal_report">
+			<div class="modal_layer">
+				<div class="modal_content">
+					<div class="modal_content_title">
+						<h1>신고하기</h1>
+					</div>
 					<div class="modal_content_radio">
-						<input type="radio" name="radioTxt" value="1" id="radio1" checked><label for="radio1">헌법 및 사회질서, 미풍양속에 반함</label><br> 
-						<input type="radio" name="radioTxt" value="2" id="radio2"><label for="radio2">음란성</label><br>
-						<input type="radio" name="radioTxt" value="3" id="radio3"><label for="radio3">개인정보 침해 및 명예훼손</label><br> 
-						<input type="radio" name="radioTxt" value="4" id="radio4"><label for="radio4">불법 촬영</label><br> 
-						<input type="radio" name="radioTxt" value="5" id="radio5"><label for="radio5">불법 광고</label><br> 
-						<input type="radio" name="radioTxt" value="6" id="radio6"><label for="radio6">도배성</label><br> 
-						<input type="radio" name="radioTxt" value="7" id="radio7"><label for="radio7">저작권 침해</label><br> 
-						<input type="radio" name="radioTxt" value="8" id="radio8"><label for="radio8">폭력/잔혹/혐오</label><br> 
-						<input type="radio" name="radioTxt" value="9">기타(직접 입력 - 100자 이내) 
-						<span id="reportTxt_count">(0 / 100)</span><br>
+						<input type="radio" name="radioTxt" value="1" id="radio1" checked><label
+							for="radio1">헌법 및 사회질서, 미풍양속에 반함</label><br> <input
+							type="radio" name="radioTxt" value="2" id="radio2"><label
+							for="radio2">음란성</label><br> <input type="radio"
+							name="radioTxt" value="3" id="radio3"><label for="radio3">개인정보
+							침해 및 명예훼손</label><br> <input type="radio" name="radioTxt" value="4"
+							id="radio4"><label for="radio4">불법 촬영</label><br> <input
+							type="radio" name="radioTxt" value="5" id="radio5"><label
+							for="radio5">불법 광고</label><br> <input type="radio"
+							name="radioTxt" value="6" id="radio6"><label for="radio6">도배성</label><br>
+						<input type="radio" name="radioTxt" value="7" id="radio7"><label
+							for="radio7">저작권 침해</label><br> <input type="radio"
+							name="radioTxt" value="8" id="radio8"><label for="radio8">폭력/잔혹/혐오</label><br>
+						<input type="radio" name="radioTxt" value="9">기타(직접 입력 -
+						100자 이내) <span id="reportTxt_count">(0 / 100)</span><br>
 					</div>
 					<div class="modal_content_text">
 						<textarea id="reportTxt" maxlength="100" readonly></textarea>
 					</div>
-						<div class="modal_content_footer">
-							허위신고시 신고자의 활동제한이 있을 수 있습니다.<br> 이 점 유의해 주시기 바랍니다.
-						</div>
+					<div class="modal_content_footer">
+						허위신고시 신고자의 활동제한이 있을 수 있습니다.<br> 이 점 유의해 주시기 바랍니다.
+					</div>
 					<div class="modal_report_btn">
 						<button type="button" id="modal_report_close_btn">취소</button>
 						<button type="button" id="modal_report_ok_btn">확인</button>
 					</div>
+				</div>
 			</div>
 		</div>
+
+
+
+
+
 	</div>
-	
 
-
-
-
-</div>
-	
 
 	<!-- import footer -->
-      <header th:replace="layout/fragment :: fr_footer"></header>
+	<header th:replace="layout/fragment :: fr_footer"></header>
 	<!-- end of import footer -->
 
 
