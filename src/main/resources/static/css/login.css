@@ -27,10 +27,7 @@
 
 }
 
-.loginpostbtn :hover{
-    background-color: #3d3bb3;
-    font-weight: bold;
-}
+
 
 /* 로그인 모달*/
 #modal_login button:hover{
@@ -82,13 +79,25 @@
 }
 
 #modal_login_close_btn {
-    margin: 10px auto 0 auto;
-    width: 70px;
-    height: 25px;
-    border: none;
-    border-radius: 25px;
-    color: black;
-    background: #bdbdbd;
+  width: 35px;
+  height: 35px;
+  box-shadow: 0 0 10px 0 #cdcdcd;
+  background-color: #fff;
+  font-family: JalnanOTF;
+  font-size: 16.5px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  object-fit: contain;
+  line-height: 1.88;
+  letter-spacing: -0.83px;
+  text-align: center;
+  color: #d2d6e6;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  margin-left: 220px;
+  
 }
 
 
@@ -188,7 +197,11 @@
   color: #fff;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
+#loginfind{
+	margin-left: 110px;
+}
 
 
