@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="indexhtml">
+
+<head>
+</head>
+
+<body>
+<header th:fragment="login_header">
+
+  <!-- 로그인 모달 버튼 -->
+		<div class="detail_content" th:if="${session.isLogOn == null}">
+			<div class="login_btn">
+				<button class="loginpostbtn">로그인</button>
+			</div>
+		</div>
+		
+		<!-- 로그인 모달창 -->
+		<div id="modal_login">
+			<div class="modal_layer">
+				<div class="modal_content">
+					<div class="modal_content_title">
+					<div class="modal_login_btn">
+					<div style="width: 300px;">
+						<img src="images/Logo_Color.png" id="logo_rainbow">
+					</div>
+					<div style="width: 300px;">
+						<button type="button" id="modal_login_close_btn">x</button>
+					</div>
+					</div>
+					</div>
+					<div class="modal_content_radio">
+						<form action="/login" class="login_form" method="post">
+							<input type="hidden" value="login">
+							<!-- 폼 시작 -->
+
+
+							<div id="text_id">ID</div>
+							<div id="id_line">
+								<!--ID-->
+								<input type=text name="member_id" id="member_id" maxlength="20"
+									size="60" required="required" pattern="[a-z0-9]{5,20}">
+								<!--영어 소문자 a-z 숫자0~9 5~20자리 사이 -->
+									<hr style="width: 500px;">
+							</div>
+							
+							<div id="text_pw">PW</div>
+							<div id="pw_line">
+								<!--PW-->
+								<input type="password" name="password" id='password'
+									required="required" size="60">
+								<hr style="width: 500px;">
+							</div>
+							<br>
+							<!-- Login button -->
+							<div id="login_btn" class="btn_form">
+								<input type=submit value="로그인" class="btn btn-dark"
+									id="login_button" name='login_btn'>
+							</div>
+
+						</form>
+					</div>
+					
+
+
+	<div id="loginfind">
+	<div class="signup">
+		<!--회원가입-->
+		<br>
+		<a class="idfind_btn" style="color: black; cursor: pointer;" id="member">아이디 찾기</a>
+		|
+		<a class="pwfind_btn" style="color: black; cursor: pointer;" id="member">비밀번호 찾기</a>
+		|
+		<a href="/member" style="color: black" id="member">회원가입</a>
+			<!-- 회원가입 페이지 이동 -->
+	</div>
+</div>
+
+
+
+				</div>
+			</div>
+		</div>
+		<!-- 로그인 모달버튼 종료 -->
+		
+
+<div th:replace="modal/login_idfind :: login_idfind"></div>
+<!-- 
+ <div th:replace="modal/login_pwfind :: login_pwfind"></div>
+ -->
+		
+</header>
+
+</body>
+</html>

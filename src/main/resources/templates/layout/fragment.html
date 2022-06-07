@@ -12,11 +12,14 @@
         <div class="header_logo">로 고</div>
 
         
-        
-        <a class="header_login" th:if="${session.isLogOn == null}" th:href="@{/login}">로그인</a>
+        <div th:replace="modal/login :: login_header"></div>
+
+       
+		
+		
+		
         <a class="header_join" th:if="${session.isLogOn == null}" th:href="@{/member}">회원가입</a>
-        
-        <a class="header_login" th:if="${session.isLogOn != null}" th:href="@{/logout}">로그아웃</a>
+        <a class="header_logout" th:if="${session.isLogOn != null}" th:href="@{/logout}">로그아웃</a>
         <a class="header_join" th:if="${session.isLogOn != null}" th:href="@{/mypage}">마이페이지</a>
         
         
@@ -66,7 +69,8 @@
 	        </div>
     </div>
 	</footer>
-	
+
+		
 	
 </body>
 

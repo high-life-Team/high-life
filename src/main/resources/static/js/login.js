@@ -1,18 +1,20 @@
-
 $(document).on('click', '.login_btn button', (function () {
- loginid = $('#member_id').val();
- //로그인 여부 확인
-   $("#modal_logincheck").show();
+ 
 
- type = $(this).attr('class');
+
  $("#modal_login").show();
 
 })); //신고하기 버튼 이벤트 end
 
 
 
-//신고 취소 버튼
+//로그인 x 버튼
 $(document).on('click', '#modal_login_close_btn', (function () {
+	
+	 //취소버튼 클릭시 내용 지우기
+	 $('#member_id').val("");
+	 $('#password').val("");
+ 
  $("#modal_login").hide();			
 }));
 
