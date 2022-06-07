@@ -186,7 +186,7 @@
 }
 
 /* 입력 nickname */
-#nickname {
+#nickname_nickname {
   width: 500px;
   height: 30px;
   margin: 26px 0 5px 1;
@@ -204,7 +204,7 @@
   outline: none;
 }
 
-#email {
+#email_email {
   width: 500px;
   height: 30px;
   margin: 26px 0 5px 1px;
