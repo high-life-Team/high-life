@@ -18,20 +18,19 @@ $(document).on('click', '.pwfind_btn ', (function () {
 $(document).on('click', '#modal_pwfind_login_close_btn', (function () {
 	
 	 //취소버튼 클릭시 내용 지우기
-	 $('#member_id_member_id').val("");
-	 $('#password').val("");
-	 $('#nickname').val("");
-	 $('#email').val("");
+	 $('#member_id_member_id_pwfind').val("");
+	 $('#nickname_nickname_pwfind').val("");
+	 $('#email_email_pwfind').val("");
  
  $("#modal_pwfind_login").hide();
  $("#modal_pwfindresult").hide(); //결과창
  
 
+}));
 
 //비밀번호 찾기 결과
 $(document).on('click', '#login_pwfind_button', (function() {
-	console.log("닉네임 : " + $("#nickname").val());
-	console.log("이메일 : " + $("#email").val());
+	
 	
 	
 $.ajax({
@@ -39,7 +38,7 @@ $.ajax({
     type : "post",
     url : "/pwfind",
     dataType : "text",
-    data : {member_id : $("member_id_member_id").val(), nickname : $("#nickname").val(), email : $("#email").val()},
+    data : {member_id : $("#member_id_pwfind").val(), email : $("#email_email_pwfind").val(), nickname : $("#nickname_nickname_pwfind").val() },
     error : function(){},
     success : function(result){
 	
@@ -52,7 +51,7 @@ $.ajax({
          
          else{
          $("#modal_pwfind_login").hide();
-         $('#email').val("");
+         $('#email_email_pwfind').val("");
          
          $("#modal_pwfindresult").show();
          $("#pwfindresult_font").html('비밀번호는 ' + result +  ' 입니다.');
@@ -68,5 +67,5 @@ $.ajax({
       }); //ajax end
    })); 
  		
-}));
+
 

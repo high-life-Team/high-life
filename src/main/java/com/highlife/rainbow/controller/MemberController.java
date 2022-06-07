@@ -109,6 +109,7 @@ public class MemberController {
 	public String pwfind(MemberDTO dto) throws Exception {
 		String pwfindresult = service.pwfind(dto);
 		System.out.println("=====================passwordresult" + pwfindresult);
+		System.out.println("getid : " + dto.getMember_id() + "/" + "getname : " + dto.getNickname() + "/" + "getemail : " + dto.getEmail());
 		return pwfindresult;
 	}
 	
