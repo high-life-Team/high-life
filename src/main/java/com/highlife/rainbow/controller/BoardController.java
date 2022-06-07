@@ -96,8 +96,8 @@ public class BoardController {
 			String memberId = (String) session.getAttribute("pkId");
 			Board board = boardRepository.findById(id).orElse(null);
 			System.out.println("==================================");
-			System.out.println("memberId : " + memberId.getClass().getName());
-			System.out.println("board.getId : " + board.getMember().getId().toString().getClass().getName());
+//			System.out.println("memberId : " + memberId.getClass().getName());
+//			System.out.println("board.getId : " + board.getMember().getId().toString().getClass().getName());
 			System.out.println("==================================");
 			boardService.updateHits(board.getId());
 			model.addAttribute("board", board);
@@ -154,7 +154,7 @@ public class BoardController {
 		String email = (String) session.getAttribute("email");
 		System.out.println("file 이름이모: " + file);
 		boardService.save(email, board, file);
-
+		
 //      Member member = memberRepository.findByUserEmail(userName);
 
 		return "redirect:/board/list";
