@@ -1,10 +1,8 @@
 $(document).on('click', '.login_btn button', (function () {
  
+ $("#modal_form").show();
 
-
- $("#modal_login").show();
-
-})); //신고하기 버튼 이벤트 end
+})); //
 
 
 

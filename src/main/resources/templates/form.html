@@ -5,10 +5,11 @@
 <title>Board Form Page</title>
 </head>
 <body>
+<div th:fragment="fr_writeform">
+<div id="modal_form">
 	<h1>게시판 글 작성 페이지</h1>
 	<div class="container">
 		<h2>게시판</h2>
-
 		<form th:object="${board}" th:action="@{/board/form}" method="post" enctype="multipart/form-data">
 			<input type="hidden" th:field="*{id}">
 			<div class="form-group">
@@ -48,8 +49,8 @@
 				name='form_btn'>
 		</form> -->
 	</div>
-
-
+ </div>
+</div>
 	<!-- Optional JavaScript; choose one of the two! -->
 
 	<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

@@ -53,7 +53,7 @@ $.ajax({
          $('#email_email').val("");
          
          $("#modal_idfindresult").show();
-         $("#idfindresult_font").html('아이디는 ' + 'cet4713' +  ' 입니다.');
+         $("#idfindresult_font").html('아이디는 ' + result +  ' 입니다.');
          $("#idfindresult_font").css('color', 'black');
          $("#idfindresult_font").css('font-size', '30px');
          }
