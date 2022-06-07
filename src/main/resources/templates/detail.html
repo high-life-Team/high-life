@@ -15,7 +15,7 @@
 </head>
 <body>
 	<!-- import header -->
-	<header th:replace="layout/fragment :: fr_header"></header>
+<!--  	<div th:replace="layout/fragment :: fr_header"></div>  -->
 	<!-- end of import header -->
 	<h1>게시판 상세보기 페이지</h1>
 	<div class="detail_wrap">
@@ -37,6 +37,10 @@
 					<label for="content">내용</label><br>
 					<td th:text="${board.content}" id="content">내용</td>
 				</div>
+				  <!-- <img th:if="${not #strings.isEmpty(board.imgPth)}" th:src="@{${board.imgPth}}" alt="게시판 이미지"/> -->
+				<img th:if="${board.imgPth != null}" th:src="@{${board.imgPth}}" alt="게시판 이미지"/>
+                         <!-- th:onerror="|this.src='@{/images/icons/basic_icon.png}'|"> -->
+                   <!--  <img th:unless="${not #strings.isEmpty(sitter.member.imgPath)}" th:src="@{/images/icons/basic_icon.png}"> -->
 				<div class="text-right">
 					<a type="button" class="tae" th:style="${'color: black; border: 1px solid'}"
 						th:href="@{/board/form(id=${board.id})}" th:if="${memberId == getId}">수정</a>
