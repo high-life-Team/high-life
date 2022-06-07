@@ -4,6 +4,7 @@
 <head>
 </head>
 
+
 <body>
 <header th:fragment="writeform_header">
 
@@ -28,6 +29,51 @@
 						<button type="button" id="modal_writeform_close_btn">x</button>
 					</div>
 					</div>
+					
+					
+					
+			<div class="post_form_container">
+            <form th:object="${board}" th:action="@{/board/form}" method="post" enctype="multipart/form-data" class="post_form">
+                
+                
+                <div class="title">
+				<input type="text" minlength="1" placeholder="제목을 입력해주세요">
+                </div>
+                <div class="preview">
+                    <div class="upload">
+                        <div class="post_btn">
+                            <div class="plus_icon">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <p>포스트 이미지 추가</p>
+                            <canvas id="image_canvas"></canvas>
+                         
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <input type="file" name="photo" id="id_photo" required="required">
+                </p>
+                <p>
+                    <textarea name="content" id="text_field" cols="50" rows="5" placeholder="내용을 작성해주세요"></textarea>
+
+                </p>
+               <!--  <input class="submit_btn" type="submit" value="저장"> -->
+                
+                <div id="login_btn" class="btn_form">
+					<input class="submit_btn" type="submit" value="저장" id="write_button" name='login_btn'>
+				</div>
+                
+            </form>
+
+       
+       
+        </div>
+					
+					
+					
+					
 					</div>
 					
 					
