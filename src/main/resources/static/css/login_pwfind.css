@@ -1,0 +1,177 @@
+/*모달 폼 시작*/
+.detail_content{
+	/*position:relative;*/
+}
+
+/* 로그인 모달*/
+#modal_pwfind_login button:hover{
+	cursor: pointer;
+}
+
+#modal_pwfind_login {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+#modal_pwfind_login .modal_layer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*화면 가운데 정렬*/
+	display: flex; 
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: -1;
+}
+
+#modal_pwfind_login .modal_content {
+  width: 550px;
+  height: 550px;
+  padding: 27px 29px 40px 69px;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+
+
+.modal_pwfind_login_btn{
+	display: flex;
+	flex-direction: row;
+}
+
+.modal_pwfind_login_btn button{
+	text-align: center;
+}
+
+#modal_pwfind_login_close_btn {
+  width: 35px;
+  height: 35px;
+  box-shadow: 0 0 10px 0 #cdcdcd;
+  background-color: #fff;
+  font-family: JalnanOTF;
+  font-size: 16.5px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  object-fit: contain;
+  line-height: 1.88;
+  letter-spacing: -0.83px;
+  text-align: center;
+  color: #d2d6e6;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  margin-left: 220px;
+  
+}
+
+
+/*모달 폼 종료*/
+
+
+
+/* 로고 */
+#logo_rainbow {
+  width: 153px;
+  height: 80px;
+  margin: 30px 375px 66px 1px;
+  object-fit: contain;
+}
+
+/* 텍스트 IDPW */
+#text_nickname {
+  width: 500px;
+  height: 15px;
+  margin: 20px 30px 25px 2px;
+  object-fit: contain;
+  font-family: NotoSansCJKkr;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.75;
+  letter-spacing: -0.9px;
+  text-align: left;
+  color: #d2d6e6;
+}
+
+#text_email {
+  width: 500px;
+  height: 15px;
+  margin: 30px 30px 25px 2px;
+  object-fit: contain;
+  font-family: NotoSansCJKkr;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.75;
+  letter-spacing: -0.9px;
+  text-align: left;
+  color: #d2d6e6;
+}
+
+/* 입력 nickname */
+#nickname {
+  width: 500px;
+  height: 30px;
+  margin: 26px 0 5px -20px;
+  object-fit: contain;
+  font-family: NotoSansCJKkr;
+  font-size: 23px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.15;
+  letter-spacing: -1.15px;
+  text-align: left;
+  color: #72788f;
+  border: none;
+  outline: none;
+}
+
+#email {
+  width: 500px;
+  height: 30px;
+  margin: 26px 0 5px -20px;
+  object-fit: contain;
+  font-family: NotoSansCJKkr;
+  font-size: 23px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.15;
+  letter-spacing: -1.15px;
+  text-align: left;
+  color: #72788f;
+  border: none;
+  outline: none;
+}
+
+#login_pwfind_button {
+  width: 500px;
+  height: 50px;
+  margin: 20px 5px 25px 0;
+  object-fit: contain;
+  border-radius: 25px;
+  background-color: #2f4fc6;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#loginfind{
+	margin-left: 110px;
+}
