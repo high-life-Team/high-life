@@ -2,6 +2,7 @@
 @import "index.css";
 @import "header.css";
 @import "footer.css";
+@import "list.css";
 
 /* scroll style */
 *::-webkit-scrollbar {
