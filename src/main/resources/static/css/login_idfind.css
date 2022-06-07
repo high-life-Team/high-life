@@ -1,22 +1,14 @@
 /*모달 폼 시작*/
-.detail_wrap{
-	height:800px;
-	width:100%;
-	background-color:rgb(255, 251, 211);
-}
-
 .detail_content{
 	/*position:relative;*/
 }
 
-
-
 /* 로그인 모달*/
-#modal_login button:hover{
+#modal_idfind_login button:hover{
 	cursor: pointer;
 }
 
-#modal_login {
+#modal_idfind_login {
 	display: none;
 	position: relative;
 	width: 100%;
@@ -24,7 +16,7 @@
 	z-index: 1;
 }
 
-#modal_login .modal_layer {
+#modal_idfind_login .modal_layer {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -38,25 +30,27 @@
 	z-index: -1;
 }
 
-#modal_login .modal_content {
+#modal_idfind_login .modal_content {
   width: 550px;
-  height: 620px;
+  height: 550px;
   padding: 27px 29px 40px 69px;
   object-fit: contain;
   border-radius: 10px;
   background-color: #fff;
 }
 
-.modal_login_btn{
+
+
+.modal_idfind_login_btn{
 	display: flex;
 	flex-direction: row;
 }
 
-.modal_login_btn button{
+.modal_idfind_login_btn button{
 	text-align: center;
 }
 
-#modal_login_close_btn {
+#modal_idfind_login_close_btn {
   width: 35px;
   height: 35px;
   box-shadow: 0 0 10px 0 #cdcdcd;
@@ -92,7 +86,7 @@
 }
 
 /* 텍스트 IDPW */
-#text_id {
+#text_nickname {
   width: 500px;
   height: 15px;
   margin: 20px 30px 25px 2px;
@@ -108,7 +102,7 @@
   color: #d2d6e6;
 }
 
-#text_pw {
+#text_email {
   width: 500px;
   height: 15px;
   margin: 30px 30px 25px 2px;
@@ -124,8 +118,8 @@
   color: #d2d6e6;
 }
 
-/* 입력 id */
-#member_id {
+/* 입력 nickname */
+#nickname {
   width: 500px;
   height: 30px;
   margin: 26px 0 5px -20px;
@@ -143,7 +137,7 @@
   outline: none;
 }
 
-#password {
+#email {
   width: 500px;
   height: 30px;
   margin: 26px 0 5px -20px;
@@ -161,7 +155,7 @@
   outline: none;
 }
 
-#login_button {
+#login_idfind_button {
   width: 500px;
   height: 50px;
   margin: 20px 5px 25px 0;
@@ -181,5 +175,3 @@
 #loginfind{
 	margin-left: 110px;
 }
-
-

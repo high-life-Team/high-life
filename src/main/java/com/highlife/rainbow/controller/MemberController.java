@@ -77,7 +77,7 @@ public class MemberController {
 			
 		} else {
 			rAttr.addAttribute("result", "loginFailed");
-			mv.setViewName("redirect:/login");
+			mv.setViewName("redirect:/");
 		}
 		return mv;
 	}
