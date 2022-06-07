@@ -17,12 +17,12 @@
 
 <!-- ID 찾기 -->
 <select id="idfind" resultType="string" parameterType="memberdto">
-	select member_id from member where email = #{email} and status=0
+	select member_id from member where email = #{email} and nickname = #{nickname} and status=0
 </select>
 
 <!-- PW 찾기 -->
 <select id="pwfind" resultType="string" parameterType="memberdto">
-	select password from member where member_id = #{member_id} and email = #{email} and status=0
+select password from member where member_id = #{member_id} and email = #{email} and nickname = #{nickname} and status=0
 </select>
 
 </mapper>
