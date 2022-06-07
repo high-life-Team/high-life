@@ -35,7 +35,7 @@
 					<td th:text="${board.id}">번호</td>
 					<td><a th:text="${board.title}"
 						th:href="@{/board/detail(id=${board.id})}">제목</a></td>
-					<td th:text="${board.member.nickname}">작성자아이디</td>
+					<td th:text="${board.member?.nickname}">작성자아이디</td>
 					<td
 						th:text="${#temporals.format(board.regDate, 'yyyy-MM-dd HH:mm')}">작성일자</td>
 					<td th:text="${board.hits}">조회수</td>
