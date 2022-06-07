@@ -79,6 +79,13 @@ public class BoardController {
 		model.addAttribute("boards", desc);
 		return "board";
 	}
+	
+	@GetMapping("hits") // 조회 순 
+	public String hitsList(Model model) {
+		Iterable<Board> desc = boardRepository.findAll(Sort.by(Sort.Direction.DESC, "hits"));
+		model.addAttribute("boards", desc);
+		return "board";
+	}
 
 	@GetMapping("detail")
 	public String detail(Model model, @RequestParam(required = false) Long id, HttpServletRequest request) {
