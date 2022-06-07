@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="indexhtml">
+
+<head>
+</head>
+
+<body>
+<header th:fragment="writeform_header">
+
+  <!-- writeform 모달 버튼 -->
+		<div class="detail_content" th:if="${session.isLogOn == null}">
+			<div class="writeform_btn">
+				<button class="writeformpostbtn">writeform</button>
+			</div>
+		</div>
+		
+		<!-- writeform 모달창 -->
+		<div id="modal_writeform">
+			<div class="modal_layer">
+				<div class="modal_content">
+					<div class="modal_content_title">
+					<div class="modal_writeform_btn">
+					<div style="width: 300px;">
+						<img src="images/Logo_Color.png" id="logo_rainbow">
+					</div>
+					
+					<div style="width: 300px;">
+						<button type="button" id="modal_writeform_close_btn">x</button>
+					</div>
+					</div>
+					</div>
+					
+					
+
+
+
+
+
+				</div>
+			</div>
+		</div>
+		<!-- writeform 모달버튼 종료 -->
+
+		
+
+
+ 
+</header>
+
+</body>
+</html>
