@@ -18,7 +18,10 @@
 			th:action="@{/board/list}">
 			<button type="submit" class="btn btn-light mb-2">오래된 순</button>
 		</form>
-		
+		<form class="form-inline d-flex justify-content-end" method="GET"
+			th:action="@{/board/hits}">
+			<button type="submit" class="btn btn-light mb-2">조회 순</button>
+		</form>
 		<form class="form-inline d-flex justify-content-end" method="GET"
 			th:action="@{/board/list}">
 			<div class="form-group mx-sm-3 mb-2">
