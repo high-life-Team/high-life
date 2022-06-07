@@ -26,7 +26,10 @@ public class MemberServiceImpl implements MemberService {
 		return dao.login(memberdto);
 	}
 
-	
+	@Override
+	public String idfind(MemberDTO dto) {
+		return dao.idfind(dto);
+	}
 
 	
 	 

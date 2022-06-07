@@ -22,12 +22,13 @@
 					</div>
 				</div>
 				
-					<form action="/idfind" class="login_idfind_form" method="post">
+					
 						<input type="hidden" value="idfind">
 						<!-- 폼 시작 -->
 
-						<div id="text_nickname">닉네임</div>
-						<div id="nickname_line">
+						<div id="text_nickname">닉네임</div> 
+						<div id="nickname_line"> <br>
+						
 							<!--ID-->
 							<input type=text name="nickname" id="nickname" maxlength="20"
 								size="60" required="required" pattern="[a-z0-9]{5,20}">
@@ -44,14 +45,34 @@
 						<br>
 						<!-- Login button -->
 						<div id="login_idfind_btn" class="btn_form">
-							<input type=submit value="아이디 찾기" class="btn btn-dark"
+							<input type=button value="아이디 찾기" class="btn btn-dark"
 								id="login_idfind_button" name='login_idfind_btn'>
 						</div>
-						</form>
+						
 			</div>
 		</div>
 	</div>
 	<!-- 로그인 모달버튼 종료 -->
+	
+	
+	<!-- IDFIND RESULT모달창 -->
+<div id="modal_idfindresult">
+	<div class="modal_layer">
+		<div class="modal_content">
+			<div class="modal_content_title">
+				<div class="modal_idfind_login_btn">
+						<div style="width: 150px;">
+							<img src="images/Logo_Color.png" id="logo_rainbow">
+						</div>
+						<div style="width: 150px;">
+							<button type="button" id="modal_idfind_login_close_btn">X</button>
+						</div>
+			</div>
+			<font id="idfindresult_font" ></font>
+		</div>
+	</div>
+</div>
+</div>
 
 </header>
 </body>

@@ -128,7 +128,7 @@
 #member_id {
   width: 500px;
   height: 30px;
-  margin: 26px 0 5px -20px;
+  margin: 26px 0 5px 1px;
   object-fit: contain;
   font-family: NotoSansCJKkr;
   font-size: 23px;
@@ -146,7 +146,7 @@
 #password {
   width: 500px;
   height: 30px;
-  margin: 26px 0 5px -20px;
+  margin: 26px 0 5px 1px;
   object-fit: contain;
   font-family: NotoSansCJKkr;
   font-size: 23px;

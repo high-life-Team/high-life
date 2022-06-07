@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -91,6 +92,15 @@ public class MemberController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("redirect:/");
 		return mav;
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "/idfind", method = RequestMethod.POST)
+	public String idfind(MemberDTO dto) throws Exception {
+		String idfindresult = service.idfind(dto);
+		System.out.println("=====================idresult" + idfindresult);
+		return idfindresult;
 	}
 	
 }

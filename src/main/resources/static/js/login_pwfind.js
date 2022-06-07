@@ -1,4 +1,5 @@
 $(document).on('click', '.pwfind_btn ', (function () {
+
  
 
  $('#member_id').val("");
@@ -7,7 +8,9 @@ $(document).on('click', '.pwfind_btn ', (function () {
  
  $("#modal_pwfind_login").show();
 
+
 }));
+
 
 
 
@@ -20,3 +23,4 @@ $(document).on('click', '#modal_pwfind_login_close_btn', (function () {
  
  $("#modal_pwfind_login").hide();			
 }));
+

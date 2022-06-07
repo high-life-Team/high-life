@@ -11,5 +11,7 @@ public interface MemberService {
 	
 	public MemberDTO login(MemberDTO memberdto);
 	
+	//ID 찾기
+	public String idfind(MemberDTO dto);
 	
 }
