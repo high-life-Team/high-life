@@ -17,6 +17,7 @@ import com.highlife.rainbow.domain.Board;
 public interface BoardRepository extends JpaRepository<Board, Long>{
 	
     List<Board> findByTitleOrContent(String title, String content);
+    Page<Board> findByOrderByIdAsc(Pageable pageable);
     Page<Board> findByOrderByIdDesc(Pageable pageable);
     
 		@Modifying

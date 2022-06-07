@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="indexhtml">
+
+<head>
+</head>
+
+<body>
+<header th:fragment="login_pwfind">
+
+		<!-- 로그인 모달창 -->
+	<div id="modal_pwfind_login">
+		<div class="modal_layer">
+			<div class="modal_content">
+				<div class="modal_content_title">
+					<div class="modal_pwfind_login_btn">
+						<div style="width: 300px;">
+							<img src="images/Logo_Color.png" id="logo_rainbow">
+						</div>
+						<div style="width: 300px;">
+							<button type="button" id="modal_pwfind_login_close_btn">X</button>
+						</div>
+					</div>
+				</div>
+				
+					<form action="/pwfind" class="login_pwfind_form" method="post">
+						<input type="hidden" value="pwfind">
+						<!-- 폼 시작 -->
+
+						<div id="text_nickname">닉네임</div>
+						<div id="nickname_line">
+							<!--ID-->
+							<input type=text name="nickname" id="nickname" maxlength="20"
+								size="60" required="required" pattern="[a-z0-9]{5,20}">
+							<!--영어 소문자 a-z 숫자0~9 5~20자리 사이 -->
+							<hr style="width: 500px;">
+						</div>
+							<div id="text_email">이메일</div>
+						<div id="email_line">
+							<!--PW-->
+							<input type="email" name="email" id='email' required="required"
+								size="60">
+							<hr style="width: 500px;">
+						</div>
+						<br>
+						<!-- Login button -->
+						<div id="login_pwfind_btn" class="btn_form">
+							<input type=submit value="비밀번호 찾기" class="btn btn-dark"
+								id="login_pwfind_button" name='login_pwfind_btn'>
+						</div>
+						</form>
+			</div>
+		</div>
+	</div>
+	<!-- 로그인 모달버튼 종료 -->
+
+</header>
+</body>
+</html>

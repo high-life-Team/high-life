@@ -1,6 +1,7 @@
 package com.highlife.rainbow.controller;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -43,22 +44,46 @@ public class BoardController {
 	@Autowired
 	private MemberRepository memberRepository;
 
-	@GetMapping("list")
-	public String list(Model model,
-			@PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable,
-			@RequestParam(required = false, defaultValue = "") String searchText) {
-
-		Page<Board> boards = boardRepository.findByOrderByIdDesc(pageable);
-
-//int startPage = Math.max(1, boards.getPageable().getPageNumber() - 4);
-//int endPage = Math.min(boards.getTotalPages(), boards.getPageable().getPageNumber() + 4);
-//		int nowPage = boards.getPageable().getPageNumber() + 1;
-//		int startPage = Math.max(1, nowPage - 2);
-//		int endPage = Math.min(startPage + 2, boards.getTotalPages());
+//	@GetMapping("list")	// 오래된 순
+//	public String list(Model model,
+//			@PageableDefault(size = 20, sort = "id", direction = Sort.Direction.ASC) Pageable pageable,
+//			@RequestParam(required = false, defaultValue = "") String searchText) {
+//		
+////		List<Member> findByUsername(String name, Sort sort);
 //
-//		model.addAttribute("startPage", startPage);
-//		model.addAttribute("endPage", endPage);
-		model.addAttribute("boards", boards);
+////		Page<Board> boards = boardRepository.findByOrderByIdAsc(pageable);
+//
+////int startPage = Math.max(1, boards.getPageable().getPageNumber() - 4);
+////int endPage = Math.min(boards.getTotalPages(), boards.getPageable().getPageNumber() + 4);
+////		int nowPage = boards.getPageable().getPageNumber() + 1;
+////		int startPage = Math.max(1, nowPage - 2);
+////		int endPage = Math.min(startPage + 2, boards.getTotalPages());
+////
+////		model.addAttribute("startPage", startPage);
+////		model.addAttribute("endPage", endPage);
+////		Iterable<Board> orderIterator = boardRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
+////		model.addAttribute("boards", orderIterator);
+//		return "board";
+//	}
+
+	@GetMapping("list") // 오래된 순
+	public String oldList(Model model) {
+		Iterable<Board> asc = boardRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
+		model.addAttribute("boards", asc);
+		return "board";
+	}
+
+	@GetMapping("new") // 최신 순
+	public String newList(Model model) {
+		Iterable<Board> desc = boardRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+		model.addAttribute("boards", desc);
+		return "board";
+	}
+	
+	@GetMapping("hits") // 조회 순 
+	public String hitsList(Model model) {
+		Iterable<Board> desc = boardRepository.findAll(Sort.by(Sort.Direction.DESC, "hits"));
+		model.addAttribute("boards", desc);
 		return "board";
 	}
 
@@ -87,8 +112,8 @@ public class BoardController {
 			System.out.println("memberId : " + memberId);
 			System.out.println("board.getId : " + board.getMember().getId().toString());
 			System.out.println("==================================");
-            model.addAttribute("memberId", memberId);
-            model.addAttribute("getId",  board.getMember().getId().toString());
+			model.addAttribute("memberId", memberId);
+			model.addAttribute("getId", board.getMember().getId().toString());
 		}
 
 		return "detail";
