@@ -22,6 +22,22 @@
 			</div>
 			<button type="submit" class="btn btn-light mb-2">검색</button>
 		</form>
+		
+		<form class="form-inline d-flex justify-content-end" method="GET"
+			th:action="@{/board/new}">
+			<button type="submit" class="btn btn-light mb-2">최신순</button>
+		</form>
+		<form class="form-inline d-flex justify-content-end" method="GET"
+			th:action="@{/board/list}">
+			<button type="submit" class="btn btn-light mb-2">오래된 순</button>
+		</form>
+		
+		<form class="form-inline d-flex justify-content-end" method="GET"
+			th:action="@{/board/hits}">
+			<button type="submit" class="btn btn-light mb-2">조회 순</button>
+		</form>
+		
+		
 <!-- 		<table class="table table-striped"> -->
 <!-- 			<thead> -->
 <!-- 				<tr> -->
