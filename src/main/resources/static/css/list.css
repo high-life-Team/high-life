@@ -70,3 +70,8 @@
   opacity: 0;
   color:#1d3378 !important;
 }
+
+.write_btn{
+	width:100px;
+	height:100px;
+}
