@@ -99,8 +99,17 @@ public class MemberController {
 	@RequestMapping(value = "/idfind", method = RequestMethod.POST)
 	public String idfind(MemberDTO dto) throws Exception {
 		String idfindresult = service.idfind(dto);
-		System.out.println("=====================idresult" + idfindresult);
+		System.out.println("=====================idresult : " + idfindresult);
+		System.out.println("=====================getmail : " + dto.getEmail() + "nick : "+ dto.getNickname());
 		return idfindresult;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/pwfind", method = RequestMethod.POST)
+	public String pwfind(MemberDTO dto) throws Exception {
+		String pwfindresult = service.pwfind(dto);
+		System.out.println("=====================passwordresult" + pwfindresult);
+		return pwfindresult;
 	}
 	
 }

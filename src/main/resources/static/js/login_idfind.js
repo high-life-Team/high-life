@@ -16,8 +16,8 @@ $(document).on('click', '#modal_idfind_login_close_btn', (function () {
 	 //취소버튼 클릭시 내용 지우기
 	 $('#member_id').val("");
 	 $('#password').val("");
-	 $('#nickname').val("");
-	 $('#email').val("");
+	 $('#nickname_nickname').val("");
+	 $('#email_email').val("");
  
  $("#modal_idfind_login").hide();
  $("#modal_idfindresult").hide();
@@ -53,7 +53,7 @@ $.ajax({
          $('#email_email').val("");
          
          $("#modal_idfindresult").show();
-         $("#idfindresult_font").html('아이디는 ' + 'cet4713' +  ' 입니다.');
+         $("#idfindresult_font").html('아이디는 ' + result +  ' 입니다.');
          $("#idfindresult_font").css('color', 'black');
          $("#idfindresult_font").css('font-size', '30px');
          }

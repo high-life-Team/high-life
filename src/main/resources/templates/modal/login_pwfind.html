@@ -22,9 +22,22 @@
 					</div>
 				</div>
 				
-					<form action="/pwfind" class="login_pwfind_form" method="post">
+					
 						<input type="hidden" value="pwfind">
 						<!-- 폼 시작 -->
+						
+						
+				<!-- ID -->
+				
+					<div id="text_member_id">아이디</div>
+					<div id="member_id_line">
+				<input type=text maxlength="20" size="40" id="member_id_member_id" name="member_id"
+					required="required" pattern="[a-z0-9]{5,20}"
+					title="5~20자의 영문 소문자, 숫자만 가능합니다.">
+					<hr style="width: 500px;">
+					</div>
+					
+					<br>
 
 						<div id="text_nickname">닉네임</div>
 						<div id="nickname_line">
@@ -34,6 +47,7 @@
 							<!--영어 소문자 a-z 숫자0~9 5~20자리 사이 -->
 							<hr style="width: 500px;">
 						</div>
+						
 							<div id="text_email">이메일</div>
 						<div id="email_line">
 							<!--PW-->
@@ -45,13 +59,32 @@
 						<!-- Login button -->
 						<div id="login_pwfind_btn" class="btn_form">
 							<input type=submit value="비밀번호 찾기" class="btn btn-dark"
-								id="login_pwfind_button" name='login_pwfind_btn'>
+								id="login_pwfind_button" name='login_pwfind_button'>
 						</div>
-						</form>
+						
 			</div>
 		</div>
 	</div>
 	<!-- 로그인 모달버튼 종료 -->
+	
+	
+	<div id="modal_pwfindresult">
+	<div class="modal_layer">
+		<div class="modal_content">
+			<div class="modal_content_title">
+				<div class="modal_pwfind_login_btn">
+						<div style="width: 150px;">
+							<img src="images/Logo_Color.png" id="logo_rainbow">
+						</div>
+						<div style="width: 150px;">
+							<button type="button" id="modal_pwfind_login_close_btn">X</button>
+						</div>
+			</div>
+			<font id="pwfindresult_font" ></font>
+		</div>
+	</div>
+</div>
+</div>
 
 </header>
 </body>
