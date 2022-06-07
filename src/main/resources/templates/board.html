@@ -3,25 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Board Test</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+  
 </head>
-<body>
+<body class="boardlist_body">
 	<h1>게시판 홈입니다.</h1>
 	<div class="container">
 		<h2>게시판</h2>
 		<!-- <div>총 건수 : <sapn th:text="${boards.totalElements}"></sapn></div> -->
 
-		<form class="form-inline d-flex justify-content-end" method="GET"
-			th:action="@{/board/new}">
-			<button type="submit" class="btn btn-light mb-2">최신순</button>
-		</form>
-		<form class="form-inline d-flex justify-content-end" method="GET"
-			th:action="@{/board/list}">
-			<button type="submit" class="btn btn-light mb-2">오래된 순</button>
-		</form>
-		<form class="form-inline d-flex justify-content-end" method="GET"
-			th:action="@{/board/hits}">
-			<button type="submit" class="btn btn-light mb-2">조회 순</button>
-		</form>
 		<form class="form-inline d-flex justify-content-end" method="GET"
 			th:action="@{/board/list}">
 			<div class="form-group mx-sm-3 mb-2">
@@ -31,30 +22,50 @@
 			</div>
 			<button type="submit" class="btn btn-light mb-2">검색</button>
 		</form>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th scope="col">번호</th>
-					<th scope="col">제목</th>
-					<th scope="col">작성자</th>
-					<th scope="col">날짜</th>
-					<th scope="col">조회수</th>
-					<th scope="col">내용</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="board : ${boards}">
-					<td th:text="${board.id}">번호</td>
-					<td><a th:text="${board.title}"
-						th:href="@{/board/detail(id=${board.id})}">제목</a></td>
-					<td th:text="${board.member?.nickname}">작성자아이디</td>
-					<td
-						th:text="${#temporals.format(board.regDate, 'yyyy-MM-dd HH:mm')}">작성일자</td>
-					<td th:text="${board.hits}">조회수</td>
-					<td th:text="${board.content}">내용</td>
-				</tr>
-			</tbody>
-		</table>
+<!-- 		<table class="table table-striped"> -->
+<!-- 			<thead> -->
+<!-- 				<tr> -->
+<!-- 					<th scope="col">번호</th> -->
+<!-- 					<th scope="col">제목</th> -->
+<!-- 					<th scope="col">작성자</th> -->
+<!-- 					<th scope="col">날짜</th> -->
+<!-- 					<th scope="col">조회수</th> -->
+<!-- 					<th scope="col">내용</th> -->
+<!-- 				</tr> -->
+<!-- 			</thead> -->
+<!-- 			<tbody> -->
+<!--  				<tr th:each="board : ${boards}"> -->
+<!-- 					<td th:text="${board.id}">번호</td> -->
+<!-- 					<td><a th:text="${board.title}" -->
+<!-- 						th:href="@{/board/detail(id=${board.id})}">제목</a></td> -->
+<!-- 					<td th:text="${board.member?.nickname}">작성자아이디</td> -->
+<!-- 					<td -->
+<!-- 						th:text="${#temporals.format(board.regDate, 'yyyy-MM-dd HH:mm')}">작성일자</td> -->
+<!-- 					<td th:text="${board.hits}">조회수</td> -->
+<!-- 					<td th:text="${board.content}">내용</td> -->
+<!-- 				</tr> -->
+<!-- 			</tbody> -->
+<!-- 		</table> -->
+<div class="list_box_section_wrap">
+ 
+<!-- box section - 1 -->
+<div class="list_box_section" >
+
+  <ul class="list_box_wrap">
+    <!-- box (1-1) -->
+    <li th:each="board : ${boards}" class="list_box">
+      <a class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
+        <img class="list_box_img" src="https://bit.ly/3aF4Kt7">
+        <p th:text="${board.title}"  class="list_box_title"></p>
+        <p th:text="${board.content}" class="list_box_content">
+        </p>
+      </a>
+    </li>
+  </ul>
+</div>
+		
+		
+		
 		<!--  <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
                 <li class="page-item" th:classappend="${1 == boards.pageable.pageNumber + 1} ? 'disabled'">
@@ -76,5 +87,5 @@
 			<a type="button" class="btn btn-primary" th:href="@{/board/form}">글쓰기</a>
 		</div>
 	</div>
-</body>
+
 </html>
