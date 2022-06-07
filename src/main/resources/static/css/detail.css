@@ -1,5 +1,4 @@
 .detail_wrap{
-	height:800px;
 	width:100%;
 	background-color:rgb(255, 251, 211);
 }
@@ -19,12 +18,8 @@
 	width:80%;
 	background-color:#dae0e3;
 	margin : 0 auto;
-	
 	position:relative;
 }
-
-
-
 
 /*신고하기 버튼*/
 .reportpostbtn{
