@@ -14,4 +14,6 @@ public interface MemberService {
 	//ID 찾기
 	public String idfind(MemberDTO dto);
 	
+	//PW 찾기
+	public String pwfind(MemberDTO dto);
 }
