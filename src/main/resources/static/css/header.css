@@ -40,7 +40,7 @@
     background-color: #7a78f0;
 }
 
-.header_login{
+.loginpostbtn{
     right: 180px;
 }
 
@@ -48,7 +48,7 @@
     right: 50px;
 }
 
-.header_login:hover, .header_join:hover {
+.loginpostbtn:hover, .header_join:hover {
     background-color: #3d3bb3;
     font-weight: bold;
 }
