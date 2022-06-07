@@ -1,7 +1,7 @@
 package com.highlife.rainbow.controller;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -9,10 +9,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.highlife.rainbow.domain.Board;
@@ -66,16 +64,16 @@ public class BoardController {
 //		return "board";
 //	}
 
-	@GetMapping("list") // 오래된 순
+	@GetMapping("list") // 최신 순
 	public String oldList(Model model) {
-		Iterable<Board> asc = boardRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
+		Iterable<Board> asc = boardRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
 		model.addAttribute("boards", asc);
 		return "board";
 	}
 
-	@GetMapping("new") // 최신 순
+	@GetMapping("old") // 오래된 순
 	public String newList(Model model) {
-		Iterable<Board> desc = boardRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+		Iterable<Board> desc = boardRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
 		model.addAttribute("boards", desc);
 		return "board";
 	}
@@ -130,7 +128,7 @@ public class BoardController {
 	MemberService memberService;
 
 	@GetMapping("/form")
-	public String form(Model model, @RequestParam(required = false) Long id) {
+	public String form(Model model, @RequestParam(required = false) Long id,  MultipartFile file) {
 		System.out.println("getMapping ==========================");
 		if (id == null) {
 			System.out.println("아이디가 없음");
@@ -146,7 +144,7 @@ public class BoardController {
 	}
 
 	@PostMapping("/form")
-	public String greetingSubmit(@Valid Board board, BindingResult bindingResult, HttpServletRequest request) {
+	public String greetingSubmit(@Valid Board board, BindingResult bindingResult, HttpServletRequest request,  MultipartFile file) throws IllegalStateException, IOException {
 		if (bindingResult.hasErrors()) {
 			System.out.println("postmapping if문==========================");
 			return "board";
@@ -154,8 +152,8 @@ public class BoardController {
 
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("email");
-		System.out.println("dto not null==========================");
-		boardService.save(email, board);
+		System.out.println("file 이름이모: " + file);
+		boardService.save(email, board, file);
 
 //      Member member = memberRepository.findByUserEmail(userName);
 
