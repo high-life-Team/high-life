@@ -40,7 +40,7 @@ public class MemberController {
 	public String insertresult(MemberDTO dto) throws Exception {
 		int result = service.memberinsert(dto);// id, email, phone �ߺ� �Ұ���
 		System.out.println(result);
-		return "redirect:login";
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
