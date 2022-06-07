@@ -1,7 +1,3 @@
-/*아이디 찾기 모달 폼 시작*/
-.detail_content{
-	/*position:relative;*/
-}
 
 /* 로그인 모달*/
 #modal_writeform button:hover{
@@ -31,12 +27,13 @@
 }
 
 #modal_writeform .modal_content { 
-  width: 550px; /* 모달 크기 */
-  height: 550px; /* 모달 크기 */
+  width: 600px; /* 모달 크기 */
+  height: 800px; /* 모달 크기 */
   padding: 27px 29px 40px 69px;
   object-fit: contain;
   border-radius: 10px;
   background-color: #fff;
+  
 }
 
 
@@ -44,6 +41,8 @@
 .modal_writeform_btn{
 	display: flex;
 	flex-direction: row;
+	
+	height: 150px;
 }
 
 .modal_writeform_btn button{
@@ -117,4 +116,157 @@
     right: 240px;
 }
 
+/* 글작성 폼 */
+
+
+
+#image_canvas{
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events:none;
+}
+
+
+.post_form_container{
+    max-width: 550px;
+    margin: 0 auto;
+    
+    height: 600px;
+}
+
+
+.post_form{
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    margin: 0 0 10px;
+    
+    height: 550px;
+}
+
+.post_form .title{
+    margin: 0 10px 40px;
+    height: 40px;
+  
+}
+
+
+.post_form .preview{
+    margin-bottom: 20px;
+}
+
+.post_form .preview .upload{
+    max-width: 300px;
+    height: 300px;
+    border: 1px solid #e6e6e6;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.plus_icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    border: 1px solid dodgerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.plus_icon span{
+    position: absolute;
+    display: block;
+    width: 2px;
+    height: 20px;
+    background: dodgerblue;
+
+}
+
+.plus_icon span:nth-child(2){
+    transform:rotate(90deg);
+}
+
+.post_form p{
+	margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.post_form input[type=file]{
+    width: 100%;
+    background: 0 0;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #262626;
+    font-size: 14px;
+    padding: 7px 8px 7px;
+}
+
+.post_form input[type=text] {
+    width: 100%;
+    background: 0 0;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #262626;
+    font-size: 14px;
+    padding: 17px 8px 17px;
+    text-align :center;
+    
+}
+
+
+.post_form textarea{
+    width: 100%;
+    background: 0 0;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #262626;
+    font-size: 14px;
+    padding: 7px 8px 7px;
+}
+
+
+
+/* .submit_btn {
+    background: #3897f0;
+    border-color: #3897f0;
+    color: #fff;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 28px;
+    outline: none;
+    width: 100%;
+    padding: 0;
+    margin-top: 10px;
+} */
+
+
+
+#write_button {
+  width: 500px;
+  height: 40px;
+  margin: 10px 5px 25px 0;
+  object-fit: contain;
+  border-radius: 25px;
+  background-color: #2f4fc6;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 
