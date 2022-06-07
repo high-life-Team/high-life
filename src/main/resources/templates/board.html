@@ -11,6 +11,15 @@
 		<!-- <div>총 건수 : <sapn th:text="${boards.totalElements}"></sapn></div> -->
 
 		<form class="form-inline d-flex justify-content-end" method="GET"
+			th:action="@{/board/new}">
+			<button type="submit" class="btn btn-light mb-2">최신순</button>
+		</form>
+		<form class="form-inline d-flex justify-content-end" method="GET"
+			th:action="@{/board/list}">
+			<button type="submit" class="btn btn-light mb-2">오래된 순</button>
+		</form>
+		
+		<form class="form-inline d-flex justify-content-end" method="GET"
 			th:action="@{/board/list}">
 			<div class="form-group mx-sm-3 mb-2">
 				<label for="searchText" class="sr-only">검색</label> <input
@@ -31,7 +40,7 @@
 				</tr>
 			</thead>
 			<tbody>
- 				<tr th:each="board : ${boards}">
+				<tr th:each="board : ${boards}">
 					<td th:text="${board.id}">번호</td>
 					<td><a th:text="${board.title}"
 						th:href="@{/board/detail(id=${board.id})}">제목</a></td>
