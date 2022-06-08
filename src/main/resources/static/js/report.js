@@ -2,7 +2,11 @@ let type; //신고하기 버튼 타입 글 or 댓글 구분
 let reportnum; //신고하는 게시글 or 댓글 번호
 let reportid; //게시글 조회하는 회원 아이디 , 비로그인이면 ''
 let reportpostid; //게시글 작성한 아이디
-console.log("report.js실행중");
+let etc = $('#reportTxt'); //기타 값이 들어갈 곳
+console.log("reportTxt.js실행중");
+
+
+
 //신고하기 버튼 클릭 이벤트
 $(document).on('click', '.report_btn button', (function () {
  reportid = $('#member_id').val();
@@ -39,12 +43,12 @@ $(document).on('keyup', '#reportTxt', function() {
      }
  });
 //radio 9번 클릭시 textarea 활성화
-$(document).on('click', 'input[name="radioTxt"]', (function(){
- if($(this).val() == "9"){				
-   $('#reportTxt').attr('readonly', false);
+$(document).on('click', 'input[name="report"]', (function(){
+ if($(this).val() == "기타"){				
+    	$('#reportTxt').attr('readonly', false);
  }
  else{
-   $('#reportTxt').attr('readonly', true);
+	  $('#reportTxt').attr('readonly', true);
    $('#reportTxt').val("");
  }			
 }));
@@ -60,13 +64,15 @@ $(document).on('click', '#modal_report_close_btn', (function () {
 
 //신고 확인 버튼
 $(document).on('click', '#modal_report_ok_btn', (function () {
- let radioval =  $('input[name="radioTxt"]:checked').val();
+ let radioval =  $('input[name="reportTxt"]:checked').val();
  let reason = "";
- if(radioval == 9){
+ if(radioval == etc){
    reason = "기타 : " + $('#reportTxt').val();	
+   model.addAttribute("reason", reason); // [key, value]
  }
  else{
    reason = $("label[for='radio"+radioval+"']").text();
+   model.addAttribute("reason", reason); // [key, value]
  }
  
  //신고하기 insert ajax

@@ -92,9 +92,36 @@
 				</form>
 			</div>
 		</div>
+		<!-- 게시판 작성자는 감정버튼을 못 누르게 비활성화 시키기 
+			th:if="${memberId} != ${session.userId}"
+		-->
+		<div class="emotion">
+			<form class="modal_form" method="post"
+				th:action="@{/like(boardId = ${board.id})}">
+				<button type="submit">좋아요</button>
+				<div th:text="${board.love}"></div>
+			</form>
 
+			<form class="modal_form" method="post"
+				th:action="@{/angry(boardId = ${board.id})}">
+				<button type="submit">화나요</button>
+				<div th:text="${board.angry}"></div>
+			</form>
+
+			<form class="modal_form" method="post"
+				th:action="@{/sad(boardId = ${board.id})}">
+				<button type="submit">슬퍼요</button>
+				<div th:text="${board.sad}"></div>
+			</form>
+
+			<form class="modal_form" method="post"
+				th:action="@{/cheer/up(boardId = ${board.id})}">
+				<button type="submit">힘내요</button>
+				<div th:text="${board.cheerUp}"></div>
+			</form>
+		</div>
 		<!-- 신고버튼(모달)작동 필요 정보 -->
-		
+
 		<input type="hidden" value="${member_id}" id="member_id">
 		<!-- 필요 정보 끝 -->
 
@@ -121,53 +148,48 @@
 
 		<!-- 신고하기 모달창 -->
 		<div id="modal_report">
-<!-- 			th:action="@{/board/reply/delete(replyId = ${r.id}, boardId = ${board.id})}" -->
-			<form class="modal_form" method="post" th:action="@{/board/report(boardId = ${board.id})}">
+			<!-- 			th:action="@{/board/reply/delete(replyId = ${r.id}, boardId = ${board.id})}" -->
+			<form class="modal_form" method="post"
+				th:action="@{/board/report(boardId = ${board.id})}">
 				<div class="modal_layer">
 					<div class="modal_content">
 						<div class="modal_content_title">
 							<h1>신고하기</h1>
 						</div>
 						<div class="modal_content_radio">
-							<input type="radio" value="헌법 및 사회질서, 미풍양속에 반함" id="radio1" name="report" checked><label
-								for="radio1">헌법 및 사회질서, 미풍양속에 반함</label><br>
-								<input type="radio" value="음란성" id="radio2" name="report"><label
-								for="radio2">음란성</label><br> 
-								<input type="radio"
-								 value="개인정보 침해 및 명예훼손" id="radio3" name="report"><label
-								for="radio3">개인정보 침해 및 명예훼손</label><br> 
-								<input type="radio"
-								value="불법 촬영" id="radio4" name="report"><label
-								for="radio4">불법 촬영</label><br> 
-								<input type="radio"
-								 value="불법 광고" id="radio5" name="report"><label
-								for="radio5">불법 광고</label><br> 
-								<input type="radio"
-								 value="도배성" id="radio6" name="report"><label
-								for="radio6">도배성</label><br> 
-								<input type="radio"
-								 value="저작권 침해" id="radio7" name="report"><label
-								for="radio7">저작권 침해</label><br> 
-								<input type="radio"
-								 value="폭력/잔혹/혐오" id="radio8" name="report"><label
-								for="radio8">폭력/잔혹/혐오</label><br> 
-								<input type="radio"
-								 >기타(직접 입력 - 100자 이내) <span
-								id="reportTxt_count">(0 / 100)</span><br>
+							<input type="radio" value="헌법 및 사회질서, 미풍양속에 반함" id="radio1"
+								name="report" checked><label for="radio1">헌법 및
+								사회질서, 미풍양속에 반함</label><br> <input type="radio" value="음란성"
+								id="radio2" name="report"><label for="radio2">음란성</label><br>
+							<input type="radio" value="개인정보 침해 및 명예훼손" id="radio3"
+								name="report"><label for="radio3">개인정보 침해 및 명예훼손</label><br>
+
+							<input type="radio" value="불법 촬영" id="radio4" name="report"><label
+								for="radio4">불법 촬영</label><br> <input type="radio"
+								value="불법 광고" id="radio5" name="report"><label
+								for="radio5">불법 광고</label><br> <input type="radio"
+								value="도배성" id="radio6" name="report"><label
+								for="radio6">도배성</label><br> <input type="radio"
+								value="저작권 침해" id="radio7" name="report"><label
+								for="radio7">저작권 침해</label><br> <input type="radio"
+								value="폭력/잔혹/혐오" id="radio8" name="report"><label
+								for="radio8">폭력/잔혹/혐오</label><br>
+
+
+							<input type="radio" name="report" th:value="기타">기타(직접
+							입력 - 100자 이내) <span id="reportTxt_count">(0 / 100)</span><br>
 						</div>
 						<div class="modal_content_text">
-	
-							<!-- <textarea id="reportTxt" maxlength="100" readonly th:field="${Breport}"></textarea> -->
-						</div>
-						<div class="modal_content_footer">
-							허위신고시 신고자의 활동제한이 있을 수 있습니다.<br> 이 점 유의해 주시기 바랍니다.
-						</div>
-						<div class="modal_report_btn">
-							<button type="button" id="modal_report_close_btn">취소</button>
-							<button type="submit" id="modal_report_ok_btn">확인</button>
+							<textarea id="reportTxt" maxlength="100" readonly></textarea>
+							<div class="modal_content_footer">
+								허위신고시 신고자의 활동제한이 있을 수 있습니다.<br> 이 점 유의해 주시기 바랍니다.
+							</div>
+							<div class="modal_report_btn">
+								<button type="button" id="modal_report_close_btn">취소</button>
+								<button type="submit" id="modal_report_ok_btn">확인</button>
+							</div>
 						</div>
 					</div>
-				</div>
 			</form>
 		</div>
 
