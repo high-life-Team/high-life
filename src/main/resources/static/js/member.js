@@ -15,15 +15,24 @@ $(document).on('click', '.member_btn ', (function () {
 //아이디 찾기 취소
 $(document).on('click', '#modal_member_close_btn', (function () {
 	
+	//닫을 때 내용 지우기
 	$('#member_id_id').val("");
 	$('#nickname_id').val("");
 	$('#email_id').val("");
 	$('#password_id').val("");
 	$('#repassword_id').val(""); 
- 
- $("#modal_member").hide();
- $("#pw_success_id").hide();
- $("#pw_fail_id").hide();
+	
+	/* 성공여부 닫기 */
+	$("#pw_success_id").hide(); 
+ 	$("#pw_fail_id").hide();
+	$("#idcheck_font").hide();
+ 	$("#nickname_font").hide();
+ 	$("#email_font").hide();
+ 	
+ 	
+ 	//모달창 닫기
+	$("#modal_member").hide(); 
+ 	
 }));
 
 
@@ -51,7 +60,131 @@ $("input[name=email_name]").keyup(function(event){
 	}
 	});
 
-}); //ready function end
+//아이디 중복 체크
+$("input[name=member_id]").keyup(function(){
+	let id = $('#member_id_id').val();
+	console.log(id);
+	
+	if(id.length < 5){
+		$("#idcheck_font").html('5자 이상의 아이디를 입력해주세요. (영문, 숫자)');
+		$("#idcheck_font").css('color', 'gray');
+		$("#idcheck_font").css('font-size', '20px');
+	}
+	else{
+	$.ajax({
+		url : "/membercheck",
+		type : "post",
+		data :{member_id : id},
+		dataType : 'json',
+		success : function(result){
+			if(result == 0){
+				$("#idcheck_font").html('사용할 수 있는 아이디 입니다.');
+				$("#idcheck_font").css('color', 'green');
+				$("#idcheck_font").css('font-size', '20px');
+				idcheck = 1;
+			} else{
+				$("#idcheck_font").html('사용할 수 없는 아이디 입니다.');
+				$("#idcheck_font").css('color', 'red');
+				$("#idcheck_font").css('font-size', '20px');
+				idcheck = 2;
+			}
+		},
+		error : function(){
+			alert("서버요청실패");
+		}
+	});//ajax
+	}
+})
+//아이디 중복 체크 END
+
+//<!-- 닉네임 중복 체크 -->
+$("input[name=nickname]").keyup(function(){
+	let id = $('#nickname_id').val();
+	if(id.length <2){
+		$("#nickname_font").html('2자 이상의 닉네임을 입력해주세요. (한글, 영문, 숫자)');
+		$("#nickname_font").css('color', 'gray');
+		$("#nickname_font").css('font-size', '20px');
+	}
+	else{
+	$.ajax({
+		url : "/membercheck_nickname",
+		type : "post",
+		data :{nickname: id},
+		dataType : 'json',
+		success : function(result){
+			if(result == 0){
+				$("#nickname_font").html('사용할 수 있는 닉네임 입니다.');
+				$("#nickname_font").css('color', 'green');
+				$("#nickname_font").css('font-size', '20px');
+				nicknamecheck = 1;
+			} else{
+				$("#nickname_font").html('사용할 수 없는 닉네임 입니다.');
+				$("#nickname_font").css('color', 'red');
+				$("#nickname_font").css('font-size', '20px');
+				nicknamecheck = 2;
+			}
+		},
+		error : function(){
+			alert("서버요청실패");
+		}
+	});//ajax
+	}
+})
+//<!-- 닉네임 중복 체크 END -->
+
+
+
+//<!-- 이메일 중복 체크 -->
+$("input[name=email]").keyup(function(){
+	let id = $('#email_id').val();
+	if(id.length<2){
+		$("#email_font").html('이메일을 입력해주세요.');
+		$("#email_font").css('color', 'gray');
+		$("#email_font").css('font-size', '20px');
+		
+	}
+	
+	else{	
+	$.ajax({
+		url : "/membercheck_email",
+		type : "post",
+		data :{'email': id},
+		dataType : 'json',
+		success : function(result){
+			if(result == 0){
+				$("#email_font").html('사용할 수 있는 이메일 입니다.');
+				$("#email_font").css('color', 'green');
+				$("#email_font").css('font-size', '20px');
+				emailcheck = 1;
+				
+			} else{
+				$("#email_font").html('사용할 수 없는 이메일 입니다.');
+				$("#email_font").css('color', 'red');
+				$("#email_font").css('font-size', '20px');
+				emailcheck = 2;
+			}
+		},
+		error : function(){
+			alert("서버요청실패");
+		}
+	});//ajax
+	}
+})
+
+//<!-- 이메일 중복 체크 END -->
+
+
+//회원가입 버튼 function
+$("#button_signup").on('click', function(ev){
+if(idcheck==2){
+	alert("아이디를 확인해주세요.");
+	ev.preventDefault();
+}
+
+})
+
+
+}) //ready function end
 
 
 //<!-- 비밀번호 중복체크 -->

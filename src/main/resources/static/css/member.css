@@ -116,7 +116,7 @@
 #text_nickname{
   width: 500px;
   height: 15px;
-  margin: 25px 30px 25px 2px;
+  margin: 0 30px 25px 2px;
   object-fit: contain;
   font-family: NotoSansCJKkr;
   font-size: 18px;
@@ -132,7 +132,7 @@
 #text_email{
   width: 500px;
   height: 15px;
-  margin: 25px 30px 25px 2px;
+  margin: 0 30px 25px 2px;
   object-fit: contain;
   font-family: NotoSansCJKkr;
   font-size: 18px;
@@ -148,7 +148,7 @@
 #text_password{
   width: 500px;
   height: 15px;
-  margin: 25px 30px 25px 2px;
+  margin: 0 30px 25px 2px;
   object-fit: contain;
   font-family: NotoSansCJKkr;
   font-size: 18px;
