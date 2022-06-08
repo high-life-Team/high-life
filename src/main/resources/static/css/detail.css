@@ -1,139 +1,250 @@
+
+.detail_section{
+    margin: 5% auto;
+    border: 3px solid #000;
+    width:70%;
+    height: 700px;;
+}
+
 .detail_wrap{
-	width:100%;
-	background-color:rgb(255, 251, 211);
+    display: flex;
+    height: inherit;
 }
 
-.detail_content{
-	height:600px;
-	width:80%;
-	background-color:#dae3db;
-	margin : 0 auto;
-	
-	position:relative;
+/* 왼쪽 - 사진, 감정표현 */
+
+.detail_left{
+    width: 45%;
+    height:inherit;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
-
-.detail_comment{
-	height:200px;
-	width:80%;
-	background-color:#dae0e3;
-	margin : 0 auto;
-	position:relative;
+.left_photo{
+    width: 100%;
+    height: inherit;
 }
 
-/*신고하기 버튼*/
-.reportpostbtn{
-	padding: 7px 10px;
-    background-color: #ce4764;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    color: white;
-    cursor: pointer;
-    
+.left_img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+.left_emotion{
+    width: 80%;
+    height: 10%;
     position: absolute;
-    right: 10px;
-    bottom: 10px;
-    float: right;
-    margin-top: 170px;
-}
-.reportcommentbtn{
-	padding: 5px 10px;
-    background-color: #ce4764;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    color: white;
-    cursor: pointer;
-    
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    float: right;
-    margin-top: 170px;
-}
-/* 신고하기 모달*/
-#modal_report button:hover{
-	cursor: pointer;
-}
-#modal_report {
-	display: none;
-	position: relative;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
+    bottom: 22%;  
+    left:10%;
+    display: flex;
+    justify-content: center;
 }
 
-#modal_report .modal_layer {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	/*화면 가운데 정렬*/
-	display: flex; 
-	align-items: center;
-	justify-content: center;
-	background: rgba(0, 0, 0, 0.4);
-	z-index: -1;
+.emo_happy, .emo_angry, .emo_sad, .emo_worry{
+    width: 50px;
+    margin-right: 50px;
+    border-radius: 50px;
+    height: 50px;
 }
 
-#modal_report .modal_content {
-	width: 350px;
-	margin: 250px auto;
-	padding: 20px 10px;
-	border-radius: 10px;
-	background: #fff;
-	border: 2px solid #666;	
-}
-.modal_content_radio{
-	margin: 8px 0px;
-	border: 1px solid #666;
-}
-.modal_content_radio input[type="radio"] {
-	margin: 0px 3px;
+.emo_worry{
+    margin-right: 0;
 }
 
-#modal_report h1 {
-	margin: 3px;
+.num_check{
+	margin-right: 50px;
+    text-align: center;
 }
 
-#reportTxt{
-	width: 100%;
-	height: 80px;
-	resize: none;
-	border: 0px;
-	background-color: rgb(209, 209, 209) ;
-}
-.modal_content_footer{
-	margin-left:5px;
-	font-size:13px;
-}
-
-.modal_report_btn{
-	display: flex;
-	flex-direction: row;
-}
-
-.modal_report_btn button{
+.num_align{
 	text-align: center;
 }
-#modal_report_close_btn {
-    margin: 10px auto 0 auto;
-    width: 70px;
-    height: 25px;
-    border: none;
-    border-radius: 25px;
-    color: black;
-    background: #bdbdbd;
+
+/* 오른쪽 본문, 댓글, 댓글작성 */
+.detail_right{
+    border-left: 1px solid rgb(212, 210, 210);
+    width: 55%;
+    height : inherit;
+    position:relative;
 }
 
-#modal_report_ok_btn {
-	margin: 10px auto 0 auto;
-    width: 70px;
-    height: 25px;
-    border: none;
-    border-radius: 25px;
-    color: white;
-    background: #12379e;
+/* 본문 영역 */
+.detail_content{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+}
+.content_write_title{
+    width: 90%;
+    height:10%;
+    margin: 10px 20px 20px 25px;
+    font-weight: bold;
+    font-size: 23px;
+    position:relative;
+    display: flex;
+    padding-bottom:20px;
+}
+
+.content_writer{
+    display: inline;
+    margin-top:10px;
+    position:absolute;
+    top:40px; 
+    left:25px;
+    font-size: 18px;
+}
+
+.content_write_time{
+    position: absolute;
+    top:28px;
+    right:60px;
+    font-weight: normal;
+    font-size: 10px;
+}
+
+
+
+.content_line{
+    width: 94%;
+    margin: 20px 5px 20px 20px;
+    padding-right: 20px;
+    text-align: justify;
+    height: auto;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.written_comment_wrap{
+    margin: 10px 0px;
+    width:98%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+}
+
+/* 작성된 댓글 영역 */
+.written_writer{
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    height:auto;
+    font-weight: bold;
+    font-size: 15px;
+    position:relative;
+}
+
+.written_comment_time{
+    position:absolute;
+    top:5px;
+    right:50px;
+    font-weight: normal;
+    font-size: 10px;
+}
+
+.written_comment_delete{
+    position:absolute;
+    top:0px;
+    right:10px;
+}
+
+.written_content{
+    box-sizing: border-box;
+    height:auto
+}
+
+
+.written_br_top{
+    border: 3px solid rgb(212, 210, 210);
+    width: 95%;
+    margin:20px auto;
+}
+
+.written_br_bottom{
+    border: 1px dashed rgb(212, 210, 210);
+    width: 95%;
+    margin:20px auto;
+}
+
+
+/* 댓글영역  */
+.detail_write_comment{
+    box-sizing: border-box;
+    width: 100%;
+    height: 25%;
+}
+
+/* 댓글 작성자 */
+.comment_writer{
+    padding:20px 20px 10px 20px;
+}
+.comment_br{
+    margin:20px auto 10px auto;
+    border: 2px solid rgb(212, 210, 210);
+    width: 95%;
+}
+
+/* 댓글 입력창 */
+.comment_input{
+    border: 1px solid rgb(212, 210, 210);
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    position: relative;
+}
+
+.input_logo{
+    box-sizing: border-box;
+    width:80px;
+    height: 50px;
+    position: absolute;
+    top:18px;
+    left:10px;
+}
+
+.comment_content{
+    width: 300%;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 16px;
+    height: 88px;
+}
+
+/* 댓글 작성 버튼 */
+.input_submit{
+    box-sizing: border-box;
+    width:10%;
+    height:70%;
+    position: absolute;
+    top:18px;
+    right:10px;
+}
+
+/* 나가기 버튼 */
+.detail_close_btn{
+    position: absolute;
+    top:10px;
+    right: 20px;
+    font-size: 30px;
+}
+
+/* 신고하기  */
+/* 게시글 신고 */
+.content_report{
+    border: 1px solid #000;
+    width: 5%;
+    height: 4%;
+    position: absolute;
+    top: 2%; 
+    right:2%; 
+}
+/* 댓글 신고 */
+.comment_report{
+    border: 1px solid red;
+    position:absolute;
+    top:0px;
+    right:10px;
 }
