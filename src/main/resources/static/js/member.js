@@ -137,6 +137,7 @@ $("input[name=nickname]").keyup(function(){
 //<!-- 이메일 중복 체크 -->
 $("input[name=email]").keyup(function(){
 	let id = $('#email_id').val();
+	let emailYN = isEmail(id);
 	if(id.length<2){
 		$("#email_font").html('이메일을 입력해주세요.');
 		$("#email_font").css('color', 'gray');
@@ -151,7 +152,7 @@ $("input[name=email]").keyup(function(){
 		data :{'email': id},
 		dataType : 'json',
 		success : function(result){
-			if(result == 0){
+			if(result == 0 && emailYN == true){
 				$("#email_font").html('사용할 수 있는 이메일 입니다.');
 				$("#email_font").css('color', 'green');
 				$("#email_font").css('font-size', '20px');
@@ -172,6 +173,13 @@ $("input[name=email]").keyup(function(){
 })
 
 //<!-- 이메일 중복 체크 END -->
+
+//<!-- 이메일 유효성 검사 시작-->
+	function isEmail(asValue){ 
+		var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+		return regExp.test(asValue); // 형식에 맞는 경우 true 리턴
+	}
+//<!-- 이메일 유효성 검사 종료-->
 
 
 //회원가입 버튼 function
