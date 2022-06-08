@@ -22,8 +22,8 @@ $(document).on('click', '#modal_member_close_btn', (function () {
 	$('#repassword_id').val(""); 
  
  $("#modal_member").hide();
-
- 	
+ $("#pw_success_id").hide();
+ $("#pw_fail_id").hide();
 }));
 
 
@@ -53,3 +53,27 @@ $("input[name=email_name]").keyup(function(event){
 
 }); //ready function end
 
+
+//<!-- 비밀번호 중복체크 -->
+$(function(){
+	$("#pw_success").hide();
+	$("#pw_fail").hide();
+	$("input").keyup(function(){
+		var pw_text=$("#password_id").val();
+		var pw_check_text=$("#repassword_id").val();
+		if(pw_text != "" || pw_check_text != ""){
+			if(pw_text == pw_check_text){
+				$("#pw_success_id").show();
+				$("#pw_fail_id").hide();
+				pwcheck=1;
+				
+			}else{
+				$("#pw_success_id").hide();
+				$("#pw_fail_id").show();
+				pwcheck=2;
+				
+			}
+		}
+	});
+})
+//<!-- 비밀번호 중복체크 END -->

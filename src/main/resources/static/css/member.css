@@ -32,7 +32,7 @@
 
 #modal_member .modal_content {
   width: 550px;
-  height: 900px;
+  height: 800px;
   padding: 27px 29px 40px 69px;
   object-fit: contain;
   border-radius: 10px;
@@ -76,7 +76,7 @@
 #logo_rainbow {
   width: 153px;
   height: 80px;
-  margin: 30px 375px 66px 1px;
+  margin: 30px 0px 30px 1px;
   object-fit: contain;
 }
 
@@ -98,6 +98,38 @@
 }
 
 #text_member_id{
+  width: 500px;
+  height: 15px;
+  margin: 0px 30px 25px 2px;
+  object-fit: contain;
+  font-family: NotoSansCJKkr;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.75;
+  letter-spacing: -0.9px;
+  text-align: left;
+  color: #d2d6e6;
+}
+
+#text_nickname{
+  width: 500px;
+  height: 15px;
+  margin: 25px 30px 25px 2px;
+  object-fit: contain;
+  font-family: NotoSansCJKkr;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.75;
+  letter-spacing: -0.9px;
+  text-align: left;
+  color: #d2d6e6;
+}
+
+#text_email{
   width: 500px;
   height: 15px;
   margin: 25px 30px 25px 2px;
@@ -128,6 +160,8 @@
   text-align: left;
   color: #d2d6e6;
 }
+
+
 
 #member_id_id{
   width: 500px;
