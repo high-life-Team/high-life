@@ -21,9 +21,6 @@ public interface BoardRepository extends JpaRepository<Board, Long>{
     Page<Board> findByOrderByIdDesc(Pageable pageable);
     List<Board> findTop3ByOrderByIdDesc();
     List<Board> findTop3ByOrderByHitsDesc();
-    List<Board> findTop3ByOrderByHitsDesc();
-    List<Board> findTop3ByOrderByHitsDesc();
-    
     
 		@Modifying
 	    @Query("update Board p set p.hits = p.hits + 1 where p.id = :id")

@@ -70,7 +70,7 @@
 					<!-- box (1-1) -->
 					<li th:each="board, pStat : ${boards}" class="list_box" th:unless="${pStat.index > 6}"><a
 						class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
-							<img class="list_box_img" src="images/boximg.png">
+							<img class="list_box_img" src="/images/boximg.png">
 							<p th:text="${board.title}" class="list_box_title"></p>
 							<p th:text="${board.content}" class="list_box_content"></p>
 					</a></li>
