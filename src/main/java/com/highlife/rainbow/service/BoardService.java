@@ -37,7 +37,12 @@ public class BoardService {
 		Member member = memberRepository.findByEmail(email);
 		board.setMember(member);
 		board.setHits(0);
-
+		board.setAngry(0);
+		board.setCheerUp(0);
+		board.setLove(0);
+		board.setSad(0);
+		board.setTotal(0);
+		
 		if (file.getOriginalFilename() != "") {
 			String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\board\\images";
 			UUID uuid = UUID.randomUUID();
@@ -74,7 +79,7 @@ public class BoardService {
 	
 	public void saveReport(BoardReport report, Board board, int reportCnt, String email, String reason) {
 		Member member = memberRepository.findByEmail(email);
-
+		
 		report.setMember(member);
 		report.setBoard(board);
 		report.setReportReason(reason);

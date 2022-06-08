@@ -72,6 +72,13 @@ public class BoardController {
 		return "board";
 	}
 
+	@GetMapping("hot") // 인기 순,
+	public String hotPost(Model model) {
+		Iterable<Board> asc = boardRepository.findAll(Sort.by(Sort.Direction.DESC, "total"));
+		model.addAttribute("boards", asc);
+		return "board";
+	}
+	
 	@GetMapping("old") // 오래된 순
 	public String newList(Model model) {
 		Iterable<Board> desc = boardRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
