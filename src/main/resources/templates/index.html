@@ -146,7 +146,7 @@
 
 				<ul class="list_box_wrap">
 					<!-- box (1-1) -->
-					<li th:each="board, pStat : ${indexpopular}" class="list_box" th:unless="${pStat.index > 2}"><a
+					<li th:each="board, pStat : ${indexpopular}" class="list_box"><a
 						class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
 							<img class="list_box_img" src="images/boximg.png">
 							<p th:text="${board.title}" class="list_box_title"></p>
@@ -181,7 +181,7 @@
 
 				<ul class="list_box_wrap">
 					<!-- box (1-1) -->
-					<li th:each="board, pStat : ${indexnew}" class="list_box" th:unless="${pStat.index > 2}"><a
+					<li th:each="board, pStat : ${indexnew}" class="list_box"><a
 						class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
 							<img class="list_box_img" src="images/boximg.png">
 							<p th:text="${board.title}" class="list_box_title"></p>

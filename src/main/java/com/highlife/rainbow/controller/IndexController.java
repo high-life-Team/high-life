@@ -19,7 +19,7 @@ public class IndexController {
 
 	@GetMapping(value = "/")
     public String main(Model model){
-
+			
 		//id 기준으로 top 3만 가져옴 
 		Iterable<Board> asc = boardRepository.findTop3ByOrderByIdDesc();
 		model.addAttribute("indexnew", asc);
