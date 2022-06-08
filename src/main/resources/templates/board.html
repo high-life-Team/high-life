@@ -68,7 +68,7 @@
 
 				<ul class="list_box_wrap">
 					<!-- box (1-1) -->
-					<li th:each="board : ${boards}" class="list_box"><a
+					<li th:each="board, pStat : ${boards}" class="list_box" th:unless="${pStat.index > 6}"><a
 						class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
 							<img class="list_box_img" src="images/boximg.png">
 							<p th:text="${board.title}" class="list_box_title"></p>
@@ -76,6 +76,10 @@
 					</a></li>
 				</ul>
 			</div>
+						<div class="text-right">
+				<a type="button" class="btn btn-primary" th:href="@{/board/form}">글쓰기</a>
+			</div>
+		</div>
 
 
 
@@ -96,8 +100,5 @@
                 </li>
             </ul>
         </nav> -->
-			<div class="text-right">
-				<a type="button" class="btn btn-primary" th:href="@{/board/form}">글쓰기</a>
-			</div>
-		</div>
+
 </html>
