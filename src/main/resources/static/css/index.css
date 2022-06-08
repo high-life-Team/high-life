@@ -10,7 +10,7 @@
 }
 
 .index_top_wrap {
-  background-image: url("/images/main_background.png");
+  background-image: url("/images/main_background_turn.png");
   background-size: cover;
   width: 100%;
   height: 1200px;
@@ -416,3 +416,11 @@
 .main_gobtn3:active .down_arrow{
   color: #e9b202;
 }
+
+
+/* 중간 박스 타이틀*/
+.index_popular_boxsection, .index_new_boxsection{
+  margin: 0 20%;
+  text-align: center;
+}
+
