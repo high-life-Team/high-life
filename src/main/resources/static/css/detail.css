@@ -297,16 +297,98 @@
 .content_report:hover{
 	color: #1f439e;
 }
-/* 댓글 신고 */
-.comment_report{
-    border: 1px solid red;
-    position:absolute;
-    top:0px;
-    right:10px;
-}
+
 
 .overscroll{
 	overflow: hidden;
     overflow-y: auto;
     height: 440px;
 }
+
+/* 신고하기 모달 시작 */
+#modal_report button:hover{
+	cursor: pointer;
+}
+#modal_report {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+#modal_report .modal_layer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*화면 가운데 정렬*/
+	display: flex; 
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: -1;
+}
+
+#modal_report .modal_content {
+	width: 350px;
+	margin: 250px auto;
+	padding: 20px 10px;
+	border-radius: 10px;
+	background: #fff;
+	border: 2px solid #666;	
+}
+.modal_content_radio{
+	margin: 8px 0px;
+	border: 1px solid #666;
+}
+.modal_content_radio input[type="radio"] {
+	margin: 0px 3px;
+}
+
+#modal_report h1 {
+	margin: 3px;
+}
+
+textarea{
+	width: 100%;
+	height: 80px;
+	resize: none;
+	border: 0px;
+	background-color: rgb(209, 209, 209) ;
+}
+.modal_content_footer{
+	margin-left:5px;
+	font-size:13px;
+}
+
+.modal_report_btn{
+	display: flex;
+	flex-direction: row;
+}
+
+.modal_report_btn button{
+	text-align: center;
+}
+#modal_report_close_btn {
+    margin: 10px auto 0 auto;
+    width: 70px;
+    height: 25px;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    background: #bdbdbd;
+}
+
+#modal_report_ok_btn {
+	margin: 10px auto 0 auto;
+    width: 70px;
+    height: 25px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    background: #12379e;
+}
+
+/* 신고하기 모달 종료 */
