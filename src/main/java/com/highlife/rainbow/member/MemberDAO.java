@@ -26,6 +26,8 @@ public interface MemberDAO {
 	//PW 찾기
 	public String pwfind(MemberDTO dto);
 	
+	//회원 정보 수정
+	public int memberedit(MemberDTO dto);
 	
 	
 

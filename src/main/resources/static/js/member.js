@@ -4,8 +4,8 @@ var pwcheck = 2;
 var emailcheck = 2;
 
 
-//아이디 찾기
-$(document).on('click', '.member_btn ', (function () {
+//회원가입
+$(document).on('click', '.member_btn, #front_member_modal', (function () {
  
  
  $("#modal_member").show();

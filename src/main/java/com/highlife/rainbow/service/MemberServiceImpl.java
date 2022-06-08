@@ -49,7 +49,10 @@ public class MemberServiceImpl implements MemberService {
 	public String pwfind(MemberDTO dto) {
 		return dao.pwfind(dto);
 	}
-	 
+	
+	public int memberedit(MemberDTO dto) {
+		return dao.memberedit(dto);
+	}
 
 
 }

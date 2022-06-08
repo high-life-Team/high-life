@@ -148,5 +148,29 @@ public class MemberController {
 		return result;
 	}
 	
+	 @RequestMapping(value="/memberedit", method = RequestMethod.GET)
+	  
+		public String memberedit(HttpServletRequest request, HttpServletResponse response) throws Exception {
+			HttpSession session = request.getSession();
+			if (session.getAttribute("member") == null) {
+				return "redirect:/";
+			}
+			return "memberedit";
+		}
+	
+	  
+		@RequestMapping(value = "/memberedit", method = RequestMethod.POST)
+
+		public String membereditresult(HttpServletRequest request ,MemberDTO dto) throws Exception {
+			int result = service.memberedit(dto);
+			System.out.println(result);
+			
+			HttpSession session = request.getSession();
+			session.removeAttribute("member");
+			session.removeAttribute("isLogOn");
+			
+			return "redirect:/";
+		}
+	
 }
 
