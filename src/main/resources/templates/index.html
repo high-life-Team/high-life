@@ -143,6 +143,7 @@
 					<!-- box (1-1) -->
 					<li th:each="board, pStat : ${indexpopular}" class="list_box"><a
 						class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
+							<div class="shadow"></div>
 							<img class="list_box_img" src="images/boximg.png">
 							<p th:text="${board.title}" class="list_box_title"></p>
 							<p th:text="${board.content}" class="list_box_content"></p>
@@ -162,7 +163,7 @@
 
 
   <!-- !! 최근글 이동지점 -->
-  <div id="next_scroll3"></div>
+  <div id="next_scroll3"></div>bo
   
   
 <!-- box section -2 -->
@@ -176,9 +177,10 @@
 
 				<ul class="list_box_wrap">
 					<!-- box (1-1) -->
-					<li th:each="board, pStat : ${indexnew}" class="list_box"><a
+					<li th:each="board : ${indexnew}" class="list_box"><a
 						class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
-							<img class="list_box_img" src="images/boximg.png">
+							<div class="shadow"></div>
+							<img class="list_box_img" th:if="${board.imgPth != null}" th:src="@{${board.imgPth}}" src="images/boximg.png">
 							<p th:text="${board.title}" class="list_box_title"></p>
 							<p th:text="${board.content}" class="list_box_content"></p>
 					</a></li>
@@ -237,6 +239,7 @@
   <script type="text/javascript" src='/js/login_pwfind.js'></script>
   <script type="text/javascript" src='/js/writeform.js'></script>
   <script type="text/javascript" src='/js/member.js'></script>
+   <script type="text/javascript" src='/js/boxdot.js'></script>
     
 
 </body>
