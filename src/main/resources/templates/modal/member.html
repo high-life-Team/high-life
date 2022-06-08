@@ -25,77 +25,72 @@
 				
 	<form action="/memberinsert" class="signup_form" method="post">
 		<!-- 폼 시작 -->
-		<div class="top-intro">
-			<h2>
-				<!-- 상단 소개글 -->
-				가입을 시작합니다!
-			</h2>
-		</div>
-		<br>
 		<div class="box">
 			<div class="idname">
 				<!-- ID -->
-				<div>
-					<strong>아이디</strong>
-				</div>
-				<input type=text minlength="5" maxlength="20" size="40" id="uid" name="member_id"
-					required="required" placeholder="아이디 입력" pattern="[a-z0-9]{5,20}"
+					<div id="text_member_id">아이디</div>
+					<div id="nickname_line"> <br> 		
+				<input type=text minlength="5" maxlength="20" size="40" id="member_id_id" name="member_id_name"
+					required="required" pattern="[a-z0-9]{5,20}"
 					title="5~20자의 영문 소문자, 숫자만 가능합니다.">
+					<hr style="width: 500px;">
+					<font id="idcheck_font" size="2"></font>
+			</div>
 			</div>
 			<br>
 			
-			<div class="nickname">
-				<div>
-					<strong>닉네임</strong>
-				</div>
 				<!-- 닉네임 -->
-				<input type="text" placeholder="닉네임" name="nickname"
-					required="required" id="nickname" size="40" />
+			<div class="nickname">
+				<div id="text_nickname">닉네임</div>
+				<div id="nickname_line"> <br> 		
+				<input type="text" id="nickname_id" name="nickname_name"
+					required="required"  size="40" />
+					<hr style="width: 500px;">
+					<font id="nickname_font" size="2"></font>
+			</div>
 			</div>
 			
 			<br>
 			
 			<div class="email">
 				<!-- email -->
-				<div>
-					<strong>이메일</strong>
-				</div>
-				<input type="email" id="email" placeholder="이메일 입력" size="40" name="email"
+				<div id="text_email">이메일</div>
+				<input type="email" id="email_id" name="email_name" size="40" 
 					required="required">
+					<hr style="width: 500px;">
+					<font id="email_font" size="2"></font>
 			</div>
 			<br>
 			<div class="password">
 				<!--PW-->
-				<div>
-					<strong>비밀번호</strong>
-				</div>
-				<input type="password" id="pw" name="password"
-					placeholder="비밀번호 입력" pattern="[a-z0-9 ]{6,12}" required="required"
+					<div id="text_password">비밀번호</div>	
+				<input type="password" id="password_id" name="password_name"
+					pattern="[a-z0-9 ]{6,12}" required="required"
 					title="6~12자 영문 소문자와 숫자 조합을 사용하세요." value="" size="40"><br>
+			<hr style="width: 500px;">
 			</div>
 			<br>
 			<div class="passwordCheck">
 				<!--PW_CHECK 비밀번호 재확인 -->
-				<div>
-					<strong>비밀번호 재확인</strong>
-				</div>
-				<input type="password" name="repwd" id="repwd"
-					placeholder="비밀번호 재입력" required="required" size="40"> <br>
+				<div id="text_password">비밀번호 확인</div>	
+				<input type="password" name="repassword_name" id="repassword_id"
+					required="required" size="40"> <br>
+			<hr style="width: 500px;">
+			<font id="password_font" size="2"></font>
 			</div><br>
 			
 			<br>
 			
 			<!--가입버튼-->
 			<div id="btn_signup" class="btn_form">
-				<input type="submit" value="가입하기"	class="btn btn-dark">
+				<input type="submit" value="가입하기"	id="button_signup">
 				<!-- 버튼클릭 시 signup.js 내부 유효성검사 실행 -->
 			</div>
 		</div>
 	</form>
 	<!-- 폼 종료 -->					
 						
-						
-						
+		
 			</div>
 		</div>
 	</div>
