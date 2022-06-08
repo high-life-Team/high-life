@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Cafe24Ssurround';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*모달 폼 시작*/
 .detail_content{
 	/*position:relative;*/
@@ -259,8 +266,6 @@
   outline: none;
 }
 
-
-
 #login_pwfind_button {
   width: 500px;
   height: 50px;
@@ -280,4 +285,9 @@
 
 #loginfind{
 	margin-left: 110px;
+}
+
+#pwfindresult_font{
+	font-family: 'Cafe24Ssurround';
+	color: #4d5fa3;
 }

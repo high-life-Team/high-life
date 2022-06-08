@@ -44,7 +44,7 @@ $.ajax({
 	     if(result==""){
          $("#modal_idfindresult").show();
          $("#idfindresult_font").html('회원정보를 확인해 주세요.');
-         $("#idfindresult_font").css('color', 'black');
+         $("#idfindresult_font").css('color', '#4d5fa3');
          $("#idfindresult_font").css('font-size', '30px');
          }
          
@@ -53,8 +53,8 @@ $.ajax({
          $('#email_email').val("");
          
          $("#modal_idfindresult").show();
-         $("#idfindresult_font").html('아이디는 ' + result +  ' 입니다.');
-         $("#idfindresult_font").css('color', 'black');
+         $("#idfind_red").html(result );
+         $("#idfind_red").css('color', '#e9615e');
          $("#idfindresult_font").css('font-size', '30px');
          }
          
