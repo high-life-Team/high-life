@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.highlife.rainbow.domain.Board;
+import com.highlife.rainbow.domain.BoardReport;
 import com.highlife.rainbow.domain.Member;
 import com.highlife.rainbow.domain.Reply;
 import com.highlife.rainbow.member.MemberDTO;
@@ -63,8 +64,8 @@ public class BoardController {
 ////		model.addAttribute("boards", orderIterator);
 //		return "board";
 //	}
-
-	@GetMapping("list") // 최신 순
+	
+	@GetMapping("list") // 최신 순, 들어가면 바로 보이는 페이지랑 연동
 	public String oldList(Model model) {
 		Iterable<Board> asc = boardRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
 		model.addAttribute("boards", asc);
@@ -129,6 +130,7 @@ public class BoardController {
 
 	@GetMapping("/form")
 	public String form(Model model, @RequestParam(required = false) Long id,  MultipartFile file) {
+		
 		System.out.println("getMapping ==========================");
 		if (id == null) {
 			System.out.println("아이디가 없음");
@@ -219,6 +221,25 @@ public class BoardController {
 		model.addAttribute("replyList", board.getReplies());
 		model.addAttribute("reply", new Reply());
 
+		return "redirect:/board/detail?id=" + boardId;
+	}
+	
+	@PostMapping("/report")
+	public String report(BoardReport boardReport, @RequestParam Long boardId,
+			HttpServletRequest request, Model model, String report) {
+		HttpSession session = request.getSession();
+		String memberId = (String) session.getAttribute("pkId");
+		String email = (String) session.getAttribute("email");
+		Board board = boardRepository.findById(boardId).get();
+		model.addAttribute("board", board);
+		model.addAttribute("memberId", memberId);
+		model.addAttribute("ReportList", board.getReportes());
+		model.addAttribute("boardReport", new BoardReport());
+		System.out.println("====================");
+		System.out.println(boardId);
+		System.out.println(report);
+		System.out.println("====================");
+		boardService.saveReport(boardReport, board, board.getReport()+1, email, report);
 		return "redirect:/board/detail?id=" + boardId;
 	}
 }

@@ -10,8 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.highlife.rainbow.domain.Board;
+import com.highlife.rainbow.domain.BoardReport;
 import com.highlife.rainbow.domain.Member;
 import com.highlife.rainbow.domain.Reply;
+import com.highlife.rainbow.repository.BoardReportRepository;
 import com.highlife.rainbow.repository.BoardRepository;
 import com.highlife.rainbow.repository.MemberRepository;
 import com.highlife.rainbow.repository.ReplyRepository;
@@ -22,6 +24,9 @@ public class BoardService {
 	@Autowired
 	private BoardRepository boardRepository;
 
+	@Autowired
+	private BoardReportRepository boardReportRepository;
+	
 	@Autowired
 	private MemberRepository memberRepository;
 
@@ -65,5 +70,16 @@ public class BoardService {
 
 	public void deleteBoard(Long boardId) {
 		boardRepository.deleteById(boardId);
+	}
+	
+	public void saveReport(BoardReport report, Board board, int reportCnt, String email, String reason) {
+		Member member = memberRepository.findByEmail(email);
+
+		report.setMember(member);
+		report.setBoard(board);
+		report.setReportReason(reason);
+		board.setReport(reportCnt);
+//		boardRepository.updateBoardReport(board);
+		boardReportRepository.save(report);
 	}
 }
