@@ -82,4 +82,10 @@ public class Board {
 	        this.regDate = regDate;
 	        this.member = member;
 	    }
+	  
+		private int love;
+		private int sad;
+		private int cheerUp;
+		private int angry;
+		private int total; // 위 4가지 감정 종합 cnt
 }
