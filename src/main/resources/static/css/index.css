@@ -419,10 +419,7 @@
 }
 
 .main_gobtn3{
-    text-align: center;
-    position: absolute;
-    top: 700px;
-    left: 48%;
+    margin: 0px 48%;
     color: #11204d;
 }
 
