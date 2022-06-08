@@ -109,12 +109,15 @@
 			
 			<p>
 				<label for="content"></label>
-				<textarea minlength="1" class="form-control" id="content" rows="3"
-					th:field="*{content}"
-					th:classappend="${#fields.hasErrors('content')} ? 'is-invalid'" placeholder="내용을 작성해주세요"></textarea>
-				<div class="invalid-feedback"
-					th:if="${#fields.hasErrors('content')}" th:errors="*{content}">
-					내용 에러 메시지</div>
+				<div class="text_write_wrap">
+					<textarea minlength="1" class="form-control" id="content" rows="3"
+						th:field="*{content}"
+						th:classappend="${#fields.hasErrors('content')} ? 'is-invalid'" placeholder="내용을 작성해주세요"></textarea>
+					<div id="test_cnt_2">(0 / 500)</div>
+					<div class="invalid-feedback"
+						th:if="${#fields.hasErrors('content')}" th:errors="*{content}">
+						내용 에러 메시지</div>
+				</div>
 			</p>
 			<div class="btn_form" >
 				<button type="submit" class="btn btn-primary" id="write_button" >등록</button>			
