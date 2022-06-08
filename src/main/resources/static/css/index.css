@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;500;600;700&display=swap');
+
 @font-face {
   font-family: 'Cafe24Ssurround';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
+
+
 
 .index_body{
   background-color:#f8f6ee;
@@ -329,13 +334,25 @@
 }
 
 .box_section_title{
-  font-size:50px;
-  padding-top:50px;
+ font-size: 75px;
+  padding-top: 66px;
+  font-family: 'Lemonada', cursive;
+  background: linear-gradient(to right top, #001f70, #c4cbef);
+  color: transparent;
+ -webkit-background-clip: text;
 }
 
 .box_section_subtitle {
-  margin: 10px auto 50px auto;
-  font-size: 30px;
+ margin: 10px auto 50px auto;
+ Font-size: 30px;
+ font-family: 'Cafe24Ssurround';
+     background: linear-gradient(to right top, #1d3378, #232266);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.title_red{
+	color: #e9615e;
 }
 
 .index_box_wrap {
