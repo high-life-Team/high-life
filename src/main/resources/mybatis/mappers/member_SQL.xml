@@ -9,6 +9,20 @@
 	insert into member (email, member_id, nickname, password, reg_date, status) values (#{email},#{member_id},#{nickname},#{password},CURRENT_TIMESTAMP,0)
 </insert>
 
+<!-- 회원가입 아이디 체크 -->
+<select id="checkmember" resultType="int" parameterType="String">
+	select count(*) from member where member_id=#{member_id}
+</select>
+
+<!-- 회원가입 닉네임 체크 -->
+<select id="checkmember_nickname" resultType="int" parameterType="String">
+	select count(*) from member where nickname=#{nickname}
+</select>
+
+<!-- 회원가입 이메일 체크 -->
+<select id="checkmember_email" resultType="int"	parameterType="String">
+	select count(*) from member where email=#{email}
+</select>
 
 <!-- 로그인 -->
 <select id="login" resultType="memberdto" parameterType="memberdto">
