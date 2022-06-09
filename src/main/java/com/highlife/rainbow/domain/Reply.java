@@ -39,6 +39,7 @@ public class Reply {
 	@JoinColumn(name = "member_num", referencedColumnName = "member_num")
 	private Member member;
 	
+	@Column(length = 500)
 	private String content;
 	
 	

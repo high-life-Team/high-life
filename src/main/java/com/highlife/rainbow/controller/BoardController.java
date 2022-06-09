@@ -108,6 +108,7 @@ public class BoardController {
 //			System.out.println("board.getId : " + board.getMember().getId().toString().getClass().getName());
 			System.out.println("==================================");
 			boardService.updateHits(board.getId());
+			model.addAttribute("regDate", board.getRegDate());
 			model.addAttribute("board", board);
 			model.addAttribute("nickname", nickName);
 			model.addAttribute("reply", new Reply());
