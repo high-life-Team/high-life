@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="indexhtml">
+
+<head>
+<link rel="stylesheet" href="/css/memberedit.css" />
+
+</head>
+<title>먹구름 속 무지개</title>
+
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script type="text/javascript" src='/js/memberedit.js'></script>
+ 
+<body style="background-color: #91c09d;">
+
+<div id="content_area">
+
+<form action="/memberinsert" class="signup_form" method="post">
+		<!-- 폼 시작 -->
+		<div class="box">
+						
+			
+				<!-- 닉네임 -->
+			<div class="nickname">
+				<div id="text_nickname">닉네임</div>
+				<div id="nickname_line"> 		
+				<input type="text" id="nickname_id" name="nickname"
+					required="required"  size="40" />
+
+					<hr style="width: 500px;">
+				<input id="nicknamecheck1" th:value="${nickName}" hidden="hidden"></input>
+				
+				<font id="nicknamecheck_font" size="2" style="margin-left:25px;"></font>
+			</div>
+			</div>
+			
+			<br>
+			
+			<div class="email">
+				<!-- email -->
+				<div id="text_email">이메일</div>
+				<input type="email" id="email_id" name="email" size="40" 
+					required="required">
+					<hr style="width: 500px;">
+					<input id="emailcheck1" th:value="${email}" hidden="hidden"></input>
+					<font id="emailcheck_font" size="2" style="margin-left:25px;"></font>
+			</div>
+			<br>
+			<div class="password">
+				<!--PW-->
+					<div id="text_password">비밀번호</div>	
+				<input type="password" id="password_id" name="password"
+					pattern="[a-z0-9 ]{6,12}" required="required"
+					title="6~12자 영문 소문자와 숫자 조합을 사용하세요." value="" size="40"><br>
+			<hr style="width: 500px;">
+			</div>
+			<br>
+			<div class="passwordCheck">
+				<!--PW_CHECK 비밀번호 재확인 -->
+				<div id="text_password">비밀번호 확인</div>	
+				<input type="password" name="repassword_name" id="repassword_id"
+					required="required" size="40"> <br>
+			<hr style="width: 500px;">
+			<div class="memberedit_success_class" id="memberedit_success_id" style="font-size: 20px; margin-left:25px; color: green" hidden="hidden">
+			비밀번호가 일치합니다.</div>
+									
+			<div class="memberedit_fail_class" id="memberedit_fail_id" style="font-size: 20px; margin-left:25px; color: red" hidden="hidden">비밀번호가
+			일치하지 않습니다. 다시 확인해주세요.</div>
+			</div><br>
+			
+			<br>
+			
+			<!--가입버튼-->
+			<div id="btn_signup" class="btn_form">
+				<input type="submit" value="회원 정보 수정"	id="button_signup">
+				<!-- 버튼클릭 시 signup.js 내부 유효성검사 실행 -->
+			</div>
+		</div>
+	</form>
+
+
+
+
+</div>
+
+
+
+</body>
+</html>

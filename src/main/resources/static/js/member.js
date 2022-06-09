@@ -197,8 +197,8 @@ if(idcheck==2){
 
 //<!-- 비밀번호 중복체크 -->
 $(function(){
-	$("#pw_success").hide();
-	$("#pw_fail").hide();
+	$("#pw_success_id").hide();
+	$("#pw_fail_id").hide();
 	$("input").keyup(function(){
 		var pw_text=$("#password_id").val();
 		var pw_check_text=$("#repassword_id").val();

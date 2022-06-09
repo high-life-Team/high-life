@@ -39,4 +39,8 @@
 select password from member where member_id = #{member_id} and email = #{email} and nickname = #{nickname} and status=0
 </select>
 
+<update id="memberedit" parameterType="memberdto">
+	update member set nickname=#{nickname}, password=#{password}, where member_id=#{member_id}
+</update>
+
 </mapper>
