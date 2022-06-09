@@ -20,7 +20,7 @@
         <a class="header_join" th:if="${session.isLogOn == null}" id="front_member_modal">회원가입</a>
         <a class="header_logout" th:if="${session.isLogOn != null}" th:href="@{/logout}">로그아웃</a>
         <a class="header_join" th:if="${session.isLogOn != null}" th:href="@{/mypage}">마이페이지</a>
-        <a class="header_write" th:if="${session.isLogOn != null}" th:href="@{/board/form}">글쓰기</a>
+        <a class="header_write" th:if="${session.isLogOn != null}" th:href="@{/board/list}">게시판</a>
         
         <!--- 로그인 유무에 따라 문구 변경
         <div class="header_login">마이페이지</div>

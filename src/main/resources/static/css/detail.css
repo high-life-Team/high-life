@@ -293,6 +293,29 @@
     right: 2%;
     color: #9f9d9d;
 }
+.delete_btn{
+    border: 1px solid black;
+    background-color: white;
+    width: 5%;
+    height: 4%;
+    position: absolute;
+    top: 2%;
+    right: 10%;
+    color: #9f9d9d;
+    color:blue;
+}
+.edit_btn{
+    border: 1px solid black;
+    background-color: white;
+    width: 5%;
+    height: 4%;
+    position: absolute;
+    top: 2%;
+    right: 18%;
+    color: #9f9d9d;
+    color:blue;
+}
+
 
 .content_report:hover{
 	color: #1f439e;

@@ -51,7 +51,7 @@
 					<li th:each="board  : ${boards}" class="list_box"><a
 						class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
 							<div class="shadow"></div>
-							<img class="list_box_img"  th:if="${board.imgPth != null}" th:src="@{${board.imgPth}}" src="/images/boximg.png">
+							<img class="list_box_img"  th:if="${board.imgPth != null}" th:src="@{${board.imgPth}}">
 							<p th:text="${board.title}" class="list_box_title"></p>
 							<p th:text="${board.content}" class="list_box_content"></p>
 					</a></li>
