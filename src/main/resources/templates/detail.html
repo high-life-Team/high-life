@@ -107,7 +107,7 @@
                         <!-- 본문 제목 -->
                         <div  th:text="${board.title}" id="title" class="content_write_title">본문 제목</div>
                         <!-- 본문 글쓴이 -->
-                        <div th:text="${nickname}" id="member_id" class="content_writer">글쓴이</div>
+                        <div th:text="${board.member?.nickname}" id="member_id" class="content_writer">글쓴이</div>
                         <!-- 본문 작성 시간 -->
                         <div class="content_write_time" th:text="${#temporals.format(regDate, 'yyyy-MM-dd HH:mm')}">본문 작성 시간</div>
                     </div>
