@@ -1,0 +1,16 @@
+#board_btn{
+  width: 180px;
+  height: 40px;
+
+  object-fit: contain;
+  border-radius: 25px;
+  background-color: #2f4fc6;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+};
