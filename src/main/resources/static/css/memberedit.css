@@ -1,3 +1,12 @@
+#backimg{
+  background-image: url("/images/main_background_turn.png");
+  background-size: cover;
+  width: 100%;
+  height: 1200px;
+  position: relative;
+  z-index: 100;
+}
+
 #content_area {
   width: 550px;
   height: 800px;

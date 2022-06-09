@@ -66,9 +66,9 @@ $("input[name=member_id]").keyup(function(){
 	console.log(id);
 	
 	if(id.length < 5){
-		$("#idcheck_font").html('5자 이상의 아이디를 입력해주세요. (영문, 숫자)');
-		$("#idcheck_font").css('color', 'gray');
-		$("#idcheck_font").css('font-size', '20px');
+		$("#member_idcheck_font").html('5자 이상의 아이디를 입력해주세요. (영문, 숫자)');
+		$("#member_idcheck_font").css('color', 'gray');
+		$("#member_idcheck_font").css('font-size', '20px');
 	}
 	else{
 	$.ajax({
@@ -78,14 +78,14 @@ $("input[name=member_id]").keyup(function(){
 		dataType : 'json',
 		success : function(result){
 			if(result == 0){
-				$("#idcheck_font").html('사용할 수 있는 아이디 입니다.');
-				$("#idcheck_font").css('color', 'green');
-				$("#idcheck_font").css('font-size', '20px');
+				$("#member_idcheck_font").html('사용할 수 있는 아이디 입니다.');
+				$("#member_idcheck_font").css('color', 'green');
+				$("#member_idcheck_font").css('font-size', '20px');
 				idcheck = 1;
 			} else{
-				$("#idcheck_font").html('사용할 수 없는 아이디 입니다.');
-				$("#idcheck_font").css('color', 'red');
-				$("#idcheck_font").css('font-size', '20px');
+				$("#member_idcheck_font").html('사용할 수 없는 아이디 입니다.');
+				$("#member_idcheck_font").css('color', 'red');
+				$("#member_idcheck_font").css('font-size', '20px');
 				idcheck = 2;
 			}
 		},
@@ -101,9 +101,9 @@ $("input[name=member_id]").keyup(function(){
 $("input[name=nickname]").keyup(function(){
 	let id = $('#nickname_id').val();
 	if(id.length <2){
-		$("#nickname_font").html('2자 이상의 닉네임을 입력해주세요. (한글, 영문, 숫자)');
-		$("#nickname_font").css('color', 'gray');
-		$("#nickname_font").css('font-size', '20px');
+		$("#member_nickname_font").html('2자 이상의 닉네임을 입력해주세요. (한글, 영문, 숫자)');
+		$("#member_nickname_font").css('color', 'gray');
+		$("#member_nickname_font").css('font-size', '20px');
 	}
 	else{
 	$.ajax({
@@ -113,14 +113,14 @@ $("input[name=nickname]").keyup(function(){
 		dataType : 'json',
 		success : function(result){
 			if(result == 0){
-				$("#nickname_font").html('사용할 수 있는 닉네임 입니다.');
-				$("#nickname_font").css('color', 'green');
-				$("#nickname_font").css('font-size', '20px');
+				$("#member_nickname_font").html('사용할 수 있는 닉네임 입니다.');
+				$("#member_nickname_font").css('color', 'green');
+				$("#member_nickname_font").css('font-size', '20px');
 				nicknamecheck = 1;
 			} else{
-				$("#nickname_font").html('사용할 수 없는 닉네임 입니다.');
-				$("#nickname_font").css('color', 'red');
-				$("#nickname_font").css('font-size', '20px');
+				$("#member_nickname_font").html('사용할 수 없는 닉네임 입니다.');
+				$("#member_nickname_font").css('color', 'red');
+				$("#member_nickname_font").css('font-size', '20px');
 				nicknamecheck = 2;
 			}
 		},
@@ -139,9 +139,9 @@ $("input[name=email]").keyup(function(){
 	let id = $('#email_id').val();
 	let emailYN = isEmail(id);
 	if(id.length<2){
-		$("#email_font").html('이메일을 입력해주세요.');
-		$("#email_font").css('color', 'gray');
-		$("#email_font").css('font-size', '20px');
+		$("#member_email_font").html('이메일을 입력해주세요.');
+		$("#member_email_font").css('color', 'gray');
+		$("#member_email_font").css('font-size', '20px');
 		
 	}
 	
@@ -153,15 +153,15 @@ $("input[name=email]").keyup(function(){
 		dataType : 'json',
 		success : function(result){
 			if(result == 0 && emailYN == true){
-				$("#email_font").html('사용할 수 있는 이메일 입니다.');
-				$("#email_font").css('color', 'green');
-				$("#email_font").css('font-size', '20px');
+				$("#member_email_font").html('사용할 수 있는 이메일 입니다.');
+				$("#member_email_font").css('color', 'green');
+				$("#member_email_font").css('font-size', '20px');
 				emailcheck = 1;
 				
 			} else{
-				$("#email_font").html('사용할 수 없는 이메일 입니다.');
-				$("#email_font").css('color', 'red');
-				$("#email_font").css('font-size', '20px');
+				$("#member_email_font").html('사용할 수 없는 이메일 입니다.');
+				$("#member_email_font").css('color', 'red');
+				$("#member_email_font").css('font-size', '20px');
 				emailcheck = 2;
 			}
 		},
