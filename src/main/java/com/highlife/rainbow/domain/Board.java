@@ -47,6 +47,7 @@ public class Board {
 	private String title;
 	
     @NotBlank(message = "내용을 입력해 주세요!")
+    @Column(length = 500)
 	private String content;
 	
     @Column(name = "reg_date", updatable = false) // update된 시점에 기존에 저장되어 있던 데이터를 유지
