@@ -75,9 +75,24 @@
 
 
                 </div>
-                <!-- 글쓰기 신고 -->
-                <input type="hidden" th:value="${member_id}" id="member_id">
-                <div class="report_btn" >
+                <!-- 글 수정 -->
+                 <form action="#" th:action="@{/board/detail}" th:object="${board}" method="post">
+					<input type="hidden" th:field="*{id}">
+               		 <a type="button" class="edit_btn"
+						th:href="@{/board/form(id=${board.id})}"
+						th:if="${memberId != getId}">수정</a>
+                </form>
+                <!-- 글 수정 -->
+                 <form action="#" th:action="@{/board/detail}" th:object="${board}" method="post">
+					<input type="hidden" th:field="*{id}">
+               		 <a type="button" class="delete_btn"
+						th:onclick="|deleteBoard(*{id})|" th:if="${memberId != getId}">삭제</a>
+                </form>
+              
+<!--             	글쓰기 신고 -->
+            	<input type="hidden" th:value="${member_id}" id="member_id">
+            	
+            	<div class="report_btn" >
                	   <button class="reportpostbtn content_report" id="1post${postnum}"><i class="fa-solid fa-bell fa-2x"></i></button>
             	</div>
             </div>

@@ -30,18 +30,7 @@
      <!-- import header -->
       <header th:replace="layout/fragment :: fr_header"></header>
       
-      
-
-    <button type="button" onclick="location.href='board/list';">게시판</button>
-    <button type="button" onclick="location.href='board/detail';">게시판 상세페이지</button>
-    <button type="button" onclick="location.href='board/form';">글작성 이동</button>
-    <button type="button" onclick="location.href='/';">홈 이동</button>
-    <button type="button" onclick="location.href='/logout';">로그아웃</button>
-
-
-
-
-
+ 
 
 
 	<h1 class="main_title">먹구름 속 무지개	</h1>
@@ -143,17 +132,19 @@
 					<!-- box (1-1) -->
 					<li th:each="board, pStat : ${indexpopular}" class="list_box"><a
 						class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
-							<div class="shadow"></div>
-							<img class="list_box_img" src="images/boximg.png">
+							<img class="list_box_img" th:if="${board.imgPth != null}" th:src="@{${board.imgPth}}">
 							<p th:text="${board.title}" class="list_box_title"></p>
 							<p th:text="${board.content}" class="list_box_content"></p>
+							<div class="shadow"></div>
 					</a></li>
 				</ul>
 			</div>
 						<div class="text-right">
-				<a type="button" class="btn btn-primary" th:href="@{/board/form}">글쓰기</a>
+				<a type="button" class="btn btn-primary" th:href="@{/board/list}">글쓰기</a>
 			</div>
 		</div>
+		
+		
 		
 		
    	<!-- 아래방향 화살표→ 최근글로 이동  -->
@@ -180,14 +171,11 @@
 					<li th:each="board : ${indexnew}" class="list_box"><a
 						class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
 							<div class="shadow"></div>
-							<img class="list_box_img" th:if="${board.imgPth != null}" th:src="@{${board.imgPth}}" src="images/boximg.png">
+							<img class="list_box_img" th:if="${board.imgPth != null}" th:src="@{${board.imgPth}}">
 							<p th:text="${board.title}" class="list_box_title"></p>
 							<p th:text="${board.content}" class="list_box_content"></p>
 					</a></li>
 				</ul>
-			</div>
-						<div class="text-right">
-				<a type="button" class="btn btn-primary" th:href="@{/board/form}">글쓰기</a>
 			</div>
 		</div>
 		
