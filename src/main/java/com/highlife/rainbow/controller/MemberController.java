@@ -115,5 +115,62 @@ public class MemberController {
 		return pwfindresult;
 	}
 	
+	@ResponseBody
+	@RequestMapping(value = "/membercheck", method = RequestMethod.POST)
+	public int selectMember(String member_id) throws Exception {
+		int result = service.checkmember(member_id);
+		System.out.println(result);
+		System.out.println(member_id);
+		// result = 0 사용o
+
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/membercheck_nickname", method = RequestMethod.POST)
+	public int selectMember_nickname(String nickname) throws Exception {
+		int result = service.checkmember_nickname(nickname);
+		System.out.println(result);
+		System.out.println(nickname);
+		// result = 0 사용o
+
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/membercheck_email", method = RequestMethod.POST)
+	public int selectMember_email(String email) throws Exception {
+		int result = service.checkmember_email(email);
+		System.out.println(result);
+		System.out.println(email);
+		// result = 0 사용o
+
+		return result;
+	}
+	
+	 @RequestMapping(value="/memberedit", method = RequestMethod.GET)
+	  
+		public String memberedit(HttpServletRequest request, HttpServletResponse response) throws Exception {
+			HttpSession session = request.getSession();
+			if (session.getAttribute("member") == null) {
+				return "redirect:/";
+			}
+			return "memberedit";
+		}
+	
+	  
+		@RequestMapping(value = "/memberedit", method = RequestMethod.POST)
+
+		public String membereditresult(HttpServletRequest request ,MemberDTO dto) throws Exception {
+			int result = service.memberedit(dto);
+			System.out.println(result);
+			
+			HttpSession session = request.getSession();
+			session.removeAttribute("member");
+			session.removeAttribute("isLogOn");
+			
+			return "redirect:/";
+		}
+	
 }
 

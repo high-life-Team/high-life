@@ -37,4 +37,17 @@ $("#modal_writeform").hide();
                // canvas.height = img.height;
            };
            reader.readAsDataURL(e.target.files[0]);
-       }	
+       }
+       
+
+ //글쓰기 글자수 제한
+   $(document).ready(function() {
+        $('#content').on('keyup', function() {
+            $('#test_cnt_2').html("("+$(this).val().length+" / 500)");
+ 
+            if($(this).val().length > 500) {
+                $(this).val($(this).val().substring(0, 500));
+                $('#test_cnt_2').html("(500 / 500)");
+            }
+        });
+    });

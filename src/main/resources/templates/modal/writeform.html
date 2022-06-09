@@ -6,32 +6,35 @@
 
 
 <body>
+
+<div th:if="${session.isLogOn != null}">
+
 <header th:fragment="writeform_header">
 
   <!-- writeform 모달 버튼 -->
-		<div class="detail_content" th:if="${session.isLogOn == null}">
+		<div class="detail_content" th:if="${session.isLogOn != null}">
 			<div class="writeform_btn">
 				<button class="writeformpostbtn">writeform</button>
 			</div>
 		</div>
 		
 		<!-- writeform 모달창 -->
-		<div id="modal_writeform">
-			<div class="modal_layer">
-				<div class="modal_content">
-					<div class="modal_content_title">
-					<div class="modal_writeform_btn">
-					<div style="width: 300px;">
-						<img src="images/Logo_Color.png" id="logo_rainbow">
-					</div>
-					
-					<div style="width: 300px;">
-						<button type="button" id="modal_writeform_close_btn">x</button>
-					</div>
-					</div>
-					
-					
-					
+			<div id="modal_writeform">
+				<div class="modal_layer">
+					<div class="modal_content">
+						<div class="modal_content_title">
+							<div class="modal_writeform_btn">
+								<div style="width: 300px;">
+									<img src="images/Logo_Color.png" id="logo_rainbow">
+								</div>
+
+								<div style="width: 300px;">
+									<button type="button" id="modal_writeform_close_btn">x</button>
+								</div>
+							</div>
+
+
+							<!-- 	
 			<div class="post_form_container">
             <form th:object="${board}" th:action="@{/board/form}" method="post" enctype="multipart/form-data" class="post_form">
                 
@@ -59,7 +62,7 @@
                     <textarea name="content" id="text_field" cols="50" rows="5" placeholder="내용을 작성해주세요"></textarea>
 
                 </p>
-               <!--  <input class="submit_btn" type="submit" value="저장"> -->
+                <input class="submit_btn" type="submit" value="저장">
                 
                 <div id="login_btn" class="btn_form">
 					<input class="submit_btn" type="submit" value="저장" id="write_button" name='login_btn'>
@@ -70,28 +73,74 @@
        
        
         </div>
-					
-					
-					
-					
+        -->
+			<div class="post_form_container">
+							<form th:object="${board}" th:action="@{/}"
+								method="post" enctype="multipart/form-data" class="post_form">
+								<input type="hidden" th:field="*{id}">
+			
+			<div class="title">
+				<input type="text" minlength="1" placeholder="제목을 입력해주세요"
+					class="form-control"
+					th:classappend="${#fields.hasErrors('title')} ? 'is-invalid'"
+					id="title" th:field="*{title}">
+				<div class="invalid-feedback" th:if="${#fields.hasErrors('title')}"
+					th:errors="*{title}">제목 에러 메시지</div>
+			</div>
+			
+			<div class="preview">
+			 <div class="upload">
+			 <div class="post_btn">
+			 <div class="plus_icon">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <p>이미지 미리보기</p>
+                            <canvas id="image_canvas"></canvas>
+			 
+			</div>
+			</div>
+			</div>
+			
+			 <p>
+				<label th:for="file"></label> <input type="file" name="file"
+					id="id_photo" multiple="multiple">
+			</p>
+			
+			<p>
+				<label for="content"></label>
+				<div class="text_write_wrap">
+					<textarea minlength="1" class="form-control" id="content" rows="3"
+						th:field="*{content}"
+						th:classappend="${#fields.hasErrors('content')} ? 'is-invalid'" placeholder="내용을 작성해주세요"></textarea>
+					<div id="test_cnt_2">(0 / 500)</div>
+					<div class="invalid-feedback"
+						th:if="${#fields.hasErrors('content')}" th:errors="*{content}">
+						내용 에러 메시지</div>
+				</div>
+			</p>
+			<div class="btn_form" >
+				<button type="submit" class="btn btn-primary" id="write_button" >등록</button>			
+			</div>
+			
+		</form>
+
+	</div>
+						</div>
+
 					</div>
-					
-					
-
-
-
-
-
 				</div>
 			</div>
-		</div>
-		<!-- writeform 모달버튼 종료 -->
-
-		
+			<!-- writeform 모달버튼 종료 -->
 
 
- 
-</header>
+
+
+
+
+		</header>
+
+</div>
 
 </body>
 </html>

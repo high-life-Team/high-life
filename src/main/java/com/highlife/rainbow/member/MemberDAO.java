@@ -11,6 +11,12 @@ public interface MemberDAO {
 	//회원가입
 	public int memberinsert(MemberDTO dto);
 	
+	public int checkmember(String member_id);
+
+	public int checkmember_nickname(String nickname);
+	
+	public int checkmember_email(String email);
+	
 	//로그인
 	public MemberDTO login(MemberDTO memberdto);
 
@@ -19,5 +25,10 @@ public interface MemberDAO {
 	
 	//PW 찾기
 	public String pwfind(MemberDTO dto);
+	
+	//회원 정보 수정
+	public int memberedit(MemberDTO dto);
+	
+	
 
 }

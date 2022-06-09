@@ -45,7 +45,7 @@
     border: 1px solid rgb(68, 68, 11);
     border-radius: 9px;
     width : 70px;
-    height: 25px;
+    height: 20px;
     top : 12px;
     text-align: center;
     padding-top: 5px;
@@ -57,7 +57,7 @@
 }
 
 .loginpostbtn, .header_logout{
-    right: 180px;
+    right: 165px;
 }
 
 .header_join{
@@ -92,10 +92,9 @@
 }
 
 #logo_rainbow_main{
-	
-	width: 200px;
-	height: 100px;
-	margin: 70px 70px 70px 70px;
+	width: 100px;
+    height: 50px;
+    margin: 20px 70px 0px 70px;
 }
 
 

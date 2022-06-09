@@ -67,7 +67,7 @@
   border: none;
   outline: none;
   border-radius: 50px;
-  margin-left: 220px;
+  margin-left: 250px;
   
 }
 /*모달 폼 종료*/
@@ -101,16 +101,16 @@
 	position: absolute;
     border: 1px solid rgb(68, 68, 11);
     border-radius: 9px;
-    width : 70px;
+    width: 70px;
     height: 25px;
-    top : 12px;
+    top: 12px;
     text-align: center;
     padding-top: 5px;
     cursor: pointer;
     font-size: 12px;
     color: #fff;
     background-color: #7a78f0;
-    right: 310px;
+    right: 370px;
 }
 
 /* 글작성 폼 */
@@ -129,7 +129,7 @@
     max-width: 550px;
     margin: 0 auto;
     
-    height: 600px;
+    height: 650px;
 }
 
 
@@ -139,12 +139,12 @@
     border: 1px solid #e6e6e6;
     margin: 0 0 10px;
     
-    height: 550px;
+    height: 600px;
 }
 
 .post_form .title{
     margin: 0 10px 40px;
-    height: 40px;
+    height: 30px;
   
 }
 
@@ -228,6 +228,7 @@
     color: #262626;
     font-size: 14px;
     padding: 7px 8px 7px;
+    resize: none;
 }
 
 
@@ -251,19 +252,29 @@
 
 
 #write_button {
-  width: 500px;
-  height: 40px;
-  margin: 10px 5px 25px 0;
-  object-fit: contain;
-  border-radius: 25px;
-  background-color: #2f4fc6;
-  font-size: 24px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  color: #fff;
-  border: none;
-  outline: none;
-  cursor: pointer;
+    width: 500px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 25px;
+    background-color: #2f4fc6;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 6px;
 }
 
+
+.text_write_wrap{
+	position:relative;
+}
+#test_cnt_2{
+	position: absolute;
+    right: 5px;
+    margin-bottom: 3px;
+}

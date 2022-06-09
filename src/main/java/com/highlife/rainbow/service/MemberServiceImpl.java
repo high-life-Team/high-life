@@ -19,6 +19,20 @@ public class MemberServiceImpl implements MemberService {
 	public int memberinsert(MemberDTO dto) {
 		return dao.memberinsert(dto);
 	}
+	
+	@Override
+	public int checkmember(String member_id) {
+		return dao.checkmember(member_id);
+	}
+	@Override
+	public int checkmember_nickname(String nickname) {
+		return dao.checkmember_nickname(nickname);
+	}
+	
+	@Override
+	public int checkmember_email(String email) {
+		return dao.checkmember_email(email);
+	}
 
 	
 	@Override
@@ -35,7 +49,10 @@ public class MemberServiceImpl implements MemberService {
 	public String pwfind(MemberDTO dto) {
 		return dao.pwfind(dto);
 	}
-	 
+	
+	public int memberedit(MemberDTO dto) {
+		return dao.memberedit(dto);
+	}
 
 
 }

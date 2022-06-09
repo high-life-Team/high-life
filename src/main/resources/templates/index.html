@@ -36,7 +36,6 @@
     <button type="button" onclick="location.href='board/detail';">게시판 상세페이지</button>
     <button type="button" onclick="location.href='board/form';">글작성 이동</button>
     <button type="button" onclick="location.href='/';">홈 이동</button>
-    <button type="button" onclick="location.href='member';">회원가입 이동</button>
     <button type="button" onclick="location.href='/logout';">로그아웃</button>
 
 
@@ -46,7 +45,8 @@
 
 
 	<h1 class="main_title">먹구름 속 무지개	</h1>
-	<h1 class="main_logo"><img src="/images/title_logo_white.png"></h1>
+<!-- 	로고 삭제 -->
+<!-- 	<h1 class="main_logo"><img src="/images/title_logo_white.png"></h1> -->
     <h3 class="sub_title"> 
     당신의 고민을 함께 나누는 이 곳 </h3>
 
@@ -133,7 +133,7 @@
  
  <div class="index_popular_boxsection">
 <h3 class="box_section_title"> TODAY TOP </h3>
-  <P class="box_section_subtitle"> 오늘의 인기글을 만나보세요 </P>
+  <P class="box_section_subtitle"> 오늘의 <span class="title_red">인기글</span>을 만나보세요 </P>
   </div>
 		<div class="list_box_section_wrap">
 	<!-- box section - 1 -->
@@ -143,6 +143,7 @@
 					<!-- box (1-1) -->
 					<li th:each="board, pStat : ${indexpopular}" class="list_box"><a
 						class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
+							<div class="shadow"></div>
 							<img class="list_box_img" src="images/boximg.png">
 							<p th:text="${board.title}" class="list_box_title"></p>
 							<p th:text="${board.content}" class="list_box_content"></p>
@@ -168,7 +169,7 @@
 <!-- box section -2 -->
  <div class="index_new_boxsection">
   <h3 class="box_section_title"> LATEST POST </h3>
-  <P class="box_section_subtitle"> 가장 최근에 올라온 게시물 </P>
+  <P class="box_section_subtitle"> <span class="title_red">가장 최근</span>에 올라온 게시물 </P>
 </div>
 		<div class="list_box_section_wrap">
 	<!-- box section - 1 -->
@@ -176,9 +177,10 @@
 
 				<ul class="list_box_wrap">
 					<!-- box (1-1) -->
-					<li th:each="board, pStat : ${indexnew}" class="list_box"><a
+					<li th:each="board : ${indexnew}" class="list_box"><a
 						class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
-							<img class="list_box_img" src="images/boximg.png">
+							<div class="shadow"></div>
+							<img class="list_box_img" th:if="${board.imgPth != null}" th:src="@{${board.imgPth}}" src="images/boximg.png">
 							<p th:text="${board.title}" class="list_box_title"></p>
 							<p th:text="${board.content}" class="list_box_content"></p>
 					</a></li>
@@ -190,7 +192,42 @@
 		</div>
 		
 
+				<!-- 
+				 
+				<form th:object="${board}" th:action="@{/index}"
+								method="post" enctype="multipart/form-data">
+								<input type="hidden" th:field="*{id}">
+								<div class="form-group">
+									제목<input type="text" minlength="1"
+										class="form-control"
+										th:classappend="${#fields.hasErrors('title')} ? 'is-invalid'"
+										id="title" th:field="*{title}">
+									<div class="invalid-feedback"
+										th:if="${#fields.hasErrors('title')}" th:errors="*{title}">제목
+										에러 메시지</div>
+								</div>
+								<div class="form-group">
+									내용<textarea minlength="1" class="form-control" id="content"
+										rows="3" th:field="*{content}"
+										th:classappend="${#fields.hasErrors('content')} ? 'is-invalid'"></textarea>
+									<div class="invalid-feedback"
+										th:if="${#fields.hasErrors('content')}" th:errors="*{content}">
+										내용 에러 메시지</div>
+								</div>
+								<div class="form-group">
+									<label th:for="file">사진 추가</label> <input type="file"
+										name="file" multiple="multiple">
+								</div>
+								<div class="text-right">
+							<button type="submit">등록</button>
+						</div>
+					</form>
+					
+					-->
+							
 
+	
+	
 	
   
   	 <!-- import footer -->
@@ -202,6 +239,7 @@
   <script type="text/javascript" src='/js/login_pwfind.js'></script>
   <script type="text/javascript" src='/js/writeform.js'></script>
   <script type="text/javascript" src='/js/member.js'></script>
+   <script type="text/javascript" src='/js/boxdot.js'></script>
     
 
 </body>

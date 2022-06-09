@@ -45,7 +45,7 @@ $.ajax({
 	     if(result==""){
          $("#modal_pwfindresult").show();
          $("#pwfindresult_font").html('회원정보를 확인해 주세요.');
-         $("#pwfindresult_font").css('color', 'black');
+         $("#pwfindresult_font").css('color', '#4d5fa3');
          $("#pwfindresult_font").css('font-size', '30px');
          }
          
@@ -54,8 +54,8 @@ $.ajax({
          $('#email_email_pwfind').val("");
          
          $("#modal_pwfindresult").show();
-         $("#pwfindresult_font").html('비밀번호는 ' + result +  ' 입니다.');
-         $("#pwfindresult_font").css('color', 'black');
+         $("#pwfind_red").html(result );
+         $("#pwfind_red").css('color', '#e9615e');
          $("#pwfindresult_font").css('font-size', '30px');
          }
          
