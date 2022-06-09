@@ -162,7 +162,7 @@ public class MemberController {
 			if (session.getAttribute("member") == null) {
 				return "redirect:/";
 			}
-			return "memberedit";
+			return "redirect:/";
 		}
 	
 	  
