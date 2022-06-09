@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -150,8 +151,14 @@ public class MemberController {
 	
 	 @RequestMapping(value="/memberedit", method = RequestMethod.GET)
 	  
-		public String memberedit(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		public String memberedit(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 			HttpSession session = request.getSession();
+			
+			String nickname = (String) session.getAttribute("nickName");
+			String email = (String) session.getAttribute("email");
+			model.addAttribute("nickName", nickname);
+			model.addAttribute("email", email);
+			
 			if (session.getAttribute("member") == null) {
 				return "redirect:/";
 			}
@@ -168,6 +175,7 @@ public class MemberController {
 			HttpSession session = request.getSession();
 			session.removeAttribute("member");
 			session.removeAttribute("isLogOn");
+			
 			
 			return "redirect:/";
 		}
