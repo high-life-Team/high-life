@@ -13,43 +13,44 @@
 
 
 
-		<div class="profilepart_wrap">
+		
 			<div class="profileimg_wrap">
 				<div class="profile_img">
 					<img src="https://bit.ly/3aF4Kt7">
 				</div>
-			</div>
 
-			<div class="profiledetail_wrap">
-				<div class="profiledetail_wrap_top">
-					<div class="profiledetail_wrap_user_name" th:text=${nickName}>NickName</div>
-				</div>
-				<div class="profiledetail_wrap_middle">
+			
+				<div class="container">
+				<div class="item">
+				<div id="profiledetail_wrap_middle">
+				<div class="profiledetail_wrap_user_name" th:text=${nickName}>NickName</div><br><br>
 					<a href="/memberedit" class="memberedit">정보수정</a>
 				</div>
+				</div>
+				</div>
 			</div>
+			
 
-	<div class="list_box_section">
+	
 <!-- 	===================================
 		<div th:text="${memberId}"></div>
 		<div th:text="${boards.member?.id}"></div>
 <li th:each="board, count : ${boards}" class="list_box">
 <p th:text="${board.member?.id}"></p></li>
 		============================== -->
-		<ul class="list_box_wrap">
-			<li th:each="board : ${boards}" class="list_box"
+			
+			<div class="container">
+			
+			<div th:each="board : ${boards}" class="item"
 				th:if="${board.member?.nickname == nickName}">
 				<a
 				class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
 					<img class="list_box_img" src="/images/boximg.png">
 					<p th:text="${board.title}" class="list_box_title"></p>
-					<p th:text="${board.content}" class="list_box_content"></p>
-			</a></li>
-		</ul>
-	</div>
-
-	</div>
-	</div>
+					<!-- <p th:text="${board.content}" class="list_box_content"></p> -->
+			</a></div>
+			</div>
+			</div>
 
 	<!-- <li class="my_write_lists" th:each="board : ${boards}"><a
 			class="list_box_link" th:href="@{/board/detail(id=${board.id})}">
