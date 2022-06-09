@@ -5,13 +5,17 @@
 <title>Board Test</title>
 <!-- CSS -->
 <link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/board.css" />
   <script type="text/javascript" src='/js/form.js'></script>
   <script type="text/javascript" src='/js/boxdot.js'></script>
 </head>
 <body class="boardlist_body">
-	<h1>게시판 홈입니다.</h1>
+
+<br> <br> <br> <br>
+
+	<h1 style="text-align: center; padding:50px 30px 30px 30px;">고민 게시판</h1>
 	<div class="container">
-		<h2>게시판</h2>
+		
 		<!-- <div>총 건수 : <sapn th:text="${boards.totalElements}"></sapn></div> -->
 
 		<form class="form-inline d-flex justify-content-end" method="GET"
@@ -21,24 +25,25 @@
 					type="text" class="form-control" id="searchText" name="searchText"
 					th:value="${param.searchText}">
 			</div>
-			<button type="submit" class="btn btn-light mb-2">검색</button>
+			<button type="submit" id="board_btn">검색</button>
 		</form>
 
 		<form class="form-inline d-flex justify-content-end" method="GET"
 			th:action="@{/board/old}">
-			<button type="submit" class="btn btn-light mb-2">오래된 순</button>
+			
+			<button type="submit" class="btn btn-light mb-2" id="board_btn">오래된 순 정렬</button>
 		</form>
 		<form class="form-inline d-flex justify-content-end" method="GET"
 			th:action="@{/board/list}">
-			<button type="submit" class="btn btn-light mb-2">최신 순</button>
+			<button type="submit" class="btn btn-light mb-2" id="board_btn">최신 순 정렬</button>
 		</form>
 		<form class="form-inline d-flex justify-content-end" method="GET"
 			th:action="@{/board/hits}">
-			<button type="submit" class="btn btn-light mb-2">조회 순</button>
+			<button type="submit" class="btn btn-light mb-2" id="board_btn">조회 순 정렬</button>
 		</form>
 		<form class="form-inline d-flex justify-content-end" method="GET"
 			th:action="@{/board/hot}">
-			<button type="submit" class="btn btn-light mb-2">인기 순</button>
+			<button type="submit" class="btn btn-light mb-2" id="board_btn">인기 순</button>
 		</form>
 		
 		<div class="list_box_section_wrap">
@@ -60,6 +65,7 @@
 						<div class="text-right">
 				<a type="button" class="btn btn-primary" th:href="@{/board/form}">글쓰기</a>
 			</div>
+		</div>
 		</div>
 
 </body>
