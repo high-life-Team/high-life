@@ -14,7 +14,7 @@
 
 
 .profileimg_wrap{
-    width: 40%;
+    width: 5%;
 
 }
 .profile_img{
@@ -50,9 +50,10 @@
     margin-top: 10px;
     justify-content: center;
     text-align : center;
+    margin-left : 10px;
 }
 
-.profiledetail_wrap_middle > a{
+#profiledetail_wrap_middle > a{
     height: 25px;
     display: flex;
     justify-content: center;
@@ -66,17 +67,18 @@
     vertical-align: text-bottom;
     text-decoration: none;
     box-sizing: border-box;
-    
+    margin-left:10px;
     
 }
 
-
+/*
 .profiledetail_wrap_middle{
     display: flex;
     height: 50px;
     margin : 0 auto;
     padding: 40px 60px ;
 }
+*/
 
 
 
@@ -126,8 +128,12 @@
     }
 }
 
-
-
-
+.container {
+	display: flex;
+	flex-wrap: wrap;
+}
+.item {
+	flex: 1 1 30%;
+}
 
 
