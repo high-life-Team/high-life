@@ -94,7 +94,7 @@
                         <!-- 본문 글쓴이 -->
                         <div th:text="${nickname}" id="member_id" class="content_writer">글쓴이</div>
                         <!-- 본문 작성 시간 -->
-                        <div class="content_write_time">본문 작성 시간</div>
+                        <div class="content_write_time" th:text="${regDate}">본문 작성 시간</div>
                     </div>
                     </form>
                     
@@ -122,7 +122,7 @@
                                 <div th:text="${r.member?.nickname}">댓글 작성자 </div>
                                 
                                 <!-- 댓글 작성 시간-->
-                                <div class="written_comment_time">댓글 작성 시간 </div>
+                                <div class="written_comment_time" th:text="${r.regDate}">댓글 작성 시간 </div>
                                 
    								<!-- 삭제 -->
                                 <button th:if="${memberId} == ${r.member?.id}" class="written_comment_delete"> <i class="fa-solid fa-xmark"></i> </button>
