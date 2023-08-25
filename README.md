@@ -1,5 +1,5 @@
 # high-life
-[[OJT-라이프1조 하이라이프] 프로젝트 최종 발표자료.pdf](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
+[[OJT-라이프1조 하이라이프]먹구름속무지개.pdf](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
 
 # 먹구름 속 무지개 :rainbow:
 
