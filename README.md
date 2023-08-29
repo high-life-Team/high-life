@@ -1,4 +1,3 @@
-###### PDF [보기](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
 # high-life
 
 # 먹구름 속 무지개 :rainbow: 
@@ -28,8 +27,7 @@
   
 ## 수행계획서 : 
 
-​	
-
+​###### PDF [보기](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
 
 ### Table of contents 
 
