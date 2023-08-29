@@ -25,6 +25,8 @@
   <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=SpringBoot&logoColor=white"/>
 <br>
 </div>
+
+###### ​기타 [PDF](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
   
 ## 수행계획서 : 
 
@@ -37,8 +39,6 @@
 2. :open_file_folder: [Overview](#idx2)
 3. :game_die: [Role](#idx3)
 4. :mag_right: [Skills & Process](#idx4)
-
-​기타 [PDF](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
 
 ---
 
