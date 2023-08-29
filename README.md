@@ -24,10 +24,12 @@
   <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=SpringBoot&logoColor=white"/>
 <br>
 </div>
-  
+
+
+
 ## 수행계획서 : 
 
-​###### PDF [보기](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
+​PDF [보기](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
 
 ### Table of contents 
 
