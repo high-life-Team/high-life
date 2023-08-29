@@ -2,7 +2,7 @@
 
 # 먹구름 속 무지개 :rainbow:
 
-> 2022.05.25 ~ 06.09 총 16일
+> 2022.05.25 ~ 06.09 총 16일 ###### ​기타 [PDF](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
 
 <div align="center">
 <br>
@@ -25,8 +25,6 @@
   <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=SpringBoot&logoColor=white"/>
 <br>
 </div>
-
-###### ​기타 [PDF](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
   
 ## 수행계획서 : 
 
