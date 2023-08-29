@@ -1,9 +1,9 @@
 # high-life
-[[OJT-라이프1조 하이라이프]먹구름속무지개.pdf](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
 
 # 먹구름 속 무지개 :rainbow:
 
 > 2022.05.25 ~ 06.09 총 16일
+###### 기타 [PDF](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
 
 <div align="center">
 <br>
