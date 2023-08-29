@@ -3,7 +3,6 @@
 # 먹구름 속 무지개 :rainbow:
 
 > 2022.05.25 ~ 06.09 총 16일
-###### 기타 [PDF](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
 
 <div align="center">
 <br>
@@ -39,7 +38,7 @@
 3. :game_die: [Role](#idx3)
 4. :mag_right: [Skills & Process](#idx4)
 
-​	
+​###### 기타 [PDF](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
 
 ---
 
