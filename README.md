@@ -38,7 +38,7 @@
 3. :game_die: [Role](#idx3)
 4. :mag_right: [Skills & Process](#idx4)
 
-​###### 기타 [PDF](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
+​기타 [PDF](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
 
 ---
 
