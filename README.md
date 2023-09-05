@@ -1,4 +1,4 @@
-# high-life
+# High-Life
 
 ###### ​PDF [보기](https://github.com/high-life-Team/high-life/files/12443696/OJT-.1.pdf)
 
